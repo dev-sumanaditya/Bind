@@ -1,0 +1,27 @@
+<nb-layout>
+  <nb-layout-column class="text-center" style="margin-top: 100px;">
+    <h3>bindAdmin</h3>
+    <div class="col-md-4  mx-auto">
+      <form [formGroup]= "adminLogin" (ngSubmit)="submit(adminLogin.value)">
+          
+          <input type="email" nbInput formControlName="email" fullWidth shape="semi-round"  placeholder="Email">
+          
+          <div *ngIf="!adminLogin.valid" style="padding-left: 10px;">
+              <small *ngIf="!adminLogin.controls['email'].valid && adminLogin.controls['email'].touched" class="text-danger" style="float: left;">Enter a valid email.</small>
+          </div>
+
+
+          <input type="password" nbInput formControlName="pass" fullWidth shape="semi-round" placeholder="Password">
+          <div *ngIf="errormessage" style="padding-bottom: 0px;">
+              <small class="text-danger errmsg">{{errormessage}}</small>
+          </div>          
+          <a href="#">Forgot password?</a>
+          
+          <button type="submit" class="mx-auto" status="info" size="small" nbButton>Login</button>
+      </form>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+
+
+

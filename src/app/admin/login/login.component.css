@@ -1,0 +1,23 @@
+h3 {
+    margin-bottom: 30px;
+}
+input {
+    margin: 5px 0;
+}
+
+button {
+    display: block;
+    margin-top: 40px;
+
+}
+
+a {
+    display: block;
+    float: right;
+}
+
+.errmsg {
+    float: left;
+    padding-left: 10px;
+    padding-top: 3px;
+}

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <nb-card>
+        <nb-card-header>Members</nb-card-header>
+        <nb-card-body style="max-height: 500px;">
+          <div class="membersList"  [ngClass]="{'selectedMember': i == infoindex}" *ngFor="let data of members; let i = index" style="cursor: pointer;;" (click)="showMember(i)">
+              <nb-user size="small"
+              name= {{data.name}}
+              title= {{data.role}}
+              picture="http://profilepicturesdp.com/wp-content/uploads/2018/06/best-profile-pictures-smiling-men-1.jpg">
+              </nb-user>
+              <hr>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col-md">
+      <nb-card>
+        <nb-card-header>
+          info
+        </nb-card-header>
+        <nb-card-body *ngIf="!infoData">
+          <div class="container text-center lead"> No member selected.</div>
+        </nb-card-body>
+        <nb-card-body *ngIf="infoData">
+          <div class="container">
+              <nb-user size="large"
+              name= {{infoData.name}}
+              title= {{infoData.role}}
+              picture="http://profilepicturesdp.com/wp-content/uploads/2018/06/best-profile-pictures-smiling-men-1.jpg">
+              </nb-user>
+            <hr>
+            <span class="lead">Email : {{infoData.email}}</span>
+            <br>
+            <span class="lead">Member since : {{infoData.joined}}</span>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</div>

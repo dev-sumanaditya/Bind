@@ -1,0 +1,27 @@
+<div class="container">
+  <nb-card>
+    <nb-card-header>
+      Requests
+    </nb-card-header>
+    <nb-card-body>
+      <div class="container" *ngFor="let data of reqData">
+        <div class="row">
+          <div class="col-md-8">
+            <nb-user
+              size="small"
+              name="{{data.name}}">
+              </nb-user>
+            <span class="lead" style="font-size: 14px; font-weight:500;">Request: {{data.request}}</span>
+          </div>
+          <div class="col-md-4">
+            <nb-actions style="float: right;" size="large">
+              <nb-action icon="nb-checkmark" style="border-bottom: 1px solid green;"></nb-action>
+              <nb-action icon="nb-close-circled" style="border-bottom: 1px solid red;"></nb-action>
+            </nb-actions>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>

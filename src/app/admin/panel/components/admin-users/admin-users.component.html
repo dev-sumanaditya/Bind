@@ -1,0 +1,67 @@
+
+  <nb-card style="height: 98%;">
+    <nb-card-header>Users
+      <div class="actions" (click)="showAction()" *ngIf="showActionBtn">  
+        <nb-actions size="small">
+            <nb-action>
+                <span>Take action</span>
+            </nb-action>
+          <nb-action icon="nb-angle-double-right"></nb-action>
+        </nb-actions>
+      </div>
+      <div class="actions2" *ngIf="takeAction">
+        <nb-actions size="medium">
+            <nb-action icon="nb-close-circled" *ngIf="takeAction" (click)="closeAction()"></nb-action>
+        </nb-actions>
+      </div>
+    </nb-card-header>
+    <div style="height: 100%;" *ngIf="!takeAction">
+        <ag-grid-angular
+          #agGrid
+          style="width: 100%; height: 100%;" 
+          class="ag-theme-balham"
+          [rowData]="rowData" 
+          [columnDefs]="columnDefs"
+          [enableSorting]="true"
+          [enableFilter]="true"
+          (selectionChanged)="onSelectionChanged($event)">
+        </ag-grid-angular>
+    </div>
+
+    <div style="height: 100%; padding: 10px;" *ngIf="takeAction">
+      <div class="container" style="margin-top: 20px;">
+        <div class="row">
+          <div class="col-md actionTextDiv">
+            <span class="actionTextPrimary">Id :</span><span class="actionTextSecondary">{{takeAction.id}}</span>
+            <br>
+            <span class="actionTextPrimary">Name :</span><span class="actionTextSecondary">{{takeAction.name}}</span>
+            <br>
+            <span class="actionTextPrimary">Username :</span><span class="actionTextSecondary">{{takeAction.username}}</span>
+            <br>
+            <span class="actionTextPrimary">Gender :</span><span class="actionTextSecondary">{{takeAction.gender}}</span>
+            <br>
+            <span class="actionTextPrimary">Mobile :</span><span class="actionTextSecondary">{{takeAction.mob}}</span>
+            <br>
+            <span class="actionTextPrimary">Registered on :</span><span class="actionTextSecondary">{{takeAction.signupTs}}</span>
+            <br>
+            <span class="actionTextPrimary">Last login :</span><span class="actionTextSecondary">{{takeAction.login_last}}</span>
+            <br>
+          </div>
+          <div class="col-md">
+            <nb-card>
+              <nb-card-body>
+                  <nb-radio-group [(value)]="selectedOption" name="happy">
+                      <nb-radio value="block">Block account</nb-radio>
+                      <nb-radio value="suspend">Suspend account</nb-radio>
+                      <nb-radio value="review">Mark for Review</nb-radio>
+                  </nb-radio-group>
+                    <br>
+                    <hr>
+                    <button nbButton shape="round" size="small" [disabled]="!selectedOption" status="success" (click)="submitAction()">Submit</button>              </nb-card-body>
+            </nb-card>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-card>

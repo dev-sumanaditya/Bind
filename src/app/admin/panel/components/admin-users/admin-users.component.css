@@ -1,0 +1,28 @@
+.actions {
+    float: right;
+    color: grey;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.actions2{
+    float: right;
+}
+.actions:hover {
+    color: #5de191 !important;
+    transition-delay: 100ms;
+}
+
+.actionTextPrimary {
+    color: gray;
+    font-size: 20px;
+}
+.actionTextSecondary {
+    color: gray;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.actionTextDiv {
+    padding: 20px !important
+}
