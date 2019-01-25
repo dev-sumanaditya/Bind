@@ -1,0 +1,67 @@
+<div class="rootdiv">
+  <div class="text-center navbar-1">
+    <div class="text-center avatar-div">
+        <div class="avatar-div2">
+            <div class="status online"></div>
+            <img class="avatar-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+        </div>
+    </div>
+    <div class="text-center center-nav">
+      <div class="nav-item-block" [routerLink]="['./messages']">
+          <div class="notification-dot" *ngIf="notifications.message">
+
+          </div>
+          <i class="material-icons nav-item-1" routerLinkActive="selected-nav" [routerLink]="['./messages']">
+              question_answer
+          </i>
+      </div>
+      <div class="nav-item-block" [routerLink]="['./search']">
+          <div class="notification-dot" *ngIf="notifications.search">
+
+          </div>
+          <i class="material-icons nav-item-1" routerLinkActive="selected-nav" [routerLink]="['./search']">
+              search
+          </i>
+      </div>
+      <div class="nav-item-block" [routerLink]="['./']">
+          <div class="notification-dot" *ngIf="notifications.home">
+
+          </div>
+          <i class="material-icons nav-item-1" [routerLink]="['/app']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="selected-nav">
+              home
+          </i>
+      </div>
+      <div class="nav-item-block" [routerLink]="['./notifications']">
+          <div class="notification-dot" *ngIf="notifications.notification">
+
+          </div>
+          <i class="material-icons nav-item-1" [routerLink]="['./notifications']" routerLinkActive="selected-nav">
+              notifications
+          </i>
+      </div>
+      <div class="nav-item-block" [routerLink]="['./profile']">
+          <div class="notification-dot" *ngIf="notifications.profile">
+
+          </div>
+          <i class="material-icons nav-item-1" routerLinkActive="selected-nav" [routerLink]="['./profile']">
+              person
+          </i>
+      </div>
+    </div>
+    <div class="text-center bottom-nav">
+        <hr>
+        <div class="nav-item-block" [routerLink]="['./settings']">
+            <div class="notification-dot" *ngIf="notifications.settings">
+  
+            </div>
+            <i class="material-icons nav-item-1" routerLinkActive="selected-nav" [routerLink]="['./settings']">
+                settings_applications
+            </i>
+        </div>
+    </div>
+  </div>
+  <div class="outlet-root">
+    <router-outlet></router-outlet>
+  </div>
+  <app-modal></app-modal>
+</div>

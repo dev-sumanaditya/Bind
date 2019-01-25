@@ -1,0 +1,72 @@
+input {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #c9c7c7;
+    padding: 5px 15px;
+}
+button {
+    border-radius: 4px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 50px 40px;
+}
+.h5-1 {
+    font-size: 20px;
+    font-weight: 300;
+}
+.bottom {
+    float:right;
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+    padding: 0 5px;
+    cursor: pointer;
+}
+.bottom:hover {
+    color: rgba(0,0,0,0.75);
+}
+.bottom-div {
+    padding: 10px 0;
+}
+.col-1 {
+    margin-top: 100px;
+}
+.text-brand {
+    color: rgb(5, 194, 178);
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+.auth-1 {
+    line-height:40px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.507);
+}
+.auth-icon {
+    float:right;
+    margin-right: 80px;
+    font-size: 30px;
+    color: rgba(0, 153, 255, 0.45);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    padding: 5px;
+}
+.link-1 {
+    font-style:italic; font-size: 12px;
+}
+.action-ftr {
+    padding-top: 50px;
+}
+.submit-btn {
+    float:right;
+    padding: 3px 30px;
+}
+.progress-bar {
+    height: 5px;
+}
+.progress {
+    height: 10px;
+    margin: 0 8px -6px 8px;
+    border-radius: 100%;
+}

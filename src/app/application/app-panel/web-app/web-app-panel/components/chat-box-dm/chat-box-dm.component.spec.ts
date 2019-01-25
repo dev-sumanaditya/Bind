@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApplicationRootComponent } from './application-root.component';
+import { ChatBoxDmComponent } from './chat-box-dm.component';
 
-describe('ApplicationRootComponent', () => {
-  let component: ApplicationRootComponent;
-  let fixture: ComponentFixture<ApplicationRootComponent>;
+describe('ChatBoxDmComponent', () => {
+  let component: ChatBoxDmComponent;
+  let fixture: ComponentFixture<ChatBoxDmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApplicationRootComponent ]
+      declarations: [ ChatBoxDmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApplicationRootComponent);
+    fixture = TestBed.createComponent(ChatBoxDmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

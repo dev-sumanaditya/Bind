@@ -1,0 +1,10 @@
+
+<div class="ctr">
+    <div class="text-center img" [ngClass]="getSize()" [ngStyle]="imgsrc && {'background-image': 'url('+imgsrc+')'}">
+        <span *ngIf="!imgsrc">{{getInitials(this.name)}}</span>
+    </div>
+    <div class="inline" [ngClass]="getClass()">
+      <div class="name">{{name}}</div>
+      <div class="title">{{title}}</div>
+    </div>
+</div>

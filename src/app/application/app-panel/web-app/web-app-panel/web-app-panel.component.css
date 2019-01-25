@@ -1,0 +1,112 @@
+.rootdiv {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.navbar-1 {
+    height:100%;
+    width: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(30, 8, 66);
+    z-index: 100;
+}
+
+.avatar-div {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+.avatar-div2 {
+    position: absolute;
+    width: 100%;
+}
+.avatar-img {
+    border-radius: 50%;
+    border: 2px solid rgba(194, 190, 190, 0.7);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.status {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    left: 17.5%;
+    border: 2px solid rgb(30, 8, 66);
+}
+
+.center-nav {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+.bottom-nav {
+    position: absolute;
+    bottom: 10px;
+    width: 100%
+}
+
+.nav-item-block {
+    position: relative;
+}
+.nav-item-1 {
+    font-size: 35px;
+    color: rgb(92, 91, 91);
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    position: relative;
+    outline: none;
+}
+.nav-item-1:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.9);
+    border-left: 3px solid rgba(127, 255, 212, 0.6);
+}
+.notification-dot {
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: rgb(255, 38, 0);
+    position: absolute;
+    right: 16px;
+    top: 4px;
+    border: 3px solid rgb(30, 8, 66);
+    z-index: 200;
+    cursor: pointer;
+}
+
+.outlet-root {
+    height:100%;
+    width: -webkit-calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+    width: calc(100% - 70px);
+    position: absolute;
+    left: 70px;
+    background-color: white;
+    min-width: 800px;
+    padding: 0;
+}
+
+
+
+/* Extras */
+
+.selected-nav {
+    color: white;
+    border-left: 3px solid aquamarine !important;
+}
+.online {
+    background-color: rgb(5, 236, 140);
+}
+.offline {
+    background-color: rgb(245, 241, 241);
+}
+.busy {
+    background-color: rgb(224, 75, 6);
+}

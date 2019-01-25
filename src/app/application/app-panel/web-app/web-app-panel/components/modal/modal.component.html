@@ -1,0 +1,5 @@
+<div class="modal-container" *ngIf="Data" (click)="close($event)">
+  <div class="modal-body" (click)="log()">
+    <img class="modal-img" src="{{Data.data}}">
+  </div>
+</div>

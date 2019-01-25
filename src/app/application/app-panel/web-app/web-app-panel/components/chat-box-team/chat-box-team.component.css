@@ -1,0 +1,147 @@
+.container-1 {
+    height: 100%;
+    position: relative;
+}
+
+.topbar {
+    height: 60px;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.4);
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.top-left {
+    float: left;
+    width: 50%;
+}
+.top-left img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    float: left;
+}
+.avatar-info {
+    display: inline-block;
+    padding-left: 5px;
+    position: relative;
+    width: 70%;
+    float: left;
+}
+.name {
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.title {
+    font-size: 13px;
+    position: absolute;
+    top: 18px;
+    opacity: 0.5;
+}
+
+.top-right {
+    float: right;
+}
+
+.icon-top {
+    font-size: 30px;
+    color: rgb(177, 175, 175);
+    cursor: pointer;
+    padding: 5px;
+}
+.icon-top:hover {
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+
+.chats {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    padding: 40px;
+    overflow: scroll;
+}
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(221, 221, 221, 0.5);
+    height: 60px;
+    padding: 10px 30px;
+    width: 100%;
+}
+
+.bottom-container {
+    position: relative;
+}
+.bottom-container input {
+    position: absolute;
+    width: 96%;
+    border-radius: 30px;
+    background-color: rgba(221, 221, 221, 0.3);
+    box-shadow: none;
+    border: none;
+    padding: 0 100px 0 50px;
+}
+.bottom-container input:focus {
+    z-index: 400;
+    background-color: rgb(243, 240, 240);
+    padding: 0 100px 0 20px;
+    -webkit-transition: padding 0.3s; /* Safari */
+    transition: padding 0.3s;
+    border: 1px solid #ddd;
+}
+.bottom-container input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+.send-btn {
+    position: absolute;
+    right: 4%;
+    top: -5px;
+    font-size: 32px;
+    padding: 8px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.attach {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    transform: rotate(45deg);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 4px;
+    cursor: pointer !important;
+    z-index: 300;
+}
+.attach:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+    border-radius: 50%;
+}
+.emoji {
+    position: absolute;
+    font-size: 24px;
+    top: 5px;
+    right: 12%;
+    padding: 2px;
+    color: rgba(0, 0, 0, 0.5);
+    z-index: 550;
+    cursor: pointer;
+}
+.emoji:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+    border-radius: 50%;
+}

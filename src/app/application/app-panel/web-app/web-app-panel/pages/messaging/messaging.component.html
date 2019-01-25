@@ -1,0 +1,85 @@
+<div style="height: 100%;">
+  <div class="row" style="height: 100%;">
+    <div class="col-4 brd"> <!-- Left col -->
+      <div class="topbar">
+        <div class="searchbar">
+            <i class="material-icons icon-1">search</i>
+            <input type="text" class="form-control searchInput" placeholder="Search">
+        </div>
+        <div class="top-right text-center" (click)="showArchives()">
+            <span class="archive-span" *ngIf="!showarc">99+</span>
+            <i class="material-icons" [ngClass]="{'selected1': showarc==true}">bookmarks</i>
+        </div>
+      </div>
+      <div class="second-bar">
+        <div class="float-left second-left">
+          <span class="sortBy">Sort by:</span> show unread
+        </div>
+        <div class="float-right second-right">
+          <i class="material-icons float-right" (click)="showDropdown() ">
+            add_circle
+          </i>
+          <span class="float-right">New</span>
+          <div class="new-dropdown" *ngIf="new">
+            <h6 href="">Team</h6>
+            <h6 href="">Direct</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chats list -->
+      <div class="chats-container">
+        <div *ngIf="!showarc" style="height: 100%;">
+            <span class="lead-1">
+              Teams
+              <div class="lead-noti"></div>
+            </span>
+            <div class="teams">
+                <div class="group-card mx-auto" *ngFor='let item of groups'>
+                  <img class="grp-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+                  <span class="grp-name">Group Name</span>
+                  <span class="grp-title">Title</span>
+                  <span class="grp-time">2h ago</span>
+                  <span class="grp-msg">Lorem ipsem message the is this...</span>
+                  <div class="grp-info text-center">{{item}}</div>
+                </div>
+            </div>
+        
+            <span class="lead-1">
+              Direct messages
+              <div class="lead-noti"></div>
+            </span>
+            <div class="dm">
+              <div class="dm-card mx-auto" *ngFor='let item of dms'>
+                <img class="dm-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+                <span class="dm-name">Group Name</span>
+                <span class="dm-time">2h ago</span>
+                <span class="dm-msg">Lorem ipsem message is the this.</span>
+                <div class="dm-info text-center">2</div>
+              </div>
+              <h6 class="dm-archives-link" (click)="showArchives()">View archives</h6>
+            </div>
+          </div>
+            <div *ngIf="showarc" style="height: 100%;">
+                <span class="arc-back" (click)="showArchives()"><i class="material-icons">arrow_back</i> <span>Back</span></span><br>
+                <span class="lead-1">
+                  Archives
+                  <div class="lead-noti"></div>
+                </span>
+                <div class="arc">
+                  <div class="arc-card mx-auto" *ngFor='let item of archives'>
+                    <img class="arc-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+                    <span class="arc-name">Group Name</span>
+                    <span class="arc-time">2h ago</span>
+                    <span class="arc-msg">Lorem ipsem message is the this.</span>
+                    <div class="arc-info text-center">{{item}}</div>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <div class="col-8 brd"> <!-- Right col --> <!-- Outlet -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

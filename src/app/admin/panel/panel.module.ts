@@ -23,6 +23,7 @@ import {
   NbSidebarService,
   NbLayoutModule,
   NbButtonModule,
+  NbInputModule,
 } from '@nebular/theme';
 
 @NgModule({
@@ -49,7 +50,8 @@ import {
     NbRadioModule,
     AgGridModule.withComponents([]),
     NbLayoutModule,
-    NbButtonModule
+    NbButtonModule,
+    NbInputModule,
   ],
   providers: [ NbSidebarService ]
 })

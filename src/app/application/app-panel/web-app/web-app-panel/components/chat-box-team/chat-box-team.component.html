@@ -1,0 +1,33 @@
+<div class="container-1">
+  <div class="topbar">
+    <div class="top-left">
+      <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+      <div class="avatar-info">
+          <h6 class="name">The Incubis</h6>
+          <p class="title">Title  |  Last seen - 2h ago</p>
+      </div>
+    </div>
+    <div class="top-right">
+        <i class="material-icons icon-top">widgets</i>
+        <i class="material-icons icon-top">info</i>
+        <i class="material-icons icon-top">more_horiz</i>
+    </div>
+  </div>
+
+  <div class="chats">
+    <app-in (reply)="reply_this($event)"></app-in>
+    <app-in (reply)="reply_this($event)"></app-in>
+    <app-in (reply)="reply_this($event)"></app-in>
+    <app-in (reply)="reply_this($event)"></app-in>
+    <app-in (reply)="reply_this($event)"></app-in>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="bottom-container">
+        <i class="material-icons attach">attach_file</i>
+        <input type="text" class="form-control input-bar" placeholder="Type a message here...">
+        <i class="material-icons emoji">sentiment_satisfied_alt</i>
+        <i class="material-icons send-btn">near_me</i>
+    </div>
+  </div>
+</div>

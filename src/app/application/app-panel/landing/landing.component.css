@@ -1,0 +1,147 @@
+.body {
+    background-image: url('../../../../assets/img2.webp');
+    width: 100%;
+    background-size: 70%;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right,rgba(0,0,0,0.6), rgba(0,0,0,0.7), rgba(0,0,0,0.95), rgb(8, 6, 10)); 
+}
+
+.navbar {
+    color: #ddd;
+    padding: 5px 40px;
+    font-family: Helvetica, sans-serif;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+    cursor: default;
+    user-select: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+.nav-item {
+    cursor: pointer;
+}
+.nav-item:hover {
+    color: rgb(170, 169, 169);
+}
+
+.row-1 {
+    margin: 50px 70px 0 70px;
+    padding: 0 0 100px 0;
+}
+.col-l {
+    color: white;
+    padding: 50px 0;
+}
+.col-r {
+    color: #ddd;
+}
+.form-1 {
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px;
+    color: black;
+}
+.reg-form {
+    margin-top: 30px;
+}
+.terms {
+    font-size: 14px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.reg-ftr {
+    padding: 0;
+}
+.reg-ftr-l {
+    float: left;
+    padding: 5px 0;
+}
+.reg-ftr-r {
+    float: right;
+}
+.btn-1 {
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-weight: 100;
+}
+.chkbox-1 {
+    cursor: pointer;
+    height: 15px;
+}
+
+
+
+.green {
+    color: rgb(13, 216, 97);
+}
+.font-f1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.65);
+}
+.lead-1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Courier New', Courier, monospace;
+}
+.lead-2 {
+    font-size: 18px;
+    font-weight: 100;
+    color: rgba(225, 225, 225, 1);
+    font-family: 'Courier New', Courier, monospace;
+}
+.input-1 {
+    background-color: rgba(221, 221, 221, 0.2);
+}
+.input-1:focus {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+}
+.input-group-text {
+    color: rgba(0, 0, 0, 0.35);
+    user-select: none;
+}
+.icon-1 {
+    font-size: 20px;
+}
+.h1-1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    font-weight: 700;
+}
+.h2-1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26px;
+    font-weight: 500;
+}
+.error {
+    box-shadow: 1px 2px 0 0 rgba(255, 0, 0, 0.4);
+    outline: none;
+}
+.error-2 {
+    color: rgba(255, 0, 0, 0.6);
+}
+.success {
+    box-shadow: 1px 2px 0 0 rgba(0, 128, 0, 0.4);
+}
+
+
+
+
+.x {
+    background-color: #ddd;
+    height: 200px;
+}
+.x2 {
+    height: 200px;
+    background-color: #fafafa;
+}
