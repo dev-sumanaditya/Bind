@@ -1,9 +1,9 @@
-<div class="separator">
+<div class="separator" *ngIf="separator">
   <span>Today</span>
   <hr>
 </div>
 
-<div class="container-1">
+<div class="container-1" [class.msg-right]="you">
   <img class="avatar" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
   <div class="avatar-info">
       <span class="name">John Doe</span>
@@ -39,8 +39,9 @@
       </div>
     </div>
   </div>
+
   <!-- replies -->
-  <div class="replies">
+  <div class="replies" *ngIf="isReplies">
     <div class="reply" *ngFor="let reply of replies">
       <img class="reply-avatar" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
       <div class="reply-data">

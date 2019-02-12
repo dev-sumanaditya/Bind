@@ -1,4 +1,5 @@
 <div class="container-1">
+  <!-- Topbar -->
   <div class="topbar">
     <div class="top-left">
       <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
@@ -14,6 +15,7 @@
     </div>
   </div>
 
+  <!-- Chats container -->
   <div class="chats">
     <app-in (reply)="reply_this($event)"></app-in>
     <app-in (reply)="reply_this($event)"></app-in>
@@ -22,11 +24,38 @@
     <app-in (reply)="reply_this($event)"></app-in>
   </div>
 
+  <div class="bottomPop" *ngIf="toggleState">
+    
+      <emoji-mart native="false" (emojiClick)="addEmoji($event)" emojiTooltip="false" showPreview="false" set="google"></emoji-mart>
+
+
+  </div>
+  <!-- Bottombar -->
   <div class="bottom-bar">
     <div class="bottom-container">
-        <i class="material-icons attach">attach_file</i>
+      <div class="attach-div" (clickOutside)="onClickedOutside($event)">
+          <i class="material-icons attach" [class.attach-selected]="attachState" (click)="toggleMenu()">attach_file</i>
+          <div class="dropup-menu" *ngIf="attachState">
+            <div class="attach-items tooltip1">
+                <i class="material-icons i1">add_photo_alternate</i>
+                <span class="tooltiptext">Photo or Video</span>
+            </div>
+            <div class="attach-items tooltip1">
+                <i class="material-icons i3">insert_drive_file</i>
+                <span class="tooltiptext">Document</span>
+            </div>
+            <div class="attach-items tooltip1">
+                <i class="material-icons i4">code</i>
+                <span class="tooltiptext">Code <></span>
+            </div>
+            <div class="attach-items tooltip1">
+                <i class="material-icons i2">poll</i>
+                <span class="tooltiptext">Poll</span>
+            </div>
+          </div>
+      </div>
         <input type="text" class="form-control input-bar" placeholder="Type a message here...">
-        <i class="material-icons emoji">sentiment_satisfied_alt</i>
+        <i class="material-icons emoji" [class.attach-selected]="toggleState" (click)="toggle()">sentiment_satisfied_alt</i>
         <i class="material-icons send-btn">near_me</i>
     </div>
   </div>

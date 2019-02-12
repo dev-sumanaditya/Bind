@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { ModalService } from '../../../../services/modal.service';
 
 @Component({
@@ -12,14 +12,14 @@ export class InComponent implements OnInit {
 
   private data: string;
   private file = true;
-  private image = true;
-  private video = true;
+  private image = false;
+  private video = false;
   private msg_id = 'hexa-123';
+  private isReplies = false;
   private replies = [
-    {'author': 'Lisa', 'message': 'lorem ipsem something something is lorem ipsem something something is lorem i this.', 'time': '1h'},
-    {'author': 'Mike tyson', 'message': 'lorem ipsem something is.', 'time': '1h'},
-    {'author': 'Lisa', 'message': 'get me some omething is this.', 'time': 'now'},
+    
   ];
+  private you = false;
 
   constructor(private _modal: ModalService) { }
 
@@ -34,5 +34,6 @@ export class InComponent implements OnInit {
   replyfn() {
     this.reply.emit(this.msg_id);
     this.replies.push({'author': 'You', 'message': 'this is good.', 'time': '1h'});
+    this.isReplies = true;
   }
 }

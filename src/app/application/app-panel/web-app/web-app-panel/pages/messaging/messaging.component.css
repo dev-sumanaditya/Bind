@@ -92,6 +92,10 @@
     top: 40px;
     right: 10px;
     z-index: 200;
+    height: 100px;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -moz-transition: width 2s;
 }
 .new-dropdown h6 {
     padding: 7px 20px;
@@ -134,14 +138,26 @@
 }
 
 .teams {
-    overflow: scroll;
+    overflow: auto;
     min-height: calc(55% - 44px);
     max-height: calc(55% - 34px);
     max-height: -moz-calc(55% - 34px);
     max-height: -webkit-calc(55% - 34px);
     margin-bottom: 15px;
     margin-top: 5px;
+    overflow-x: hidden;
 }
+.dm::-webkit-scrollbar {
+    width: 5px;
+}
+.dm::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.dm::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 
 .dm {
     overflow: scroll;
@@ -150,7 +166,19 @@
     max-height: -webkit-calc(45% - 44px);
     padding: 0;
     margin-top: 5px;
+    overflow-x: hidden;
 }
+.dm::-webkit-scrollbar {
+    width: 5px;
+}
+.dm::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.dm::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 .lead-1 {
     padding-left: 5%;
     font-size: 14px;
@@ -308,6 +336,7 @@
     max-height: -webkit-calc(100% - 64px);
     padding: 0;
     margin-top: 5px;
+    overflow-x: hidden;
 }
 .arc-card {
     width: 90%;

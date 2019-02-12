@@ -11,7 +11,10 @@
     box-shadow: 0px 2px 18px -7px rgba(0,0,0,0.75);
     padding: 50px 20px 20px 30px;
     display: block;
-    margin: 10px 0;
+    margin: 10px 0 30px 0;
+}
+.msg-right {
+    float: right;
 }
 
 .avatar {
@@ -176,7 +179,7 @@
 .replies {
     margin: 20px -20px -20px -30px;
     padding: 20px 20px 20px 30px;
-    background: rgba(203, 209, 241, 0.1);
+    background: rgba(203, 209, 241, 0.3);
 }
 .reply {
     position: relative;

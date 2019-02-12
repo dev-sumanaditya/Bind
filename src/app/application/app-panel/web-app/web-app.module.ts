@@ -13,6 +13,8 @@ import { ChatBoxDmComponent } from './web-app-panel/components/chat-box-dm/chat-
 import { ChatBoxDefaultComponent } from './web-app-panel/components/chat-box-default/chat-box-default.component';
 import { InComponent } from './web-app-panel/components/chat-box-team/components/in/in.component';
 import { ModalComponent } from './web-app-panel/components/modal/modal.component';
+import { ClickOutsideModule } from 'ng-click-outside';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ModalComponent } from './web-app-panel/components/modal/modal.component
   ],
   imports: [
     CommonModule,
-    WebAppRoutingModule
+    WebAppRoutingModule,
+    ClickOutsideModule,
+    PickerModule
   ]
 })
 export class WebAppModule { }
