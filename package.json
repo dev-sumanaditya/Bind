@@ -26,6 +26,7 @@
     "@nebular/theme": "^3.0.1",
     "@ngxs/devtools-plugin": "^3.3.4",
     "@ngxs/logger-plugin": "^3.3.4",
+    "@ngxs/store": "^3.3.4",
     "ag-grid-angular": "^19.1.2",
     "ag-grid-community": "^19.1.4",
     "bootstrap": "^4.2.1",

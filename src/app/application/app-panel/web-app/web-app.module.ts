@@ -15,6 +15,8 @@ import { InComponent } from './web-app-panel/components/chat-box-team/components
 import { ModalComponent } from './web-app-panel/components/modal/modal.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { NgxsModule } from '@ngxs/store';
+import { AppChatsState } from './web-app-panel/store/state/application.state';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
     CommonModule,
     WebAppRoutingModule,
     ClickOutsideModule,
-    PickerModule
+    PickerModule,
+    NgxsModule.forFeature([AppChatsState])
   ]
 })
 export class WebAppModule { }

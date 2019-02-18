@@ -6,9 +6,9 @@
             <i class="material-icons icon-1">search</i>
             <input type="text" class="form-control searchInput" placeholder="Search">
         </div>
-        <div class="top-right text-center" (click)="showArchives()">
-            <span class="archive-span" *ngIf="!showarc">99+</span>
-            <i class="material-icons" [ngClass]="{'selected1': showarc==true}">bookmarks</i>
+        <div class="top-right text-center" (click)="ShowArchives()">
+            <span class="archive-span" *ngIf="showChatsList">99+</span>
+            <i class="material-icons" [ngClass]="{'selected1': showArchive==true}">bookmarks</i>
         </div>
       </div>
       <div class="second-bar">
@@ -29,7 +29,7 @@
 
       <!-- Chats list -->
       <div class="chats-container">
-        <div *ngIf="!showarc" style="height: 100%;">
+        <div *ngIf="showChatsList" style="height: 100%;">
             <span class="lead-1">
               Teams
               <div class="lead-noti"></div>
@@ -57,11 +57,11 @@
                 <span class="dm-msg">Lorem ipsem message is the this.</span>
                 <div class="dm-info text-center">2</div>
               </div>
-              <h6 class="dm-archives-link" (click)="showArchives()">View archives</h6>
+              <h6 class="dm-archives-link" (click)="ShowArchives()">View archives</h6>
             </div>
           </div>
-            <div *ngIf="showarc" style="height: 100%;">
-                <span class="arc-back" (click)="showArchives()"><i class="material-icons">arrow_back</i> <span>Back</span></span><br>
+            <div *ngIf="showArchive" style="height: 100%;">
+                <span class="arc-back" (click)="HideArchives()"><i class="material-icons">arrow_back</i> <span>Back</span></span><br>
                 <span class="lead-1">
                   Archives
                   <div class="lead-noti"></div>
