@@ -14,7 +14,6 @@ export class MessagingComponent implements OnInit {
   dms: number[] = [];
   archives: number[] = [];
 
-  showarc = false;
   new = false;
 
   private showArchive;
@@ -51,7 +50,11 @@ export class MessagingComponent implements OnInit {
 
    // Actions
   ShowArchives() {
-    this.store.dispatch(new AppActions.ShowArchive);
+    if(this.showArchive == true) {
+      this.HideArchives();
+    } else {
+      this.store.dispatch(new AppActions.ShowArchive);
+    }
   }
   HideArchives() {
     this.store.dispatch(new AppActions.HideArchive);
