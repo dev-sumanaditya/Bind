@@ -29,7 +29,7 @@ export class MessagingComponent implements OnInit {
     for (let i = 0; i < 10; i++) {
       this.dms.push(i);
     }
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       this.archives.push(i);
     }
 
@@ -67,12 +67,14 @@ export class MessagingComponent implements OnInit {
   }
   ShowCreateGroup() {
     this.store.dispatch(new AppActions.ShowCreateGroup);
+    this.new = false;
   }
   HideCreateGroup() {
     this.store.dispatch(new AppActions.HideCreateGroup);
   }
   ShowCreateDirect() {
     this.store.dispatch(new AppActions.ShowCreateDirect);
+    this.new = false;
   }
   HideCreateDirect() {
     this.store.dispatch(new AppActions.HideCreateDirect);

@@ -1,5 +1,9 @@
 .brd {
-    border: 1px solid #ddd;
+    height: 100%;
+    padding: 0;
+}
+.outlet {
+    border-left: 1px solid #ddd;
     height: 100%;
     padding: 0;
 }
@@ -14,17 +18,17 @@
 }
 .searchbar {
     position: relative;
-    width: 85%;
+    width: 100%;
     display: inline-block;
 }
 .searchInput {
     border-radius: 20px;
-    padding-left: 45px;
+    padding-left: 65px;
     background-color: rgba(221, 221, 221, 0.4);
     border: none;
 }
 .searchInput:focus {
-    box-shadow: 0px 0px 1px 1px #ddd;
+    box-shadow: 0px 0px 1px 2px #ddd;
 }
 .searchInput::placeholder {
     color: rgba(0, 0, 0, 0.3);
@@ -34,7 +38,7 @@
     top: 7px;
     left: 5%;
     z-index: 1;
-    font-size: 23px;
+    font-size: 25px;
     color: rgba(0, 0, 0, 0.3);
     font-weight: 500;
 }
@@ -60,16 +64,11 @@
     background-color: rgba(238, 238, 238, 0.9);
     color: rgba(0, 0, 0, 0.6) !important;
 }
-.archive-span {
-    font-size: 12px;
-    position: absolute;
-    top: -15px;
-    left: 13px;
-}
+
 
 .second-bar {
     width: 100%;
-    padding: 5px 15px;
+    padding: 5px 20px;
 }
 
 .second-left {
@@ -147,13 +146,13 @@
     margin-top: 5px;
     overflow-x: hidden;
 }
-.dm::-webkit-scrollbar {
+.teams::-webkit-scrollbar {
     width: 5px;
 }
-.dm::-webkit-scrollbar-track {
+.teams::-webkit-scrollbar-track {
     background-color: #fafafa;
 }
-.dm::-webkit-scrollbar-thumb {
+.teams::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
@@ -327,16 +326,53 @@
 }
 
 
-
-
+.archive-container {
+    height: 100%;
+    position: relative;
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+}
+.archive-topbar {
+    padding: 20px 10px;
+    background-color: rgb(61, 45, 115);
+    color: #fff;
+    height: 70px;
+}
+.arc-top-header {
+    position: absolute;
+    font-size: 20px;
+    left: 70px;
+    opacity: 0.8;
+    cursor: default;
+}
+.arc-back {
+    font-size: 24px;
+    position: absolute;
+    opacity: 0.8;
+    cursor: pointer;
+    left: 25px;
+}
+.arc-back:hover {
+    opacity: 1;
+}
 .arc {
     overflow: scroll;
-    max-height: calc(100% - 64px);
-    max-height: -moz-calc(100% - 64px);
-    max-height: -webkit-calc(100% - 64px);
+    max-height: calc(100% - 80px);
+    max-height: -moz-calc(100% - 80px);
+    max-height: -webkit-calc(100% - 80px);
     padding: 0;
     margin-top: 5px;
     overflow-x: hidden;
+}
+.arc::-webkit-scrollbar {
+    width: 5px;
+}
+.arc::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.arc::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 .arc-card {
     width: 90%;
@@ -395,16 +431,64 @@
     right: 10px;
 }
 
-.arc-back {
-    font-size: 18px;
-    margin-left: 15px;
-    position: relative;
-    opacity: 0.6;
+
+.create-group-container {
+    height: 100%;
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+}
+.CG-1st-step {
+    border: 2px solid lightgreen;
+}
+.CG-image-upload-ctr {
+    background-color: rgba(170, 168, 168, 0.867);
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    text-align: center;
     cursor: pointer;
+    position: relative;
+    margin: 40px 0 40px 0;
+    overflow: hidden;
 }
-.arc-back:hover {
-    opacity: 0.8;
+
+.CG-bg-i {
+    font-size: 100px;
+    color: rgba(163, 162, 162, 0.4);
 }
-.arc-back span {
+.CG-image-upload-ctr p {
+    font-size: 13px;
+    color:white;
+    width: 80px;
     position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-weight: 500;
+}
+.CG-image-upload-ctr p i {
+    font-size: 35px;
+}
+
+.CG-details {
+    padding: 50px;
+}
+.lead1 {
+    font-size: 12px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+
+
+
+
+
+/* Animations */
+@keyframes slideIn {
+    from {width: 50%;}
+    to {width: 100%;}
 }

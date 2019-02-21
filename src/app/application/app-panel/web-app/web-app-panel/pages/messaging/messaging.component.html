@@ -1,35 +1,40 @@
 <div style="height: 100%;">
   <div class="row" style="height: 100%;">
-    <div class="col-4 brd"> <!-- Left col -->
-      <div class="topbar">
+    <!-- Left Column -->
+    <div class="col-4 brd">
+      <!-- Search Bar -->
+      <div class="topbar" *ngIf="showChatsList">
         <div class="searchbar">
             <i class="material-icons icon-1">search</i>
             <input type="text" class="form-control searchInput" placeholder="Search">
-        </div>
-        <div class="top-right text-center" (click)="ShowArchives()">
-            <span class="archive-span" *ngIf="showChatsList">99+</span>
-            <i class="material-icons" [ngClass]="{'selected1': showArchive==true}">bookmarks</i>
-        </div>
+        </div>        
       </div>
-      <div class="second-bar">
+
+      <!-- Left Second Bar (new and sort) -->
+      <div class="second-bar" *ngIf="showChatsList">
+
+        <!-- Sort By -->
         <div class="float-left second-left">
           <span class="sortBy">Sort by:</span> show unread
         </div>
+
+        <!-- Create New -->
         <div class="float-right second-right">
           <i class="material-icons float-right" (click)="showDropdown() ">
             add_circle
           </i>
           <span class="float-right">New</span>
           <div class="new-dropdown" *ngIf="new">
-            <h6 href="">Team</h6>
-            <h6 href="">Direct</h6>
+            <h6 (click)="ShowCreateGroup()">Team</h6>
+            <h6 (click)="ShowCreateDirect()">Direct</h6>
           </div>
         </div>
       </div>
 
-      <!-- Chats list -->
-      <div class="chats-container">
-        <div *ngIf="showChatsList" style="height: 100%;">
+      <!-- Chats container -->
+      <div class="chats-container" *ngIf="showChatsList">
+
+            <!-- Group List -->
             <span class="lead-1">
               Teams
               <div class="lead-noti"></div>
@@ -44,7 +49,8 @@
                   <div class="grp-info text-center">{{item}}</div>
                 </div>
             </div>
-        
+
+            <!-- Direct List -->
             <span class="lead-1">
               Direct messages
               <div class="lead-noti"></div>
@@ -59,26 +65,85 @@
               </div>
               <h6 class="dm-archives-link" (click)="ShowArchives()">View archives</h6>
             </div>
-        </div>
-            <div *ngIf="showArchive" style="height: 100%;">
-                <span class="arc-back" (click)="HideArchives()"><i class="material-icons">arrow_back</i> <span>Back</span></span><br>
-                <span class="lead-1">
-                  Archives
-                  <div class="lead-noti"></div>
-                </span>
-                <div class="arc">
-                  <div class="arc-card mx-auto" *ngFor='let item of archives'>
-                    <img class="arc-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
-                    <span class="arc-name">Group Name</span>
-                    <span class="arc-time">2h ago</span>
-                    <span class="arc-msg">Lorem ipsem message is the this.</span>
-                    <div class="arc-info text-center">{{item}}</div>
-                  </div>
-                </div>
+      </div>
+
+      <!-- Archives -->
+      <div *ngIf="showArchive" class="archive-container">
+          <!-- Top Bar -->
+          <div class="archive-topbar">
+              <span class="arc-back" (click)="HideArchives()">
+                <i class="material-icons">arrow_back</i>
+              </span>
+              <span class="arc-top-header">
+                  Archived chats
+              </span>
+          </div>
+          
+          <div class="arc">
+            <div class="arc-card mx-auto" *ngFor='let item of archives'>
+              <img class="arc-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+              <span class="arc-name">Group Name</span>
+              <span class="arc-time">2h ago</span>
+              <span class="arc-msg">Lorem ipsem message is the this.</span>
+              <div class="arc-info text-center">{{item}}</div>
             </div>
+          </div>
+      </div>
+
+      <!-- Create New Group Container -->
+      <div *ngIf="showCreateGroup" class="create-group-container">
+          <div class="archive-topbar">
+              <span class="arc-back" (click)="HideCreateGroup()">
+                <i class="material-icons">arrow_back</i>
+              </span>
+              <span class="arc-top-header">
+                  Create team
+              </span>
+          </div>
+
+          <!-- CG 1st step -->
+          <div class="CG1">
+              <div class="CG-image-upload-ctr mx-auto">
+                  <i class="material-icons CG-bg-i">
+                    people
+                  </i>
+                  <p>
+                    <i class="material-icons">add_photo_alternate</i>
+                    <br>
+                    ADD GROUP ICON</p>
+              </div>
+              <div class="CG-details">
+                  <div class="input-group mb-1">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                  <p class="lead1 mb-4">*Name must be without special characters and less than 22 characters.</p>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Username">
+                      <i class="material-icons">
+                          check_circle_outline
+                      </i>
+                  </div>
+
+              </div>
+            </div>
+
+      </div>
+
+      <!-- Create new Direct Container -->
+      <div *ngIf="showCreateDirect">
+          create Direct /// <br>
+          <button (click)="HideCreateDirect()">Close</button>
       </div>
     </div>
-    <div class="col-8 brd"> <!-- Right col --> <!-- Outlet -->
+
+    <!-- Right column ------ Chat Outlet -->
+    <div class="col-8 outlet">
       <router-outlet></router-outlet>
     </div>
   </div>

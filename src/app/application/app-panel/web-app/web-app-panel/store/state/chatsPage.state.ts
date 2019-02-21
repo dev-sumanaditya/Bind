@@ -31,6 +31,8 @@ export class ChatsPageState {
         return state;
     }
 
+    // Chats List reducers
+
     @Action(ChatActions.GetChatsList)
     getChatsList({patchState}: StateContext<ChatsPageModel>) {
         patchState({
@@ -52,7 +54,7 @@ export class ChatsPageState {
             list: payload,
         })
     }
-
+    
     @Action(ChatActions.GetChatsListFail)
     getChatsListFail({patchState}: StateContext<ChatsPageModel>, { payload }: ChatActions.GetChatsListFail) {
         patchState({
@@ -60,5 +62,17 @@ export class ChatsPageState {
             loading: false,
             error: payload
         })
+    }
+
+
+    // Create new group reducers
+    
+    @Action(ChatActions.CreateNewGroup)
+    createNewgroup({patchState}: StateContext<ChatsPageModel>, { payload }: ChatActions.CreateNewGroup) {
+        patchState({
+            loading: true,
+            loaded: false
+        })
+
     }
 }
