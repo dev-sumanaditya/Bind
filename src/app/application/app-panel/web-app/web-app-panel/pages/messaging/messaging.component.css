@@ -119,11 +119,11 @@
     font-size: 30px;
     margin-top: -3px;
     margin-left: 3px;
-    color: aquamarine;
+    color: rgba(61, 45, 115, 0.9);
     cursor: pointer;
 }
 .second-right i:active {
-    color: rgb(34, 116, 88);
+    color: rgba(61, 45, 115 , 0.7);
 }
 
 .chats-container {
@@ -437,9 +437,6 @@
     animation-name: slideIn;
     animation-duration: 0.3s;
 }
-.CG-1st-step {
-    border: 2px solid lightgreen;
-}
 .CG-image-upload-ctr {
     background-color: rgba(170, 168, 168, 0.867);
     border-radius: 50%;
@@ -448,7 +445,7 @@
     text-align: center;
     cursor: pointer;
     position: relative;
-    margin: 40px 0 40px 0;
+    margin: 60px 0 30px 0;
     overflow: hidden;
 }
 
@@ -470,7 +467,7 @@
 }
 
 .CG-details {
-    padding: 50px;
+    padding: 50px 50px 10px 50px;
 }
 .lead1 {
     font-size: 12px;
@@ -481,6 +478,88 @@
     border: 1px solid #ddd;
     outline: none;
 }
+.CG-username-check {
+    position: absolute;
+    right: 0;
+    padding: 10px 5px;
+    font-size: 17px;
+    color: #ddd;
+    z-index: 20;
+}
+.CG1-next {
+    text-align: center;
+    padding-top: 15px;
+}
+.CG1-next i {
+    color: white;
+    font-size: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(61, 45, 115, 0.9);
+    cursor: pointer;
+    box-shadow: 0 1px 3px 2px rgb(204, 204, 204);
+    user-select: none;
+}
+.CG1-next i:active {
+    padding: 6px;
+}
+
+.CG2 {
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    padding: 20px 50px 10px 50px;
+}
+.CG2 p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.CG2 input {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 0;
+}
+.participants {
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.participant {
+    background-color: rgba(221, 221, 221, 0.7);
+    border-radius: 20px;
+    height: 30px;
+    width: max-content;
+    position: relative;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.participant img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.participant span {
+    font-size: 14px;
+    padding: 9px 40px 6px 10px;
+}
+.participant i {
+    font-size: 14px;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0.4);
+}
+.participant i:hover {
+    background-color: #fff;
+}
+
+.connection-list {
+    border: 1px solid slateblue;
+}
 
 
 
@@ -489,6 +568,7 @@
 
 /* Animations */
 @keyframes slideIn {
-    from {width: 50%;}
+    from {width: 70%;}
     to {width: 100%;}
 }
+

@@ -102,7 +102,7 @@
           </div>
 
           <!-- CG 1st step -->
-          <div class="CG1">
+          <div class="CG1" *ngIf="!step">
               <div class="CG-image-upload-ctr mx-auto">
                   <i class="material-icons CG-bg-i">
                     people
@@ -115,24 +115,54 @@
               <div class="CG-details">
                   <div class="input-group mb-1">
                       <div class="input-group-prepend">
-                        <span class="input-group-text">@</span>
+                        <span class="input-group-text">&nbsp;#</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Name">
+                      <input type="text" class="form-control" placeholder="Name" maxlength="25">
                   </div>
-                  <p class="lead1 mb-4">*Name must be without special characters and less than 22 characters.</p>
-                  <div class="input-group mb-3">
+                  <p class="lead1 mb-4">*Name must be without special characters and less than 25 characters.</p>
+                  <div class="input-group mb-1">
                       <div class="input-group-prepend">
                         <span class="input-group-text">@</span>
                       </div>
                       <input type="text" class="form-control" placeholder="Username">
-                      <i class="material-icons">
+                      <i class="material-icons CG-username-check">
                           check_circle_outline
                       </i>
                   </div>
+                  <p class="lead1 mb-5">*Username must be short and can contain letters, numbers, period and underscore.</p>
+                  <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Description</span>
+                      </div>
+                      <textarea style="resize: none;" class="form-control" maxlength="80"></textarea>
+                  </div>
+                  <p class="lead1">*Briefly describe the purpose of this team in not more than 80 characters.</p>
+              </div>
+              <div class="CG1-next">
+                  <i class="material-icons" (click)="nextStep()">
+                      arrow_forward
+                  </i>
+              </div>
+          </div>
 
+          <!-- CG 2nd step-->
+          <div class="CG2" *ngIf="step">
+            <p class="lead mb-5">Add participants</p>
+            <div class="participants">
+              <div class="participant" *ngFor="let p of groups">
+                  <img src="https://www.bittaxer.com/wp-content/uploads/2018/03/danielle-profile-bittaxer.jpg">
+                  <span>Jacqueline Hardy</span>
+                  <i class="material-icons">
+                      clear
+                  </i>
               </div>
             </div>
+            <input type="text" class="form-control mb-4" placeholder="Type contact name">
+            <div class="connection-list">
+              connection-list
+            </div>
 
+          </div>
       </div>
 
       <!-- Create new Direct Container -->

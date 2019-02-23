@@ -15,6 +15,7 @@ export class MessagingComponent implements OnInit {
   archives: number[] = [];
 
   new = false;
+  step = false;
 
   private showArchive;
   private showSearch;
@@ -82,5 +83,9 @@ export class MessagingComponent implements OnInit {
 
   showDropdown() {
     this.new = !this.new;
+    this.step = false;
+  }
+  nextStep() {
+    this.step = true;
   }
 }
