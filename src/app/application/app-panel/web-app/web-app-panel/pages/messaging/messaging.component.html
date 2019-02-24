@@ -181,9 +181,28 @@
       </div>
 
       <!-- Create new Direct Container -->
-      <div *ngIf="showCreateDirect">
-          create Direct /// <br>
-          <button (click)="HideCreateDirect()">Close</button>
+      <div class="createDirect" *ngIf="showCreateDirect">
+          <div class="archive-topbar">
+              <span class="arc-back" (click)="HideCreateDirect()">
+                <i class="material-icons">arrow_back</i>
+              </span>
+              <span class="arc-top-header">
+                  Select contact
+              </span>
+          </div>
+          <div class="contact-search">
+              <input type="text" class="form-control mb-4" placeholder="Type contact name">
+          </div>
+          <div class="contact-list">
+              <div class="cat">
+                <p>A</p>
+                <div class="user" *ngFor="let u of contacts; index as i" (click)="addParticipant(u, i)">
+                    <img src="{{u.url}}">
+                    <span class="U-name">{{u.name}}</span>
+                    <span class="U-title">{{u.title}}</span>
+                </div>
+              </div>
+          </div>
       </div>
     </div>
 
