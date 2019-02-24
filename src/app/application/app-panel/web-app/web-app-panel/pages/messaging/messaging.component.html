@@ -147,19 +147,34 @@
 
           <!-- CG 2nd step-->
           <div class="CG2" *ngIf="step">
-            <p class="lead mb-5">Add participants</p>
-            <div class="participants">
-              <div class="participant" *ngFor="let p of groups">
-                  <img src="https://www.bittaxer.com/wp-content/uploads/2018/03/danielle-profile-bittaxer.jpg">
-                  <span>Jacqueline Hardy</span>
-                  <i class="material-icons">
-                      clear
-                  </i>
+            <div class="CG2-top">
+                <p class="lead mb-4">Add participants</p>
+                <div class="participants" *ngIf="participantsss">
+                  <div class="participant" *ngFor="let p of participantsss; index as i">
+                      <img src="{{p.url}}">
+                      <span>{{p.name}}</span>
+                      <i class="material-icons" (click)="pop(i, p)">
+                          clear
+                      </i>
+                  </div>
+                </div>
+                <input type="text" class="form-control mb-4" placeholder="Type contact name">
+            </div>
+      
+            <div class="connection-list">
+              <div class="cat">
+                <p>A</p>
+                <div class="user" *ngFor="let u of contacts; index as i" (click)="addParticipant(u, i)">
+                    <img src="{{u.url}}">
+                    <span class="U-name">{{u.name}}</span>
+                    <span class="U-title">{{u.title}}</span>
+                </div>
               </div>
             </div>
-            <input type="text" class="form-control mb-4" placeholder="Type contact name">
-            <div class="connection-list">
-              connection-list
+            <div class="CG2-next" *ngIf="participantsss.length > 0">
+                <i class="material-icons">
+                    arrow_forward
+                </i>
             </div>
 
           </div>
