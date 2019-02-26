@@ -32,6 +32,7 @@
 }
 .searchInput::placeholder {
     color: rgba(0, 0, 0, 0.3);
+    user-select: none;
 }
 .icon-1 {
     position: absolute;
@@ -41,6 +42,7 @@
     font-size: 25px;
     color: rgba(0, 0, 0, 0.3);
     font-weight: 500;
+    user-select: none;
 }
 
 
@@ -53,16 +55,19 @@
 .second-bar {
     width: 100%;
     padding: 5px 20px;
+    user-select: none;
 }
 
 .second-left {
     color: rgba(0, 0, 0, 0.5);
     font-size: 12px;
     font-weight: 500;
+    cursor: pointer;
 }
 .sortBy {
     color: rgba(0, 0, 0, 0.3);
     margin-right: 5px;  
+    cursor: default;
 }
 
 .second-right {
@@ -118,6 +123,7 @@
     height: calc(100% - 110px);
     height: -moz-calc(100% - 110px);
     height: -webkit-calc(100% - 110px);
+    user-select: none;
 }
 
 .teams {
@@ -178,127 +184,8 @@
     background-color: orangered;
     display: inline-block; 
 }
-.group-card {
-    height: 80px;
-    min-height: 80px;
-    width: 90%;
-    margin: 10px 0;
-    -webkit-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    border-radius: 5px;
-    position: relative;
-}
 
-.dm-card {
-    width: 90%;
-    height: 50px;
-    margin: 10px 0;
-    -webkit-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
-    border-radius: 5px;
-    position: relative;
-}
 
-.grp-img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.grp-name {
-    font-size: 14px;
-    font-weight: 500;
-    position: absolute; 
-    top: 8px;
-    left: 50px;
-    opacity: 0.9;
-}
-.grp-title {
-    position: absolute;
-    top: 25px;
-    font-size: 12px;
-    left: 50px;
-    opacity: 0.4;
-}
-.grp-time {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 12px;
-    opacity: 0.3;
-}
-.grp-msg {
-    position: absolute;
-    bottom: 8px;
-    left: 10px;
-    right: 40px;
-    font-size: 14px;
-    opacity: 0.7;
-}
-.grp-info {
-    height: 18px;
-    width: 18px;
-    background-color: rgba(255, 68, 0, 0.8);
-    color: white;
-    font-size: 12px;
-    line-height: 18px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 8px;
-    right: 10px;
-}
-
-.dm-img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.dm-name {
-    font-size: 13px;
-    font-weight: 500;
-    position: absolute; 
-    top: 8px;
-    left: 50px;
-    opacity: 0.9;
-}
-.dm-time {
-    position: absolute;
-    right: 10px;
-    top: 8px;
-    font-size: 12px;
-    opacity: 0.3;
-}
-.dm-msg {
-    position: absolute;
-    bottom: 6px;
-    left: 50px;
-    right: 40px;
-    font-size: 14px;
-    opacity: 0.6;
-    max-height: 16px;
-    overflow: hidden;
-}
-.dm-info {
-    height: 12px;
-    width: 12px;
-    background-color: rgba(255, 68, 0, 0.8);
-    color: white;
-    font-size: 8px;
-    line-height: 12px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 6px;
-    right: 10px;
-}
 
 .dm-archives-link {
     font-size: 12px;
@@ -321,6 +208,7 @@
     background-color: rgb(61, 45, 115);
     color: #fff;
     height: 70px;
+    user-select: none;
 }
 .arc-top-header {
     position: absolute;
@@ -431,6 +319,7 @@
     position: relative;
     margin: 60px 0 30px 0;
     overflow: hidden;
+    user-select: none;
 }
 
 .CG-bg-i {
@@ -455,8 +344,11 @@
 }
 .lead1 {
     font-size: 12px;
+    user-select: none;
 }
-
+.CG1 .input-group-text {
+    user-select: none;
+}
 .form-control:focus {
     box-shadow: none;
     border: 1px solid #ddd;
@@ -469,6 +361,7 @@
     font-size: 17px;
     color: #ddd;
     z-index: 20;
+    user-select: none;
 }
 .CG1-next {
     text-align: center;

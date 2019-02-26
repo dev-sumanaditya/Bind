@@ -1,0 +1,77 @@
+.group-card {
+    height: 80px;
+    min-height: 80px;
+    width: 90%;
+    margin: 10px 0;
+    border-left: 3px solid #fff;
+    -webkit-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 22px -7px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    z-index: 200;
+}
+.group-card:focus {
+    outline: none;
+}
+.group-card:hover {
+    border-left: 3px solid rgb(61, 45, 115);
+    background-color: rgba(221, 221, 221, 0.3);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.grp-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.grp-name {
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute; 
+    top: 8px;
+    left: 50px;
+    opacity: 0.9;
+}
+.grp-title {
+    position: absolute;
+    top: 25px;
+    font-size: 12px;
+    left: 50px;
+    opacity: 0.4;
+}
+.grp-time {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    opacity: 0.3;
+}
+.grp-msg {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    right: 40px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+.grp-info {
+    height: 18px;
+    width: 18px;
+    background-color: rgba(255, 68, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+}

@@ -29,7 +29,6 @@ export class ChatBoxTeamComponent implements OnInit {
   onClickedOutside(data) {
     if(this.attachState) {
       this.toggleMenu();
-      console.log('closing');
     }
   }
 }

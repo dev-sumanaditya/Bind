@@ -42,7 +42,7 @@ export class MessagingComponent implements OnInit {
 
 
   constructor(private store: Store) {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
       this.groups.push(i);
     }
     for (let i = 0; i < 10; i++) {
@@ -103,6 +103,11 @@ export class MessagingComponent implements OnInit {
     this.new = !this.new;
     this.step = false;
   }
+  newClickOutside(data) {
+    if(this.new) {
+      this.new = false;
+    }
+  }
   nextStep() {
     this.step = true;
   }
@@ -115,4 +120,6 @@ export class MessagingComponent implements OnInit {
     this.participantsss.splice(i, 1);
     this.contacts.push(u)
   }
+
+
 }

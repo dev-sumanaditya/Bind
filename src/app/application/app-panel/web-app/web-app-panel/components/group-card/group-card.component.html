@@ -1,0 +1,26 @@
+<div class="group-card mx-auto"  [routerLink]="['./team']" (contextmenu)="groupRightClick()"
+  [popper]="GroupDropdown"
+  [popperShowOnStart]="false"
+  [popperHideOnScroll]="true"
+  [popperPlacement]="'bottom'"
+  [popperApplyClass]="'popper'"
+  [popperDisableStyle]="true"
+  >
+  
+  <img class="grp-img" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+  <span class="grp-name">Group Name</span>
+  <span class="grp-title">Title</span>
+  <span class="grp-time">2h ago</span>
+  <span class="grp-msg">Lorem ipsem message the is this...</span>
+  <div class="grp-info text-center">2</div>
+</div>
+
+<!-- Dropdown menu -->
+<popper-content #GroupDropdown [ngClass]="popper" (clickOutside)="clickOutPopper()">
+  <div class="">
+      <h6>Mute team</h6>
+      <h6>Mark as read</h6>
+      <h6>Open in new tab</h6>
+      <h6>Exit team</h6>
+  </div>
+</popper-content>

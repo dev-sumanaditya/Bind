@@ -17,6 +17,10 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { NgxsModule } from '@ngxs/store';
 import { AppChatsState } from './web-app-panel/store/state/application.state';
+import { GroupCardComponent } from './web-app-panel/components/group-card/group-card.component';
+import { DmCardComponent } from './web-app-panel/components/dm-card/dm-card.component';
+import { NgxPopperModule } from 'ngx-popper';
+
 
 @NgModule({
   declarations: [
@@ -32,12 +36,15 @@ import { AppChatsState } from './web-app-panel/store/state/application.state';
     ChatBoxDefaultComponent,
     InComponent,
     ModalComponent,
+    GroupCardComponent,
+    DmCardComponent,
   ],
   imports: [
     CommonModule,
     WebAppRoutingModule,
     ClickOutsideModule,
     PickerModule,
+    NgxPopperModule,
     NgxsModule.forFeature([AppChatsState])
   ]
 })
