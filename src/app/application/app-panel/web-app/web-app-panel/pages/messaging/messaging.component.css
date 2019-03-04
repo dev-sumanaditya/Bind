@@ -79,7 +79,7 @@
     position: absolute;
     top: 40px;
     right: 10px;
-    z-index: 200;
+    z-index: 1200;
     height: 100px;
     -webkit-transition: width 2s; /* Safari */
     transition: width 2s;

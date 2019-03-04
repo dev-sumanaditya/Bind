@@ -13,6 +13,14 @@ export class ChatBoxTeamComponent implements OnInit {
   private toggleState = false;
   private attachState = false;
 
+  private ChatsWindow = true;
+  private GroupBoxWindow = false;
+  private InfoWindow = false;
+
+  private boardDrop = false;
+
+  private GroupBoxTab = 'boards';
+
   ngOnInit() {
   }
 
@@ -30,5 +38,40 @@ export class ChatBoxTeamComponent implements OnInit {
     if(this.attachState) {
       this.toggleMenu();
     }
+  } 
+
+  // topbar options
+  ShowGroupBox() {
+    this.GroupBoxWindow = true;
+    this.ChatsWindow = false;
+    this.InfoWindow = false;
+    this.toggleState = false;
+  }
+  ShowInfo() {
+    this.InfoWindow = true;
+    this.ChatsWindow = false;
+    this.GroupBoxWindow = false;
+  }
+  ShowChatsWindow() {
+    this.ChatsWindow = true;
+    this.GroupBoxWindow = false;
+    this.InfoWindow = false;
+  }
+
+  // GroupBox nav
+  showBoards() {
+    this.GroupBoxTab = 'boards';
+  }
+  showTasks() {
+    this.GroupBoxTab = 'tasks';
+  }
+  showFiles() {
+    this.GroupBoxTab = 'files';
+  }
+  showPolls() {
+    this.GroupBoxTab = 'polls';
+  }
+  showImportants() {
+    this.GroupBoxTab = 'importants';
   }
 }

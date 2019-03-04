@@ -18,14 +18,24 @@
   box-shadow: 0px 2px 15px -6px black;
   margin-top: -20px;
   margin-left: 100px;
+  user-select: none;
 }
 .popper h6 {
   padding: 5px 20px;
   cursor: pointer;
   margin: 0;
   font-weight: 400;
+  line-height: 20px;
 }
 .popper h6:hover {
   background-color: rgba(221, 221, 221, 0.4);
   color: black;
+}
+
+.popper h6 i {
+  color: rgba(0,0,0,0.5);
+  font-size: 20px;
+  padding: 1px 10px 0px 0px;
+  line-height: 20px;
+  vertical-align: text-bottom;
 }

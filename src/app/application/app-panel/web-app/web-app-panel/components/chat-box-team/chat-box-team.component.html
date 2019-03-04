@@ -9,14 +9,14 @@
       </div>
     </div>
     <div class="top-right">
-        <i class="material-icons icon-top">widgets</i>
-        <i class="material-icons icon-top">info</i>
-        <i class="material-icons icon-top">more_horiz</i>
+        <i class="material-icons icon-top" (click)="ShowGroupBox()" *ngIf="ChatsWindow">widgets</i>
+        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="ChatsWindow">more_horiz</i>
+        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="!ChatsWindow">clear</i>
     </div>
   </div>
 
   <!-- Chats container -->
-  <div class="chats">
+  <div class="chats" *ngIf="ChatsWindow">
     <app-in (reply)="reply_this($event)"></app-in>
     <app-in (reply)="reply_this($event)"></app-in>
     <app-in (reply)="reply_this($event)"></app-in>
@@ -24,14 +24,100 @@
     <app-in (reply)="reply_this($event)"></app-in>
   </div>
 
+  <!-- Group box container -->
+  <div class="groupbox" *ngIf="GroupBoxWindow">
+    <!-- Navbar (Group box) -->
+    <div class="box-topbar">
+      <p>Group Box</p>
+      <div class="box-navbar">
+        <div class="box-nav" (click)="showBoards()" [class.box-nav-selected]="GroupBoxTab === 'boards'">
+            <i class="material-icons">layers</i>
+            <h6>Boards</h6>
+        </div>
+        <div class="box-nav" (click)="showTasks()" [class.box-nav-selected]="GroupBoxTab === 'tasks'">
+            <i class="material-icons">check_box</i>
+            <h6>Tasks</h6>
+        </div>
+        <div class="box-nav" (click)="showFiles()" [class.box-nav-selected]="GroupBoxTab === 'files'">
+            <i class="material-icons">cloud_upload</i>
+            <h6>Files</h6>
+        </div>
+        <div class="box-nav" (click)="showPolls()" [class.box-nav-selected]="GroupBoxTab === 'polls'">
+            <i class="material-icons">poll</i>
+            <h6>Polls</h6>
+        </div>
+        <div class="box-nav" (click)="showImportants()" [class.box-nav-selected]="GroupBoxTab === 'importants'">
+            <i class="material-icons">star</i>
+            <h6>Important</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create new Board -->
+    <div class="box-new">
+      <i class="material-icons">add_circle</i>
+    </div>
+    <!-- group box display Container -->
+    <div class="box-container">
+     
+      <!-- Boards --> 
+      <div class="boards-container" *ngIf="GroupBoxTab == 'boards'">
+        <!-- Board -->
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+        <app-board></app-board>
+      </div>
+
+      <!-- Tasks -->
+      <div class="tasks-container" *ngIf="GroupBoxTab == 'tasks'">
+        <p class="lead">My tasks</p>
+          <app-task></app-task>
+          <app-task></app-task>
+          <app-task></app-task>
+        <p class="lead">All tasks</p>
+          <app-task></app-task>
+          <app-task></app-task>
+
+      </div>
+
+      <!-- Files -->
+      <div class="files-container" *ngIf="GroupBoxTab == 'files'">
+        files
+      </div>
+
+      <!-- polls -->
+      <div class="polls-container" *ngIf="GroupBoxTab == 'polls'">
+        polls
+      </div>
+
+      <!-- Important -->
+      <div class="important-container" *ngIf="GroupBoxTab == 'importants'">
+        importants
+      </div>
+    </div>
+  </div>
+
+  <div class="infoWindow" *ngIf="InfoWindow">
+    Info Window
+  </div>
+
+  <!-- Emoji selector Div -->
   <div class="bottomPop" *ngIf="toggleState">
-    
       <emoji-mart native="false" (emojiClick)="addEmoji($event)" emojiTooltip="false" showPreview="false" set="google"></emoji-mart>
-
-
   </div>
   <!-- Bottombar -->
-  <div class="bottom-bar">
+  <div class="bottom-bar" *ngIf="ChatsWindow">
     <div class="bottom-container">
       <div class="attach-div" (clickOutside)="onClickedOutside($event)">
           <i class="material-icons attach" [class.attach-selected]="attachState" (click)="toggleMenu()">attach_file</i>

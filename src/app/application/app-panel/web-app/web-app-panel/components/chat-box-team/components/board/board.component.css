@@ -1,0 +1,57 @@
+.board {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 150px;
+    width: 230px;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+.board:active {
+    border: 1px solid slateblue;
+}
+.board-top {
+    flex-grow: 1;
+    position: relative;
+}
+.board-top .drop {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.board-top .drop:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+.board-bottom {
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.board-bottom i {
+    color: slateblue;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.board-bottom h6 {
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    right: 0;
+    bottom: 15px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.board-bottom .edited {
+    position: absolute;
+    bottom: 7px;
+    left: 14px;
+    font-size: 11px;
+    opacity: 0.8;
+}

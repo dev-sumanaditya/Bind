@@ -20,6 +20,8 @@ import { AppChatsState } from './web-app-panel/store/state/application.state';
 import { GroupCardComponent } from './web-app-panel/components/group-card/group-card.component';
 import { DmCardComponent } from './web-app-panel/components/dm-card/dm-card.component';
 import { NgxPopperModule } from 'ngx-popper';
+import { BoardComponent } from './web-app-panel/components/chat-box-team/components/board/board.component';
+import { TaskComponent } from './web-app-panel/components/chat-box-team/components/task/task.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { NgxPopperModule } from 'ngx-popper';
     ModalComponent,
     GroupCardComponent,
     DmCardComponent,
+    BoardComponent,
+    TaskComponent,
   ],
   imports: [
     CommonModule,

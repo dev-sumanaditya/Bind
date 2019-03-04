@@ -1,0 +1,27 @@
+<div class="board">
+    <div class="board-top">
+      <i class="material-icons drop"
+        [popper]="Dropdown"
+        [popperShowOnStart]="false"
+        [popperTrigger]="'click'"
+        [popperHideOnClickOutside]="true"
+        [popperHideOnScroll]="true"
+        [popperPlacement]="'bottom'"
+        [popperApplyClass]="'popper'"
+        [popperDisableStyle]="true"
+      >keyboard_arrow_down</i>
+    </div>
+    <div class="board-bottom">
+      <i class="material-icons" >assignment</i>
+      <h6>Design Workflow for the ground team....</h6>
+      <span class="edited">last edited 2 days ago</span>
+    </div>
+  </div>
+  <!-- Dropdown menu -->
+  <popper-content #Dropdown [ngClass]="popper">
+          <h6> <i class="material-icons">person_add</i> Add participants</h6>
+          <h6> <i class="material-icons">link</i> Get shareable link</h6>
+          <h6> <i class="material-icons">star</i> Mark as important</h6>
+          <h6> <i class="material-icons">edit</i> Rename</h6>
+          <h6> <i class="material-icons">delete</i> Delete</h6>
+  </popper-content>
