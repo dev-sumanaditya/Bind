@@ -1,0 +1,19 @@
+<div class="poll-container">
+  <div class="user">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmd8T9ARvwMBzUCotv_iGaz-LYpbrkSB1Yj7-kvMhCsMyeYpZ-">
+    <span class="name">Sophie Turner</span>
+    <span class="username">@i_sophie</span>
+  </div>
+  <h6 class="topic">{{poll.topic}}</h6>
+  <div class="options mb-2">
+      <div class="progress opt" [class.notvoted]="!voted && !past" [class.selectedb]="selected === i" *ngFor="let option of poll.options, index as i" (click)="SelectOption(i)">
+          <div class="progress-bar" role="progressbar" [style.width]="option.percent" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <span class="percent">{{option.percent}}</span>
+            <span class="text">{{option.text}}</span>
+            <span class="marked" *ngIf="selected === i"> <i class="material-icons">check_circle</i> </span>
+          </div>
+      </div>
+  </div>
+  <p class="info">22 Votes - <span *ngIf="!past">2 days remaining</span> <span *ngIf="past">Final results</span> </p>
+  <button class="btn btn-sm btn-block submit" *ngIf="!past" [disabled]="voted || selected == -1" (click)="Submit()">{{btnText}}</button>
+</div>

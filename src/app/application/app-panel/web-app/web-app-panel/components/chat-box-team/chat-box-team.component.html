@@ -93,17 +93,58 @@
 
       <!-- Files -->
       <div class="files-container" *ngIf="GroupBoxTab == 'files'">
-        files
+        <p class="lead">My Files</p>
+        <div class="tabletopbar">
+          <div class="one">Name</div>
+          <div class="two">Type</div>
+          <div class="three">Modified</div>
+          <div class="four">User</div>
+          <div class="five"> <i class="material-icons">list</i> </div>
+        </div>
+        <app-file></app-file>
+        <app-file></app-file>
+        <app-file></app-file>
+
+        <p class="lead mt-5">All Files</p>
+        <div class="tabletopbar">
+          <div class="one">Name</div>
+          <div class="two">Type</div>
+          <div class="three">Modified</div>
+          <div class="four">User</div>
+          <div class="five"> <i class="material-icons">list</i> </div>
+        </div>
+        <app-file></app-file>
+        <app-file></app-file>
+        <app-file></app-file>
+        <app-file></app-file>
+        <app-file></app-file>
+        <app-file></app-file>
       </div>
 
       <!-- polls -->
-      <div class="polls-container" *ngIf="GroupBoxTab == 'polls'">
-        polls
+      <div class="polls-main-container" *ngIf="GroupBoxTab == 'polls'">
+        <p class="lead">Active polls</p>
+        <div class="polls-container">
+            <div class="pol">
+                <app-poll></app-poll>
+            </div>
+            <div class="pol">
+                <app-poll></app-poll>
+            </div>
+            <div class="pol">
+                <app-poll></app-poll>
+            </div>
+            <div class="pol">
+                <app-poll></app-poll>
+            </div><div class="pol">
+                <app-poll></app-poll>
+            </div>
+        </div>
       </div>
 
       <!-- Important -->
       <div class="important-container" *ngIf="GroupBoxTab == 'importants'">
-        importants
+        <p class="lead">Recent</p>
       </div>
     </div>
   </div>

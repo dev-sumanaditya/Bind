@@ -1,0 +1,91 @@
+.file-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+.file-container:hover .name {
+    color: #0062ff;
+}
+.file-container:hover .star {
+    display: inline-block;
+}
+.star {
+    position: absolute;
+    left: -40px;
+    cursor: pointer;
+    display: none;
+    color: darkblue;
+    padding: 20px 20px 20px 10px;
+}
+.starred {
+    position: absolute;
+    left: -40px;
+    cursor: pointer;
+    color: #ffc400;
+    padding: 20px 20px 20px 10px;
+}
+.ic {
+    flex: 1;
+    color: slateblue;
+}
+.ic i {
+    font-size: 30px;
+    vertical-align: text-bottom;
+}
+.name {
+    flex: 6;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.type {
+    flex: 3;
+    text-overflow: ellipsis;
+    height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.date {
+    flex: 3;
+    text-overflow: ellipsis;
+    height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.user {
+    flex: 4;
+    text-overflow: ellipsis;
+    color: darkblue;
+    height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+    font-weight: 400;
+}
+.user span:hover {
+    font-weight: 500;
+}
+.options {
+    flex: 1;
+    user-select: none;
+}
+.options i {
+    padding: 4px;
+    cursor: pointer;
+}
+.file-container:hover .options i {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: white;
+}

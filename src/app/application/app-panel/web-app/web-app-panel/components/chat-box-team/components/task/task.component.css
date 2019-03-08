@@ -36,6 +36,7 @@
 .bottom h6 {
     line-height: 18px;
     display: inline-block;
+    font-size: 15px;
 }
 .deadline {
     padding-left: 10px;

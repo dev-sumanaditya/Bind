@@ -1,0 +1,41 @@
+<div class="file-container">
+  <i class="material-icons star" *ngIf="!file.star" (click)="markStar()">star_border</i>
+  <i class="material-icons starred" *ngIf="file.star" (click)="removeStar()">star</i>
+  <div class="ic">
+    <i class="material-icons" *ngIf="file.type === 'folder'">folder</i>
+    <i class="material-icons" *ngIf="file.type === 'document'">description</i>
+    <i class="material-icons" *ngIf="file.type === 'audio'">library_music</i>
+    <i class="material-icons" *ngIf="file.type === 'video'">video_library</i>
+    <i class="material-icons" *ngIf="file.type === 'unknown'">web_asset</i>
+    <i class="material-icons" *ngIf="file.type === 'sheet'">list_alt</i>
+    <i class="material-icons" *ngIf="file.type === 'zip'">unarchive</i>
+  </div>
+  <div class="name">Project report on heavy vehicle supercharger</div>
+  <div class="type">Document</div>
+  <div class="date">2 days ago</div>
+  <div class="user"><span>@sumanaditya</span></div>
+  <div class="options">
+    <i class="material-icons"
+    [popper]="dropdown"
+    [popperShowOnStart]="false"
+    [popperTrigger]="'click'"
+    [popperHideOnClickOutside]="true"
+    [popperHideOnScroll]="true"
+    [popperPlacement]="'left-start'"
+    [popperApplyClass]="'popper'"
+    [popperDisableStyle]="true">
+    more_horiz</i>
+  </div>
+</div>
+
+
+  <!-- Dropdown menu -->
+<popper-content #dropdown [ngClass]="popper">
+      <h6> <i class="material-icons">share</i> share in chat</h6>
+      <h6> <i class="material-icons">link</i> Copy shareable link</h6>
+      <h6> <i class="material-icons">get_app</i> Download</h6>
+      <h6> <i class="material-icons">star</i> Mark as important</h6>
+      <h6> <i class="material-icons">edit</i> Rename</h6>
+      <h6> <i class="material-icons">delete</i> Delete</h6>
+      <h6> <i class="material-icons">info</i> File info</h6>
+</popper-content>

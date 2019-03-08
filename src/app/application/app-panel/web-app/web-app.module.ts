@@ -22,6 +22,8 @@ import { DmCardComponent } from './web-app-panel/components/dm-card/dm-card.comp
 import { NgxPopperModule } from 'ngx-popper';
 import { BoardComponent } from './web-app-panel/components/chat-box-team/components/board/board.component';
 import { TaskComponent } from './web-app-panel/components/chat-box-team/components/task/task.component';
+import { FileComponent } from './web-app-panel/components/chat-box-team/components/file/file.component';
+import { PollComponent } from './web-app-panel/components/chat-box-team/components/poll/poll.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { TaskComponent } from './web-app-panel/components/chat-box-team/componen
     DmCardComponent,
     BoardComponent,
     TaskComponent,
+    FileComponent,
+    PollComponent,
   ],
   imports: [
     CommonModule,
