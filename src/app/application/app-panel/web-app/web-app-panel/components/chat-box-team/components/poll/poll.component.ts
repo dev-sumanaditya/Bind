@@ -16,7 +16,7 @@ export class PollComponent implements OnInit {
         percent: '25%'
       },
       {
-        text: 'Maybe not, it is good.',
+        text: 'Maybe not, it is not good.',
         percent: '19%'
       },
       {

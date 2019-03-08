@@ -26,6 +26,7 @@ export class CreateNewGroupSuccess {
 }
 export class CreateNewGroupFail {
     static readonly type = '[CHATS] create new group fail';
+    constructor(public payload: string) {}
 }
 
 
@@ -40,5 +41,6 @@ export class CreateNewDirectSuccess {
 }
 export class CreateNewDirectFail {
     static readonly type = '[CHATS] create new direct fail';
+    constructor(public payload: string) {}
 }
 

@@ -26,8 +26,9 @@ export interface chatsList {
 export interface CreateNewGroup {
     name: string;
     username: string;
-    title: string;
+    description: string;
     image: string;
+    members: string[];  // array of user ids
 }
 
 export interface CreateNewDirect {

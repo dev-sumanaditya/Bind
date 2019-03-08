@@ -9,15 +9,34 @@ import * as ChatsPageModel from '../store/model/chatsPage.model';
 })
 export class ChatsPageService {
     private chatsListUrl = '';
+    private createNewGroupUrl = '';
+    private createNewDirectUrl = '';
 
     constructor(private _http: HttpClient) {}
 
+    // Get Chats List
     getChatsList(): Observable<ChatsPageModel.chatsList> {
         return this._http.get<ChatsPageModel.chatsList>(this.chatsListUrl).pipe(
             catchError(this.errorHandler)
         )
     }
 
+    // Create new group
+    createNewGroup(data): Observable<ChatsPageModel.Group> {
+        return this._http.post<ChatsPageModel.Group>(this.createNewGroupUrl, data).pipe(
+            catchError(this.errorHandler)
+        )
+    }
+
+    // create new direct
+    createNewDirect(data): Observable<ChatsPageModel.Direct> {
+        return this._http.post<ChatsPageModel.Direct>(this.createNewDirectUrl, data).pipe(
+            catchError(this.errorHandler)
+        )
+    }
+
+
+    // common error handler
     errorHandler(error: HttpErrorResponse) {
         return throwError(error.status || 'Server Error');
     }
