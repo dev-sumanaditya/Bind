@@ -17,6 +17,9 @@
 
   <!-- Chats container -->
   <div class="chats" *ngIf="ChatsWindow">
+    input:
+    <div class="ctr" [innerHtml]="vall | safe: 'html'"></div>
+    <hr>
     <app-in (reply)="reply_this($event)"></app-in>
     <app-in (reply)="reply_this($event)"></app-in>
     <app-in (reply)="reply_this($event)"></app-in>
@@ -30,23 +33,23 @@
     <div class="box-topbar">
       <p>Group Box</p>
       <div class="box-navbar">
-        <div class="box-nav" (click)="showBoards()" [class.box-nav-selected]="GroupBoxTab === 'boards'">
+        <div class="box-nav" (click)="showBoards()" [class.box-nav-selected]="GroupBoxTab === 'Boards'">
             <i class="material-icons">layers</i>
             <h6>Boards</h6>
         </div>
-        <div class="box-nav" (click)="showTasks()" [class.box-nav-selected]="GroupBoxTab === 'tasks'">
+        <div class="box-nav" (click)="showTasks()" [class.box-nav-selected]="GroupBoxTab === 'Tasks'">
             <i class="material-icons">check_box</i>
             <h6>Tasks</h6>
         </div>
-        <div class="box-nav" (click)="showFiles()" [class.box-nav-selected]="GroupBoxTab === 'files'">
+        <div class="box-nav" (click)="showFiles()" [class.box-nav-selected]="GroupBoxTab === 'Files'">
             <i class="material-icons">cloud_upload</i>
             <h6>Files</h6>
         </div>
-        <div class="box-nav" (click)="showPolls()" [class.box-nav-selected]="GroupBoxTab === 'polls'">
+        <div class="box-nav" (click)="showPolls()" [class.box-nav-selected]="GroupBoxTab === 'Polls'">
             <i class="material-icons">poll</i>
             <h6>Polls</h6>
         </div>
-        <div class="box-nav" (click)="showImportants()" [class.box-nav-selected]="GroupBoxTab === 'importants'">
+        <div class="box-nav" (click)="showImportants()" [class.box-nav-selected]="GroupBoxTab === 'Importants'">
             <i class="material-icons">star</i>
             <h6>Important</h6>
         </div>
@@ -61,7 +64,7 @@
     <div class="box-container">
      
       <!-- Boards --> 
-      <div class="boards-container" *ngIf="GroupBoxTab == 'boards'">
+      <div class="boards-container" *ngIf="GroupBoxTab == 'Boards'">
         <!-- Board -->
         <app-board></app-board>
         <app-board></app-board>
@@ -80,7 +83,7 @@
       </div>
 
       <!-- Tasks -->
-      <div class="tasks-container" *ngIf="GroupBoxTab == 'tasks'">
+      <div class="tasks-container" *ngIf="GroupBoxTab == 'Tasks'">
         <p class="lead">My tasks</p>
           <app-task></app-task>
           <app-task></app-task>
@@ -92,7 +95,7 @@
       </div>
 
       <!-- Files -->
-      <div class="files-container" *ngIf="GroupBoxTab == 'files'">
+      <div class="files-container" *ngIf="GroupBoxTab == 'Files'">
         <p class="lead">My Files</p>
         <div class="tabletopbar">
           <div class="one">Name</div>
@@ -122,7 +125,7 @@
       </div>
 
       <!-- polls -->
-      <div class="polls-main-container" *ngIf="GroupBoxTab == 'polls'">
+      <div class="polls-main-container" *ngIf="GroupBoxTab == 'Polls'">
         <p class="lead">Active polls</p>
         <div class="polls-container">
             <div class="pol">
@@ -143,7 +146,7 @@
       </div>
 
       <!-- Important -->
-      <div class="important-container" *ngIf="GroupBoxTab == 'importants'">
+      <div class="important-container" *ngIf="GroupBoxTab == 'Importants'">
         <p class="lead">Recent</p>
       </div>
     </div>
@@ -154,15 +157,15 @@
   </div>
 
   <!-- Emoji selector Div -->
-  <div class="bottomPop" *ngIf="toggleState">
+  <div class="bottomPop" *ngIf="emojiToggleState">
       <emoji-mart native="false" (emojiClick)="addEmoji($event)" emojiTooltip="false" showPreview="false" set="google"></emoji-mart>
   </div>
   <!-- Bottombar -->
   <div class="bottom-bar" *ngIf="ChatsWindow">
     <div class="bottom-container">
       <div class="attach-div" (clickOutside)="onClickedOutside($event)">
-          <i class="material-icons attach" [class.attach-selected]="attachState" (click)="toggleMenu()">attach_file</i>
-          <div class="dropup-menu" *ngIf="attachState">
+          <i class="material-icons attach" [class.attach-selected]="attachMenuState" (click)="toggleAttachMenu()">attach_file</i>
+          <div class="dropup-menu" *ngIf="attachMenuState">
             <div class="attach-items tooltip1">
                 <i class="material-icons i1">add_photo_alternate</i>
                 <span class="tooltiptext">Photo or Video</span>
@@ -181,8 +184,8 @@
             </div>
           </div>
       </div>
-        <input type="text" class="form-control input-bar" placeholder="Type a message here...">
-        <i class="material-icons emoji" [class.attach-selected]="toggleState" (click)="toggle()">sentiment_satisfied_alt</i>
+        <div class="input" #inputBar contenteditable="true" [ngxTribute]="Options" (onMentioned)="display()" placeholder="Type a message here..." (input)="display()" (keyup)="display()" (click)="display()"></div>
+        <i class="material-icons emoji" [class.attach-selected]="emojiToggleState" (click)="toggleEmojiSelector()">sentiment_satisfied_alt</i>
         <i class="material-icons send-btn">near_me</i>
     </div>
   </div>

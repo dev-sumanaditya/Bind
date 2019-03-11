@@ -1,4 +1,4 @@
-import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
+import { State, Action, StateContext, Selector } from '@ngxs/store';
 import * as AppActions from '../actions/application.actions';
 import { AppChatsModel } from '../model/application.model';
 

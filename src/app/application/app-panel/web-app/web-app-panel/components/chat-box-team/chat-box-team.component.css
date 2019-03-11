@@ -96,22 +96,26 @@
 .bottom-container {
     position: relative;
 }
-.bottom-container input {
+.bottom-container .input {
     position: absolute;
     width: 96%;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: none;
     border: none;
-    padding: 0 100px 0 50px;
+    padding: 6px 100px 0 50px;
+    -webkit-appearance: textarea;
+    appearance: textarea;
+    height: 38px;
+    outline: none;
+    overflow-y: auto;
+    display: table-cell;
 }
-.bottom-container input:focus {
-    z-index: 400;
-    padding: 0 100px 0 20px;
-    -webkit-transition: padding 0.3s; /* Safari */
-    transition: padding 0.3s;
+[contenteditable=true]:empty::before {
+    content: attr(placeholder);
 }
-.bottom-container input::placeholder {
+
+.bottom-container .input::placeholder {
     color: rgba(0, 0, 0, 0.3);
 }
 .send-btn {
@@ -370,6 +374,11 @@
     flex: 14;
     overflow: scroll;
     overflow-x: hidden;
+}
+
+
+.mention {
+    border: 2px solid red;
 }
 
 

@@ -35,8 +35,10 @@
     "ng-click-outside": "^4.0.0",
     "ngx-popper": "^6.0.7",
     "ngx-progressbar": "^2.1.1",
+    "ngx-tribute": "^1.1.0",
     "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",
+    "tributejs": "^3.6.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

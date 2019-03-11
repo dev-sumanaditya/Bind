@@ -17,6 +17,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { NgxsModule } from '@ngxs/store';
 import { AppChatsState } from './web-app-panel/store/state/application.state';
+import { AppTeamChatState } from './web-app-panel/store/state/appTeamChat.state';
 import { GroupCardComponent } from './web-app-panel/components/group-card/group-card.component';
 import { DmCardComponent } from './web-app-panel/components/dm-card/dm-card.component';
 import { NgxPopperModule } from 'ngx-popper';
@@ -24,6 +25,8 @@ import { BoardComponent } from './web-app-panel/components/chat-box-team/compone
 import { TaskComponent } from './web-app-panel/components/chat-box-team/components/task/task.component';
 import { FileComponent } from './web-app-panel/components/chat-box-team/components/file/file.component';
 import { PollComponent } from './web-app-panel/components/chat-box-team/components/poll/poll.component';
+import { SafePipe } from './web-app-panel/pipes/safe.pipe';
+import { NgxTributeModule } from 'ngx-tribute';
 
 
 @NgModule({
@@ -46,14 +49,17 @@ import { PollComponent } from './web-app-panel/components/chat-box-team/componen
     TaskComponent,
     FileComponent,
     PollComponent,
+    SafePipe,
   ],
   imports: [
     CommonModule,
     WebAppRoutingModule,
     ClickOutsideModule,
     PickerModule,
+    NgxTributeModule,
     NgxPopperModule,
-    NgxsModule.forFeature([AppChatsState])
-  ]
+    NgxsModule.forFeature([AppChatsState, AppTeamChatState])
+  ],
+  
 })
 export class WebAppModule { }

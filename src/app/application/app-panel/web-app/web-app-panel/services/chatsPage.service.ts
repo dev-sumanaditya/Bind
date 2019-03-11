@@ -36,7 +36,7 @@ export class ChatsPageService {
     }
 
 
-    // common error handler
+    // common error handler **************************************************************
     errorHandler(error: HttpErrorResponse) {
         return throwError(error.status || 'Server Error');
     }
