@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { AppChatsState } from '../../store/state/application.state';
 import * as AppActions from '../../store/actions/application.actions';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-messaging',
@@ -40,6 +41,8 @@ export class MessagingComponent implements OnInit {
   private showCreateGroup;
   private showCreateDirect;
 
+  @ViewChild('searchBar') searchBar:ElementRef;
+
 
   constructor(private store: Store) {
     for (let i = 0; i < 10; i++) {
@@ -69,11 +72,7 @@ export class MessagingComponent implements OnInit {
 
    // Actions
   ShowArchives() {
-    if(this.showArchive == true) {
-      this.HideArchives();
-    } else {
       this.store.dispatch(new AppActions.ShowArchive);
-    }
   }
   HideArchives() {
     this.store.dispatch(new AppActions.HideArchive);
@@ -122,4 +121,12 @@ export class MessagingComponent implements OnInit {
   }
 
 
+  search() {
+    let val = this.searchBar.nativeElement.value;
+    if(val.length > 0) {
+      this.ShowSearch();
+    } else {
+      this.HideSearch();
+    }
+  }
 }

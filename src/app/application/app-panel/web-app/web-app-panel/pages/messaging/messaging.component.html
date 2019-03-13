@@ -3,12 +3,42 @@
     <!-- Left Column -->
     <div class="col-4 brd">
       <!-- Search Bar -->
-      <div class="topbar" *ngIf="showChatsList">
+      <div class="topbar" *ngIf="showChatsList || showSearch">
         <div class="searchbar">
             <i class="material-icons icon-1">search</i>
-            <input type="text" class="form-control searchInput" placeholder="Search">
+            <input type="text" #searchBar class="form-control searchInput" placeholder="Search" (input)="search()">
         </div>        
       </div>
+      <!-- Search output -->
+      <div class="searchContainer" *ngIf="showSearch">
+          <!-- No result -->
+          <div class="noresult text-center mt-5">
+            <p class="lead">
+              No results found
+            </p>
+          </div>
+
+          <!-- Search results (Team) -->
+          <div class="teamsres" *ngIf="a">
+            <p class="head">Teams</p>
+            <div class="resultUser" *ngFor="let i of groups">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQColOa9a4w--lQqb-Ss9EdBcJ3DTgCe_ieesLhcvTZ1LfuJ-">
+              <h5>Brad Nicolas</h5>
+              <h6>@brad_nicolas</h6>
+            </div>
+          </div>
+
+          <!-- Search results (People) -->
+          <div class="peopleres" *ngIf="b">
+            <p class="head">People</p>
+            <div class="resultUser" *ngFor="let i of groups">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQColOa9a4w--lQqb-Ss9EdBcJ3DTgCe_ieesLhcvTZ1LfuJ-">
+                <h5>Brad Nicolas</h5>
+                <h6>@brad_nicolas</h6>
+              </div>
+          </div>
+      </div>
+      
 
       <!-- Left Second Bar (new and sort) -->
       <div class="second-bar" *ngIf="showChatsList">

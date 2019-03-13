@@ -10,10 +10,28 @@
     </div>
     <div class="top-right">
         <i class="material-icons icon-top" (click)="ShowGroupBox()" *ngIf="ChatsWindow">widgets</i>
-        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="ChatsWindow">more_horiz</i>
+        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="ChatsWindow"
+          [popper]="Chatdropdown"
+          [popperShowOnStart]="false"
+          [popperTrigger]="'click'"
+          [popperHideOnClickOutside]="true"
+          [popperHideOnScroll]="true"
+          [popperPlacement]="'left-end'"
+          [popperApplyClass]="'popper2'"
+          [popperDisableStyle]="true"
+        >more_horiz</i>
         <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="!ChatsWindow">clear</i>
     </div>
-  </div>
+  </div> 
+    <!-- Dropdown menu -->
+    <popper-content #Chatdropdown [ngClass]="popper">
+      <h6> <i class="material-icons">search</i> Search</h6>
+      <h6> <i class="material-icons">info</i> Group info</h6>
+      <h6> <i class="material-icons">volume_off</i> Mute notifications</h6>
+      <h6> <i class="material-icons">person_add</i> Add members </h6>
+      <h6> <i class="material-icons">settings</i> Group Settings</h6>
+      <h6> <i class="material-icons">backspace</i> Exit group</h6>
+    </popper-content>
 
   <!-- Chats container -->
   <div class="chats" *ngIf="ChatsWindow">
@@ -184,7 +202,7 @@
             </div>
           </div>
       </div>
-        <div class="input" #inputBar contenteditable="true" [ngxTribute]="Options" (onMentioned)="display()" placeholder="Type a message here..." (input)="display()" (keyup)="display()" (click)="display()"></div>
+        <div class="input" #inputBar contenteditable="true" [ngxTribute]="Options"  (drop)="return()" (paste)="paste($event)" (onMentioned)="display()" placeholder="Type a message here..." (input)="display()" (keyup)="display()" (click)="display()"></div>
         <i class="material-icons emoji" [class.attach-selected]="emojiToggleState" (click)="toggleEmojiSelector()">sentiment_satisfied_alt</i>
         <i class="material-icons send-btn">near_me</i>
     </div>

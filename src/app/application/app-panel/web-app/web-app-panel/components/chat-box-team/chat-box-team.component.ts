@@ -92,7 +92,6 @@ export class ChatBoxTeamComponent implements OnInit {
     this.outputContainer.nativeElement.focus();
     this.selection = window.getSelection();
     this.caretPos = this.selection.getRangeAt(0);
-    console.log(this.caretPos);
   }
 
 
@@ -104,7 +103,6 @@ export class ChatBoxTeamComponent implements OnInit {
         
         range.deleteContents();
         
-
         var frag = document.createDocumentFragment(), lastNode;
       
         lastNode = frag.appendChild(element);      
@@ -118,7 +116,6 @@ export class ChatBoxTeamComponent implements OnInit {
            sel.addRange(range);
         }
         this.getPosandRange();
-
     }
   }
 
@@ -143,7 +140,7 @@ export class ChatBoxTeamComponent implements OnInit {
 
     // template for displaying item in menu
     menuItemTemplate: function (item) {
-      return item.string;
+      return '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREmSR-zx4-ofSGNDScwCYObZdySCtLhTk_dnY7dBvzdQjLr6HO">' + item.string;
     },
 
     // template for when no match is found (optional),
@@ -158,14 +155,20 @@ export class ChatBoxTeamComponent implements OnInit {
     // column that contains the content to insert by default
     fillAttr: 'value',
 
+    // load remote data
+      //..other config options
+      // function retrieving an array of objects
+      //      values: function (text, cb) {
+      //         remoteSearch(text, users => cb(users));
+      //      },
     // REQUIRED: array of objects to match
     values: [
-      {key: 'Phil Heartman', value: 'pheartman'},
-      {key: 'Gordon Ramsey', value: 'gramsey'},
-      {key: 'Phil Heartman', value: 'pheartman'},
-      {key: 'Gordon Ramsey', value: 'gramsey'},
-      {key: 'Phil Heartman', value: 'pheartman'},
-      {key: 'Gordon Ramsey', value: 'gramsey'},
+      {key: 'Aditya Suman', value: 'sumanaditya'},
+      {key: 'Rishav Singh', value: 'r.rishav'},
+      {key: 'Bikas Phukan', value: 'bphkns'},
+      {key: 'Neha Singh', value: 'singhneha'},
+      {key: 'Mark', value: 'markell'},
+      {key: 'Lucky Dangi', value: 'dangi705'},
       {key: 'Phil Heartman', value: 'pheartman'},
       {key: 'Gordon Ramsey', value: 'gramsey'}
     ],
@@ -190,14 +193,37 @@ export class ChatBoxTeamComponent implements OnInit {
     // Customize the elements used to wrap matched strings within the results list
     // defaults to <span></span> if undefined
     searchOpts: {
-      pre: '<span style="color: red;">',
+      pre: '<span>',
       post: '</span>'
     }
   };
 
 
+  return() {
+    return false;
+  }
 
+  paste(event) {
+    let pastedText = event.clipboardData.getData('text/plain');
+    this.insertTextAtPosition(pastedText ,this.caretPos);
+    return false;
+  }
 
+  insertTextAtPosition(text, range) {
+    var sel = this.selection;
+    var frag = document.createTextNode(text), lastNode;
+      
+        lastNode = frag;      
+        range.insertNode(frag);
+        if (lastNode) {
+          range = range.cloneRange();
+          range.setStartAfter(lastNode);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+       }
+       this.getPosandRange();
+  }
 
   
 

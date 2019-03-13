@@ -39,3 +39,83 @@
   line-height: 20px;
   vertical-align: text-bottom;
 }
+
+.popper2 {
+  background-color: rgb(250, 250, 250);
+  z-index: 1000;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 15px -6px black;
+  margin-top: 5px;
+  user-select: none; 
+}
+.popper2 h6 {
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+  line-height: 20px;
+}
+.popper2 h6:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: black;
+}
+
+.popper2 h6 i {
+  color: rgba(0,0,0,0.5);
+  font-size: 20px;
+  padding: 1px 10px 0px 0px;
+  line-height: 20px;
+  vertical-align: text-bottom;
+}
+
+
+/* Tributejs (Mentions) */
+
+.tribute-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  max-height: 300px;
+  max-width: 500px;
+  overflow: auto;
+  display: block;
+  z-index: 999999;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: white
+}
+.tribute-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+.tribute-container li {
+  padding: 5px 15px;
+  cursor: pointer;
+  border-left: 3px solid white;
+}
+.tribute-container li.highlight {
+  background: rgba(221, 221, 221, 0.6);
+  border-left-color: slateblue;
+}
+.tribute-container li span {
+  font-weight: bolder;
+}
+.tribute-container li img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  margin-right: 7px;
+  vertical-align: top;
+}
+.tribute-container li.no-match {
+  cursor: default;
+}
+.tribute-container .menu-highlighted {
+  font-weight: bold;
+}
