@@ -27,6 +27,7 @@ import { FileComponent } from './web-app-panel/components/chat-box-team/componen
 import { PollComponent } from './web-app-panel/components/chat-box-team/components/poll/poll.component';
 import { SafePipe } from './web-app-panel/pipes/safe.pipe';
 import { NgxTributeModule } from 'ngx-tribute';
+import { PostComponent } from './web-app-panel/components/profile/post/post.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { NgxTributeModule } from 'ngx-tribute';
     FileComponent,
     PollComponent,
     SafePipe,
+    PostComponent,
   ],
   imports: [
     CommonModule,

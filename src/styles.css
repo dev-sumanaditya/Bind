@@ -70,6 +70,10 @@
   vertical-align: text-bottom;
 }
 
+.nodisplay::selection {
+  /*  Class for native emoji behind emoji apan in text input  */
+}
+
 
 /* Tributejs (Mentions) */
 

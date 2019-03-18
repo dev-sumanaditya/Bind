@@ -72,9 +72,18 @@ export class ChatBoxTeamComponent implements OnInit {
     styles["max-width"]= "1.4em";
     styles["height"]= "1.4em";
     styles["width"]= "1.4em";
-    styles["padding"]= "0.7em";
+    styles["position"] = "relative";
+    styles["z-index"] = "100";
+    styles["overflow"] = "hidden";
+    styles["color"] = "transparent";
+    
 
-    const element = this.renderer.createElement('img');
+
+    const element = this.renderer.createElement('span');
+    this.renderer.setAttribute(element, 'contenteditable', 'false');
+    element.innerHTML = native;    
+
+    this.renderer.addClass(element, 'nodisplay');
     Object.assign(element.style, styles);
 
     this.insertcustomHtml(element);
@@ -205,6 +214,7 @@ export class ChatBoxTeamComponent implements OnInit {
 
   paste(event) {
     let pastedText = event.clipboardData.getData('text/plain');
+    this.getPosandRange();
     this.insertTextAtPosition(pastedText ,this.caretPos);
     return false;
   }

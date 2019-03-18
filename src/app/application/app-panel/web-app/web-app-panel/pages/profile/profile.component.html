@@ -1,3 +1,109 @@
-<p>
-  profile works!
-</p>
+<div class="profilepage">
+  <div class="profile">
+      <div class="leftColumn">
+        <div class="one">
+            <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+            <button class="">
+              <i class="material-icons">person_add</i>
+              <span>FOLLOW</span>
+            </button>
+        </div>
+        <div class="two">
+          <div>
+            FOLLOWERS <h6>495</h6>
+          </div>
+          <div>
+            FOLLOWING <h6>220</h6>
+          </div>
+        </div>
+        <div class="three">
+          <h6><i class="material-icons">school</i> Stanford University, California </h6>
+          <h6><i class="material-icons">business_center</i> Incubis inc, California </h6>
+          <h6><i class="material-icons">pin_drop</i> Ohio city, Ohio </h6>
+          <h6><i class="material-icons">cake</i> 19 July </h6>
+          <h6><i class="material-icons">email</i> johndoe@gmail.com </h6>
+          <h6 class="url"><i class="material-icons">public</i>twitter.com/john-doe</h6>
+        </div>
+        <div class="four">
+          <h5> <i class="material-icons">star</i> Top Skills</h5>
+          <div class="skill-container">
+            <div class="skill">Java</div>
+            <div class="skill">C++</div>
+            <div class="skill">Javascript</div>
+            <div class="skill">Angular</div>
+            <div class="skill">Node</div>
+            <div class="skill">Php</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Networking</div>
+            <div class="skill">UI/UX</div>
+          </div>
+          <p>See all</p>
+        </div>
+      </div>
+      <div class="centerColumn">
+        <div class="topbar">
+          <h1>Mario Mendez</h1>
+          <h6>Founder, Incubis inc. I'm a passionate digital entrepreneur with a deep affection for tech & startups!</h6>
+        </div>
+        <div class="c-navbar">
+          <div class="nav-opt" (click)="nav('feed')" [class.selected-nav-opt]="tab == 'feed'">
+            <i class="material-icons">event_note</i>
+            <h6>Feed</h6>
+          </div>
+          <div class="nav-opt" (click)="nav('about')" [class.selected-nav-opt]="tab == 'about'">
+            <i class="material-icons">assignment_ind</i>
+            <h6>About</h6>
+          </div>
+          <div class="nav-opt" (click)="nav('projects')" [class.selected-nav-opt]="tab == 'projects'">
+            <i class="material-icons">vertical_split</i>
+            <h6>Projects</h6>
+          </div>
+          <div class="nav-opt nav-opt-last" (click)="nav('more')" [class.selected-nav-opt]="tab == 'more'">
+            <i class="material-icons">more</i>
+            <h6>More</h6>
+          </div>
+        </div>
+
+        <!-- feed -->
+        <div class="feed" *ngIf="tab == 'feed'">
+          <div class="posts">
+              <app-post *ngFor="let i of post"></app-post>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="about" *ngIf="tab == 'about'">
+
+          <!-- Experience -->
+          <div class="c-one">
+            <h2 class="lead-1">Experience</h2>
+            <div class="experience" *ngFor="let i of repeat">
+              <div class="e-left">
+                <i class="material-icons">business_center</i>
+              </div>
+              <div class="e-right">
+                <h6 class="pos">Director & Co-Founder</h6>
+                <h6 class="name">Mavric Ventures</h6>
+                <h6 class="timespan">Sep 2017 - present <i class="material-icons">lens</i> 1 yrs 7 mos</h6>
+                <h6 class="location">New Delhi, India</h6>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="projects" *ngIf="tab == 'projects'">
+
+        </div>
+
+        <!-- More -->
+        <div class="more" *ngIf="tab == 'more'">
+
+        </div>
+      </div>
+      <div class="rightColumn">
+        ads and suggestions
+      </div>
+  </div>
+</div>

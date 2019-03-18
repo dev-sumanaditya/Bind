@@ -1,0 +1,65 @@
+.post {
+    display: flex;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.7);
+    margin: 20px 0;
+}
+.post .img img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.post .content {
+    margin: 0 15px;
+}
+.post .content h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8)
+}
+.post .content h6 i {
+    font-size: 4px;
+    color: rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.post .content h6 span {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+}
+
+.post .content .text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.post .content .bottombar {
+    display: flex;
+    margin-top: 15px;
+    user-select: none;
+}
+.post .content .bottombar .tab {
+    display: flex;
+    margin-right: 25px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+}
+.post .content .bottombar .tab i {
+    font-size: 18px;
+    margin-right: 6px;
+    margin-top: -1px;
+}
+.post .content .bottombar .tab h6 {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.bottombar .t-one:hover {
+    color: rgb(245, 72, 60) !important;
+}
+.bottombar .t-two:hover {
+    color: slateblue;
+}
+.bottombar .t-three:hover {
+    color: rgb(9, 185, 9);
+}

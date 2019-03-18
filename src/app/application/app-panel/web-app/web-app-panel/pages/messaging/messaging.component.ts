@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { AppChatsState } from '../../store/state/application.state';
 import * as AppActions from '../../store/actions/application.actions';
-import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-messaging',
