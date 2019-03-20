@@ -2,6 +2,7 @@
     display: flex;
     border-bottom: 1px solid rgba(221, 221, 221, 0.7);
     margin: 20px 0;
+    position: relative;
 }
 .post .img img {
     height: 40px;
@@ -62,4 +63,42 @@
 }
 .bottombar .t-three:hover {
     color: rgb(9, 185, 9);
+}
+
+
+.post .content .drop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.post .content .drop:hover {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background-color: rgba(105, 104, 104, 0.1);
+    border-radius: 50%;
+}
+.post:hover .content .drop {
+    display: block;
+}
+
+.post .content .image {
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    max-height: 450px;
+    border: 1px solid #ddd;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+.post .content .url {
+    color: #0645ad;
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0 20px 0;
+    font-size: 14px;
+    width: max-content;
 }

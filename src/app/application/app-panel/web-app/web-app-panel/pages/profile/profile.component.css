@@ -92,11 +92,12 @@
 .three .url i {
     color: rgba(0, 0, 0, 0.6);
 }
-.three .url {
+.three .url a {
     color: #0645AD;
     cursor: pointer;
     width: max-content;
     font-weight: 400;
+    margin-left: 3px;
 }
 .four {
     padding: 0 35px;
@@ -286,7 +287,7 @@
     display: inline-block;
     cursor: pointer;
 }
-.c-one .experience .e-right .link {
+.c-one .experience .e-right .link a {
     font-weight: 400;
     color: #0645AD;
     cursor: pointer;
@@ -298,7 +299,7 @@
 
 
 .feed {
-
+    margin: 0;
 }
 .feed .posts {
     margin: 40px 20px;
@@ -343,7 +344,7 @@
     margin-top: 5px;
 }
 .achievement .a-left {
-
+    margin: 0;
 }
 .achievement .a-left i {
     font-size: 30px;
