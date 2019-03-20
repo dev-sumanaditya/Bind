@@ -29,6 +29,12 @@ import { SafePipe } from './web-app-panel/pipes/safe.pipe';
 import { NgxTributeModule } from 'ngx-tribute';
 import { PostComponent } from './web-app-panel/components/profile/post/post.component';
 
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+
+
 
 @NgModule({
   declarations: [
@@ -60,7 +66,11 @@ import { PostComponent } from './web-app-panel/components/profile/post/post.comp
     PickerModule,
     NgxTributeModule,
     NgxPopperModule,
-    NgxsModule.forFeature([AppChatsState, AppTeamChatState])
+    NgxsModule.forFeature([AppChatsState, AppTeamChatState]),
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   
 })

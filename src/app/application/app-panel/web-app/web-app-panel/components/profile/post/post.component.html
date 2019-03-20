@@ -3,16 +3,53 @@
     <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
   </div>
   <div class="content">
+    
+    <!-- Topbar -->
     <h6>Mario Mendez <i class="material-icons">lens</i><span>10h</span></h6>
+    <!-- topbar dropdown -->
     <i class="drop material-icons">expand_more</i>
+
+    <!-- Text -->
     <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is</div>
+    
+    <!-- Link -->
     <a href="http://www.google.com" target="_blank" class="url">http://www.example.com/post/wwx3cd</a>
-    <div class="url-preview">
-      
+    
+    <!-- Video Player -->
+    <div class="video">
+        <vg-player (onPlayerReady)="onPlayerReady($event)" (mouseenter)="enter()" (mouseleave)="leave()">
+            <vg-buffering vgFor="singleVideo"></vg-buffering>
+            <vg-overlay-play vgFor="singleVideo"></vg-overlay-play>
+            <!-- Controls -->
+            <vg-controls *ngIf="ShowBar">
+                <vg-play-pause></vg-play-pause>
+        
+        
+                <vg-scrub-bar class="scrub">
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+        
+                <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+        
+                <vg-fullscreen></vg-fullscreen>
+            </vg-controls>
+
+            <!-- Video media -->
+            <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
+                <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+            </video>
+        </vg-player>
     </div>
-    <div class="image">
+
+    <!-- Image -->
+    <div class="image" *ngIf="x">
         <img src="https://static.collectui.com/shots/3335173/getting-started-large" class="img-fluid">
     </div>
+
     <!-- Bottom bar -->
     <div class="bottombar">
       <div class="tab">

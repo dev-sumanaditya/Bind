@@ -102,3 +102,8 @@
     font-size: 14px;
     width: max-content;
 }
+
+.post .content .video {
+    border-radius: 10px;
+    overflow: hidden;
+}
