@@ -53,16 +53,16 @@
 }
 .post .content .bottombar .tab h6 {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.5);
+    color: inherit;
 }
-.bottombar .t-one:hover {
-    color: rgb(245, 72, 60) !important;
+.bottombar .tab-1:hover {
+    color: rgb(228, 73, 62) !important;
 }
-.bottombar .t-two:hover {
-    color: slateblue;
+.bottombar .tab-2:hover {
+    color: slateblue !important;
 }
-.bottombar .t-three:hover {
-    color: rgb(9, 185, 9);
+.bottombar .tab-3:hover {
+    color: rgb(9, 185, 9) !important;
 }
 
 
@@ -106,4 +106,43 @@
 .post .content .video {
     border-radius: 10px;
     overflow: hidden;
+}
+
+/* Link preview */
+.post .content .linkPreview {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.post .content .linkPreview:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.post .content .linkPreview .pic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post .content .linkPreview .pic img {
+    height: 100px;
+    width: 100px;
+}
+
+.post .content .linkPreview .inf {
+    flex: 3;
+}
+.post .content .linkPreview .inf h6 {
+    margin-bottom: 5px;
+    color: #333;
+}
+.post .content .linkPreview:hover .inf h6 {
+    text-decoration: underline;
+}
+.post .content .linkPreview .inf p {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
 }

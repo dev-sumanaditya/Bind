@@ -13,10 +13,10 @@
     <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is</div>
     
     <!-- Link -->
-    <a href="http://www.google.com" target="_blank" class="url">http://www.example.com/post/wwx3cd</a>
+    <a href="http://www.google.com" target="_blank" class="url" *ngIf="x">http://www.example.com/post/wwx3cd</a>
     
     <!-- Video Player -->
-    <div class="video">
+    <div class="video" *ngIf="x">
         <vg-player (onPlayerReady)="onPlayerReady($event)" (mouseenter)="enter()" (mouseleave)="leave()">
             <vg-buffering vgFor="singleVideo"></vg-buffering>
             <vg-overlay-play vgFor="singleVideo"></vg-overlay-play>
@@ -30,7 +30,8 @@
                     <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
                 </vg-scrub-bar>
         
-                <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                <vg-time-display vgProperty="left" vgFormat="mm:ss" *ngIf="leftTime"></vg-time-display>
+                <vg-time-display vgProperty="total" vgFormat="mm:ss" *ngIf="totalTime"></vg-time-display>
         
                 <vg-mute></vg-mute>
                 <vg-volume></vg-volume>
@@ -50,18 +51,34 @@
         <img src="https://static.collectui.com/shots/3335173/getting-started-large" class="img-fluid">
     </div>
 
+
+    <!-- Poll -->
+    <app-post-poll *ngIf="x"></app-post-poll>
+
+    <!-- Link preview -->
+    <a href="https://stackoverflow.com/questions/24054691/how-to-create-link-previews-like-in-facebook-linkedin" target="_blank" class="linkPreview">
+      <div class="pic">
+        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" class="image-fluid">
+      </div>
+      <div class="inf">
+        <h6>How to create link previews like in Facebook/Linkedin</h6>
+        <p>I am creating a web app using the mean stack.It will have an input box where the user can write anything which will be stored in mongo db and later be displayed using angular. It is similar to a newsfeed. So the user can eve...</p>
+      </div>
+    </a>
+
+
     <!-- Bottom bar -->
     <div class="bottombar">
-      <div class="tab">
-        <i class="material-icons t-one">favorite_border</i>
+      <div class="tab tab-1">
+        <i class="material-icons">favorite_border</i>
         <h6>49</h6>
       </div>
-      <div class="tab">
-        <i class="material-icons t-two">comment</i>
+      <div class="tab tab-2">
+        <i class="material-icons">comment</i>
         <h6>2</h6>
       </div>
-      <div class="tab">
-        <i class="material-icons t-three">repeat</i>
+      <div class="tab tab-3">
+        <i class="material-icons">repeat</i>
         <h6>9</h6>
       </div>
     </div>

@@ -1,0 +1,171 @@
+/* Poll */
+
+.poll {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+.poll .notSubmitted {
+}
+.poll .notSubmitted .radio {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    position: relative;
+}
+.poll .notSubmitted .radio input {
+    cursor: pointer;
+    position: absolute;
+    visibility: hidden;
+}
+.poll .notSubmitted .radio label {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+    color: #333;
+    display: block;
+    padding-left: 30px;
+    -webkit-transition: all 0.25s linear;
+    z-index:  9;
+}
+
+.poll .notSubmitted .radio .check {
+    display: flex;
+    position: absolute;
+    border: 1px solid #aaaaaa;
+    height: 22px;
+    width: 22px;
+    -webkit-transition: border .15s linear;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.poll .notSubmitted .radio .check::before {
+    height: 11px;
+    width: 11px;
+    border-radius: 100%;
+}
+
+.poll .notSubmitted .radio:hover .check {
+    border: 1px solid rgba(51, 51, 51, 0.7);
+}
+
+.poll .notSubmitted .radio .check::before {
+    content: '';
+    display: block;
+    transition: all 0.15s linear;
+	-webkit-transition: all 0.15s linear;
+}
+
+.poll .notSubmitted .radio input[type=radio]:checked ~ .check {
+    border: 2px solid #0DFF92;
+}
+.poll .notSubmitted .radio input[type=radio]:checked ~ .check::before {
+    background: #0DFF92;
+}
+
+
+.poll .notSubmitted .bottom {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+.poll .notSubmitted .bottom .submit {
+    border: 1px solid slateblue;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    outline: none;
+    color: slateblue;
+    cursor: pointer;
+}
+.poll .notSubmitted .bottom .submit:disabled {
+    border: 1px solid rgba(105, 90, 205, 0.5) !important;
+    cursor: default;
+    color: rgba(105, 90, 205, 0.5);
+    background-color: #fff !important;
+}
+.poll .notSubmitted .bottom .submit:hover {
+    background-color: rgba(105, 90, 205, 0.1);
+}
+.poll .notSubmitted .bottom .submit .poll-spinner {
+    height: 20px;
+    width: 20px;
+}
+.poll .notSubmitted .bottom h6 {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    margin: 0 0 0 20px;
+}
+.poll .notSubmitted .bottom h6 i {
+    font-size: 5px;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+
+/* Voted */
+.submitted {
+    display: flex;
+    flex-direction: column;
+}
+.submitted .progress {
+    margin-bottom: 10px;
+    width: 70%;
+    height: 25px;
+    background-color: #fafafa;
+}
+.submitted .progress .progress-bar {
+    background-color: rgba(105, 90, 205, 0.22);
+    color: #333;
+    animation-name: reducetime;
+    animation-duration: 0.2s;
+    position: relative;
+}
+.submitted .progress .progress-bar .percent {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.submitted .progress .progress-bar .text {
+    position: absolute;
+    left: 45px;
+    top: 2px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.submitted .progress .progress-bar .text i {
+    font-size: 18px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-left: 5px;
+    cursor: default;
+}
+.submitted .status h6 {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+}
+.submitted .status h6 i {
+    font-size: 5px;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+
+@keyframes reducetime {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: 0;
+    }
+  }

@@ -33,7 +33,9 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
+import { PostPollComponent } from './web-app-panel/components/profile/post-poll/post-poll.component';
 
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -58,6 +60,7 @@ import {VgBufferingModule} from 'videogular2/buffering';
     PollComponent,
     SafePipe,
     PostComponent,
+    PostPollComponent,
   ],
   imports: [
     CommonModule,
@@ -70,7 +73,9 @@ import {VgBufferingModule} from 'videogular2/buffering';
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   
 })

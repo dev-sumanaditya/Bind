@@ -1,0 +1,69 @@
+<div class="poll">
+
+    <!-- Not submitted -->
+    <div class="notSubmitted" *ngIf="!voted">
+      <form [formGroup]="form">
+            <div class="radio" (click)="changeVal()">
+              <input type="radio" id="1" formControlName="value" value="1">
+              <label for="1">Option 2</label>
+              <div class="check"><div class="inside"></div></div>
+            </div>
+            <div class="radio" (click)="changeVal()">
+              <input type="radio" id="2" formControlName="value" value="2">
+              <label for="2">Option 2</label>
+              <div class="check"><div class="inside"></div></div>
+            </div>
+            <div class="radio" (click)="changeVal()">
+              <input type="radio" id="3" formControlName="value" value="3">
+              <label for="3">Option 2</label>
+              <div class="check"><div class="inside"></div></div>
+            </div>
+            <div class="radio" (click)="changeVal()">
+              <input type="radio" id="4" formControlName="value" value="4">
+              <label for="4">Option 2</label>
+              <div class="check"><div class="inside"></div></div>
+            </div>
+            <div class="bottom">
+              <button class="submit" type="submit" [disabled]="val == -1 || voted" (click)="submit()">
+                <span *ngIf="!spinner && !voted">Vote</span>
+                <div class="spinner-border poll-spinner" *ngIf="spinner" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+              </button>
+              <h6>4,280 votes <i class="material-icons">lens</i> 1 day left</h6>
+            </div>
+      </form>
+    </div>
+
+    <!-- submitted -->
+    <div class="submitted" *ngIf="voted">
+      
+      <div class="progress">
+          <div class="progress-bar" style="width: 25%">
+            <div class="percent">25%</div>
+            <div class="text">This is option one <i class="material-icons">check_circle_outline</i></div>
+          </div>
+      </div>
+      <div class="progress">
+          <div class="progress-bar" style="width: 35%">
+            <div class="percent">35%</div>
+            <div class="text">This is option two <i class="material-icons">check_circle_outline</i></div>
+          </div>
+      </div>
+      <div class="progress">
+          <div class="progress-bar" style="width: 15%">
+            <div class="percent">15%</div>
+            <div class="text">This is option three <i class="material-icons">check_circle_outline</i></div>
+          </div>
+      </div>
+      <div class="progress">
+          <div class="progress-bar" style="width: 9%">
+            <div class="percent">9%</div>
+            <div class="text">This is option four <i class="material-icons">check_circle_outline</i></div>
+          </div>
+      </div>
+      <div class="status">
+          <h6>4,281 votes <i class="material-icons">lens</i> 1 day left</h6>
+      </div>
+    </div>
+</div>

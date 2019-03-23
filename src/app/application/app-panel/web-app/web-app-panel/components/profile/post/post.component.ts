@@ -10,8 +10,38 @@ export class PostComponent implements OnInit {
 
   constructor() { }
 
+  private x = false;
+
   private VideoApi: VgAPI;
-  private ShowBar: boolean = true;
+  private ShowBar: boolean = false;
+  private totalTime: Boolean = true;
+  private leftTime: boolean = false;
+
+  private past = false;
+  private voted = false;
+  private poll = {
+    topic: 'Do you think this is a good design for poll? True reviews needed.',
+    options: [{
+        text: 'Yes, definately!',
+        percent: '25%'
+      },
+      {
+        text: 'Maybe not, it is not good.',
+        percent: '19%'
+      },
+      {
+        text: 'No, not at all.',
+        percent: '45%'
+      },
+      {
+        text:  'You should give it one more try.',
+        percent: '11%'
+      }
+    ]
+  }
+
+  selected:number = -1;
+
 
   ngOnInit() {
   }
@@ -23,6 +53,8 @@ export class PostComponent implements OnInit {
     this.VideoApi.getDefaultMedia().subscriptions.playing.subscribe(
       () => {
         setTimeout(() => { this.ShowBar = false; }, 2000);
+        this.totalTime = false;
+        this.leftTime = true;
       }
     )
     this.VideoApi.getDefaultMedia().subscriptions.pause.subscribe(
