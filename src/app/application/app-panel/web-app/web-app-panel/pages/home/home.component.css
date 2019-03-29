@@ -1,0 +1,320 @@
+.homepage {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.feed {
+    display: flex;
+    background-color: rgba(221, 221, 221, 0.3);
+    min-height: 100%;
+}
+.feed .left {
+    flex: 1;
+    padding: 20px;
+}
+.feed .center {
+    flex: 2;
+}
+.feed .right {
+    flex: 1;
+}
+
+
+/* Topbox LEFT */
+.left .topbox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.left .topbox .coverImg {
+    height: 100px;
+    background-image: url('https://i.ibb.co/HdyfrPh/323518-P9-MHS8-840.jpg');
+    background-size: cover;
+}
+
+.left .topbox .info {
+    background-color: #fff;
+}
+.left .topbox .info .one {
+    display: flex;
+    padding: 0 10px;
+}
+.left .topbox .info .one .profile-img {
+    flex: 1;
+}
+.left .topbox .info .one .profile-img img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-top: -35px;
+}
+.left .topbox .info .one .details {
+    flex: 3;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.left .topbox .info .one .details .name {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.left .topbox .info .one .details .username {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+.left .topbox .info .two {
+    display: flex;
+    padding: 10px 20px 5px 20px;
+}
+.left .topbox .info .two div {
+    flex: 1;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    margin-right: 60px;
+}
+.left .topbox .info .two div:hover {
+    color: slateblue !important;
+}
+.left .topbox .info .two div h6 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+}
+.left .topbox .info .two div p {
+    font-size: 18px;
+    font-weight: 700;
+    color: slateblue;
+    margin: 0;
+}
+.left .topbox .info .three {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+
+/* Second box LEFT */
+.left .secondbox {
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.left .secondbox div {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.left .secondbox div a {
+    color: slateblue;
+    font-size: 22px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.left .secondbox div h6 {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* third box */
+.left .thirdbox {
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.left .thirdbox .topic {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+}
+.left .thirdbox .topic a {
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.left .thirdbox .u-list {
+    display: flex;
+    padding: 10px;
+}
+.left .thirdbox .u-list .imgs img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.left .thirdbox .u-list .details {
+    margin-left: 10px;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left .thirdbox .u-list .details .name {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    line-height: 16px;  
+}
+.left .thirdbox .u-list .details .username {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+}
+.left .thirdbox .u-list .follow {
+    display: flex;
+    align-items: center;
+}
+.left .thirdbox .u-list .follow h6 {
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+    color: slateblue;
+}
+
+
+/* Center create post */
+.center .createpost {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    flex-direction: column;
+}
+.center .createpost .top {
+    display: flex;
+}
+.center .createpost .avatar {
+    display: flex;
+    justify-content: center;
+}
+.center .createpost .avatar img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.center .createpost .input {
+    flex-grow: 1;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center .createpost .input textarea {
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    margin: 0;
+    border: none;
+    padding: 5px;
+}
+.center .createpost .input textarea:focus {
+    height: 100px;
+}
+
+.center .createpost .bottom {
+    display: flex;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    align-items: center;
+}
+.center .createpost .bottom .sec {
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 2px 10px;
+    cursor: pointer;
+    background-color: rgba(221, 221, 221, 0.4);
+}
+.center .createpost .bottom .sec:hover {
+    background-color: rgba(105, 90, 205, 0.2);
+}
+.center .createpost .bottom .sec i {
+    color: slateblue;
+    margin-right: 10px;
+    font-size: 25px;
+}
+.center .createpost .bottom .sec h6 {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+}
+.center .createpost .bottom .sec2 {
+    flex-grow: 1;
+}
+.center .createpost .bottom .sec3 {
+    margin: 10px 0;
+    border-radius: 10px;
+    align-items: center;
+    padding: 2px 0;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: default;
+}
+
+.center .createpost .mid {
+    padding: 10px 20px 0 20px;
+    display: flex;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+.center .createpost .mid .filePreview {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.center .createpost .mid .filePreview i {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    padding: 3px;
+}
+.center .createpost .mid .VideoPreview {
+    max-width: 40%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.center .createpost .mid .VideoPreview i {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    padding: 3px;
+}

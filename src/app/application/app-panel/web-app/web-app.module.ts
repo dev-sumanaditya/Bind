@@ -36,7 +36,7 @@ import {VgBufferingModule} from 'videogular2/buffering';
 import { PostPollComponent } from './web-app-panel/components/profile/post-poll/post-poll.component';
 
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-
+import { ngfModule } from 'angular-file'
 
 @NgModule({
   declarations: [
@@ -75,7 +75,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     VgOverlayPlayModule,
     VgBufferingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ngfModule
   ],
   
 })

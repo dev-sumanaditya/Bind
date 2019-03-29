@@ -1,8 +1,12 @@
 .post {
     display: flex;
-    border-bottom: 1px solid rgba(221, 221, 221, 0.7);
-    margin: 20px 0;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    padding: 20px 20px 0 20px;
     position: relative;
+}
+.post:hover {
+    background-color: rgba(221, 221, 221, 0.15);
+    cursor: pointer;
 }
 .post .img img {
     height: 40px;
@@ -17,6 +21,10 @@
     font-size: 14px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.8)
+}
+.post .content h6 .username {
+    font-size: 14px;
+    margin-left: 3px;
 }
 .post .content h6 i {
     font-size: 4px;
@@ -68,8 +76,9 @@
 
 .post .content .drop {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
+    padding: 2px;
     color: rgba(0, 0, 0, 0.2);
     display: none;
 }
@@ -128,8 +137,8 @@
     align-items: center;
 }
 .post .content .linkPreview .pic img {
-    height: 100px;
-    width: 100px;
+    max-height: 100px;
+    max-width: 120px;
 }
 
 .post .content .linkPreview .inf {

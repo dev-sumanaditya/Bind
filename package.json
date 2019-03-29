@@ -29,6 +29,7 @@
     "@ngxs/store": "^3.3.4",
     "ag-grid-angular": "^19.1.2",
     "ag-grid-community": "^19.1.4",
+    "angular-file": "^1.0.2",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
     "nebular-icons": "^1.1.0",

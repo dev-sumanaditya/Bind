@@ -5,9 +5,27 @@
   <div class="content">
     
     <!-- Topbar -->
-    <h6>Mario Mendez <i class="material-icons">lens</i><span>10h</span></h6>
+    <h6>Mario Mendez <span class="username">@mario_mz</span> <i class="material-icons">lens</i><span>10h</span></h6>
+
     <!-- topbar dropdown -->
-    <i class="drop material-icons">expand_more</i>
+    <i class="drop material-icons" 
+    [popper]="PostDropdown"
+    [popperShowOnStart]="false"
+    [popperTrigger]="'click'"
+    [popperHideOnClickOutside]="true"
+    [popperHideOnScroll]="true"
+    [popperPlacement]="'bottom-start'"
+    [popperApplyClass]="'popper'"
+    [popperDisableStyle]="true"
+    >expand_more</i>
+    <!-- Dropdown -->
+    <popper-content #PostDropdown [ngClass]="popper" (clickOutside)="clickOutPopper()">
+        <div>
+            <h6 style="font-weight: 400;">Delete</h6>
+            <h6 style="font-weight: 400;">Report this post</h6>
+            <h6 style="font-weight: 400;">View stats</h6>
+        </div>
+    </popper-content>
 
     <!-- Text -->
     <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is</div>

@@ -285,8 +285,13 @@
 }
 .box-container {
     flex-grow: 1;
-    overflow: auto;
+    overflow: scroll;
     overflow-x: hidden;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .box-container::-webkit-scrollbar {
     width: 5px;
