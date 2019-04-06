@@ -8,13 +8,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-###### Routes
+###### Routes -
 
-`http://localhost:4200/` - **Landing page.**
-`http://localhost:4200/app` - **Main application.**
-`http://localhost:4200/login` - **User login.**
-`http://localhost:4200/admin` - **Admin.**
-`http://localhost:4200/admin/login` - **Admin Login.**
+- `http://localhost:4200/` - **Landing page.**
+- `http://localhost:4200/app` - **Main application.**
+- `http://localhost:4200/login` - **User login.**
+- `http://localhost:4200/admin` - **Admin.**
+- `http://localhost:4200/admin/login` - **Admin Login.**
 
 ## Build
 
