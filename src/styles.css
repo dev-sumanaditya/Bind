@@ -123,3 +123,21 @@
 .tribute-container .menu-highlighted {
   font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.ng5-slider-bubble {
+  display: none !important;
+}
+.ng5-slider-pointer {
+  outline: none;
+}

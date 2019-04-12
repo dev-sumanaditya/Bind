@@ -73,7 +73,7 @@
               <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754" alt="">
             </div>
             <div class="input">
-              <textarea type="text" [(ngModel)]="inputVal" placeholder="Write something..." maxlength="400"></textarea>
+              <textarea type="text" [(ngModel)]="inputVal" placeholder="Write something..." maxlength="400" [class.textareaHeight]="inputVal.length > 0"></textarea>
             </div>
         </div>
         <div class="mid" *ngIf="SelectedFile">
@@ -117,7 +117,9 @@
       <!-- posts -->
       
       <div class="createpost">
-        posts
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
       </div>
     </div>
   

@@ -37,6 +37,8 @@ import { PostPollComponent } from './web-app-panel/components/profile/post-poll/
 
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { ngfModule } from 'angular-file'
+import { Ng5SliderModule } from 'ng5-slider';
+
 
 @NgModule({
   declarations: [
@@ -76,7 +78,8 @@ import { ngfModule } from 'angular-file'
     VgBufferingModule,
     FormsModule,
     ReactiveFormsModule,
-    ngfModule
+    ngfModule,
+    Ng5SliderModule
   ],
   
 })

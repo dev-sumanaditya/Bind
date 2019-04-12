@@ -10,7 +10,11 @@ export class PostComponent implements OnInit {
 
   constructor() { }
 
-  private x = false;
+  private img = true;
+  private polls = true;
+  private link = true;
+  private linkPreview = true;
+  private video = true;
 
   private VideoApi: VgAPI;
   private ShowBar: boolean = false;

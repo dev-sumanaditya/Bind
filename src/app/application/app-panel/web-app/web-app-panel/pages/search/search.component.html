@@ -1,1 +1,109 @@
-<input type="range">
+<div class="searchPage">
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="more">
+            <i class="material-icons">more_horiz</i>
+        </div>
+        <div class="input">
+            <i class="material-icons">search</i>
+            <input class="searchbar" type="text" placeholder="Search" spellcheck="false">
+        </div>
+        <div class="tabs">
+            <div class="sec-1">
+                <h6 [class.selected]="selectedTab == 'all'" (click)="selTab('all')">All</h6>
+                <h6 [class.selected]="selectedTab == 'people'" (click)="selTab('people')">People</h6>
+                <h6 [class.selected]="selectedTab == 'tags'" (click)="selTab('tags')">Tags</h6>
+                <h6 [class.selected]="selectedTab == 'posts'" (click)="selTab('posts')">Posts</h6>
+                <h6 [class.selected]="selectedTab == 'jobs'" (click)="selTab('jobs')">Jobs</h6>
+                <div class="filters">
+                    <div class="option" (click)="show('location')" [class.sel-opt]="x == 'location'">
+                        <i class="material-icons">place</i>
+                        <h5>Location</h5>
+                    </div>
+                    <div class="option" (click)="show('education')" [class.sel-opt]="x == 'education'">
+                        <i class="material-icons">school</i>
+                        <h5>Education</h5>
+                    </div>
+                    <div class="option" (click)="show('work')" [class.sel-opt]="x == 'work'">
+                        <i class="material-icons">work</i>
+                        <h5>Work</h5>
+                    </div>
+                    <div class="option" (click)="show('skills')" [class.sel-opt]="x == 'skills'">
+                        <i class="material-icons">stars</i>
+                        <h5>Skills</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-expanded" *ngIf="x == 'location'">
+                <div class="location">
+                        <div class="locationFilter">
+                                <i class="i-left material-icons">person_pin</i>
+                                <i class="material-icons i-right">public</i>
+                            <ng5-slider [(value)]="value" [options]="options" (valueChange)="onChangeReadOnly()"></ng5-slider>
+                        </div>
+                        <div class="loctn-right">
+                            <h5>{{val}}</h5>
+                        </div>
+                </div>
+                <div class="drop" (click)="toggleAdvanced()">Advanced filters <i class="material-icons">expand_more</i></div>
+                <div class="loc-advanced" *ngIf="showAdvanced">
+                    Search for a particular location :
+                    <input type="text" class="form-control mt-1" style = "width: 300px; background-color: #fff;">
+                    <button class="btn btn-info btn-sm mt-2">Search</button>
+                </div>
+            </div>
+            <div class="filter-expanded" *ngIf="x == 'education'" style="padding: 20px 60px;">
+                School or University :
+                <input type="text" class="form-control mb-2" style="width: 300px;">
+                Location :
+                <input type="text" class="form-control mb-3" style="width: 300px;">
+                <button class="btn btn-info btn-sm">Search</button>
+            </div>
+            <div class="filter-expanded" *ngIf="x == 'work'" style="padding: 20px 60px;">
+                Workplace :
+                <input type="text" class="form-control mb-2" style="width: 300px; background-color:#fff;">
+                Location :
+                <input type="text" class="form-control mb-3" style="width: 300px; background-color:#fff;">
+                <button class="btn btn-info btn-sm">Search</button>
+            </div>
+            <div class="filter-expanded" *ngIf="x == 'skills'" style="padding: 20px 60px;">
+                Add skills :
+                <input type="text" class="form-control mb-2" style="width: 300px; background-color:#fff;">
+                <button class="btn btn-info btn-sm">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="unsearch">
+        <p class="lead">Suggestions</p>
+        <div class="suggestions">
+            <div class="sugg" *ngFor="let x of dummy">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzix6zlJLz7MDcz907yfj-wRJnZ1FvktyrFmfJYuEPPOV7jVv52g" alt="">
+                <h6 class="name">Emma Sunshine</h6>
+                <h6 class="username">@emma_s</h6>
+                <button class="btn btn-sm">Follow</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recent">
+        <p class="lead">Recent Searches</p>
+        <div class="recent-list">
+            <div class="person" *ngFor="let x of dummy">
+                <div class="img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzix6zlJLz7MDcz907yfj-wRJnZ1FvktyrFmfJYuEPPOV7jVv52g" alt="">
+                </div>
+                <div class="info">
+                    <a href="app/search" class="name">Michael Peters</a>
+                    <h6 class="username">@michaelpeters</h6>
+                    <h6 class="place mt-1">New Delhi, India</h6>
+                    <h6 class="rel mt-1"><i class="material-icons">people_outline</i> <span>2 mutual connections</span></h6>
+                </div>
+                <div class="btn">
+                    <button class="btn btn1"><Span>Follow</Span> <span *ngIf="d">Following</span></button>
+                    <button class="btn ml-2"> <i class="material-icons">mail</i> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

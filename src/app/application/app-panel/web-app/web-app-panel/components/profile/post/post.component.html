@@ -19,7 +19,7 @@
     [popperDisableStyle]="true"
     >expand_more</i>
     <!-- Dropdown -->
-    <popper-content #PostDropdown [ngClass]="popper" (clickOutside)="clickOutPopper()">
+    <popper-content #PostDropdown [ngClass]="popper">
         <div>
             <h6 style="font-weight: 400;">Delete</h6>
             <h6 style="font-weight: 400;">Report this post</h6>
@@ -31,10 +31,10 @@
     <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is</div>
     
     <!-- Link -->
-    <a href="http://www.google.com" target="_blank" class="url" *ngIf="x">http://www.example.com/post/wwx3cd</a>
+    <a href="http://www.google.com" target="_blank" class="url" *ngIf="link">http://www.example.com/post/wwx3cd</a>
     
     <!-- Video Player -->
-    <div class="video" *ngIf="x">
+    <div class="video" *ngIf="video">
         <vg-player (onPlayerReady)="onPlayerReady($event)" (mouseenter)="enter()" (mouseleave)="leave()">
             <vg-buffering vgFor="singleVideo"></vg-buffering>
             <vg-overlay-play vgFor="singleVideo"></vg-overlay-play>
@@ -65,16 +65,16 @@
     </div>
 
     <!-- Image -->
-    <div class="image" *ngIf="x">
+    <div class="image" *ngIf="img">
         <img src="https://static.collectui.com/shots/3335173/getting-started-large" class="img-fluid">
     </div>
 
 
     <!-- Poll -->
-    <app-post-poll *ngIf="x"></app-post-poll>
+    <app-post-poll *ngIf="polls"></app-post-poll>
 
     <!-- Link preview -->
-    <a href="https://stackoverflow.com/questions/24054691/how-to-create-link-previews-like-in-facebook-linkedin" target="_blank" class="linkPreview">
+    <a href="https://stackoverflow.com/questions/24054691/how-to-create-link-previews-like-in-facebook-linkedin" target="_blank" class="linkPreview" *ngIf="linkPreview">
       <div class="pic">
         <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" class="image-fluid">
       </div>

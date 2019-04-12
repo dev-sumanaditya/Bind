@@ -224,7 +224,7 @@
 }
 .center .createpost .input textarea {
     width: 100%;
-    height: 38px;
+    height: 34px;
     border-radius: 5px;
     outline: none;
     resize: none;
@@ -232,8 +232,8 @@
     border: none;
     padding: 5px;
 }
-.center .createpost .input textarea:focus {
-    height: 100px;
+.textareaHeight {
+    height: 80px !important;
 }
 
 .center .createpost .bottom {

@@ -115,6 +115,7 @@
 .post .content .video {
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 /* Link preview */
