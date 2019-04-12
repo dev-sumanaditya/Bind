@@ -1,1 +1,75 @@
-<h3>Chat Box Direct</h3>
+<div class="container-1">
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="top-left">
+          <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+          <div class="avatar-info">
+              <h6 class="name">The Incubis</h6>
+              <p class="title">Title  |  Last seen - 2h ago</p>
+          </div>
+        </div>
+        <div class="top-right">
+            <i class="material-icons icon-top"
+              [popper]="Chatdropdown"
+              [popperShowOnStart]="false"
+              [popperTrigger]="'click'"
+              [popperHideOnClickOutside]="true"
+              [popperHideOnScroll]="true"
+              [popperPlacement]="'left-end'"
+              [popperApplyClass]="'popper2'"
+              [popperDisableStyle]="true"
+            >more_horiz</i>
+            <i class="material-icons icon-top">clear</i>
+        </div>
+    </div>
+    <!-- Dropdown menu -->
+    <popper-content #Chatdropdown [ngClass]="popper">
+        <h6> <i class="material-icons">search</i> Search</h6>
+        <h6> <i class="material-icons">info</i> Info</h6>
+        <h6> <i class="material-icons">volume_off</i> Mute notifications</h6>
+        <h6> <i class="material-icons">not_interested</i> Block user </h6>
+        <h6> <i class="material-icons">delete_outline</i> Delete chat</h6>
+        <h6> <i class="material-icons">error_outline</i> Report chat</h6>
+    </popper-content>
+
+
+    <!-- Chats Container -->
+    <div class="chats">
+        <app-in (reply)="reply_this($event)"></app-in>
+    </div>
+
+    <!-- Emoji selector Div -->
+    <div class="bottomPop" *ngIf="emojiToggleState">
+        <emoji-mart native="false" (emojiClick)="addEmoji($event)" emojiTooltip="false" showPreview="false" set="google"></emoji-mart>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+        <div class="bottom-container">
+            <div class="attach-div" (clickOutside)="onClickedOutside($event)">
+              <i class="material-icons attach" [class.attach-selected]="attachMenuState" (click)="toggleAttachMenu()">attach_file</i>
+              <div class="dropup-menu" *ngIf="attachMenuState">
+                <div class="attach-items tooltip1">
+                    <i class="material-icons i1">add_photo_alternate</i>
+                    <span class="tooltiptext">Photo or Video</span>
+                </div>
+                <div class="attach-items tooltip1">
+                    <i class="material-icons i3">insert_drive_file</i>
+                    <span class="tooltiptext">Document</span>
+                </div>
+                <div class="attach-items tooltip1">
+                    <i class="material-icons i4">code</i>
+                    <span class="tooltiptext">Code <></span>
+                </div>
+                <div class="attach-items tooltip1">
+                    <i class="material-icons i2">poll</i>
+                    <span class="tooltiptext">Poll</span>
+                </div>
+            </div>
+        </div>
+        <div class="input" #inputBar contenteditable="true" [ngxTribute]="Options"  (drop)="return()" (paste)="paste($event)" (onMentioned)="display()" placeholder="Type a message here..." (input)="display()" (keyup)="display()" (click)="display()"></div>
+            <i class="material-icons emoji" [class.attach-selected]="emojiToggleState" (click)="toggleEmojiSelector()">sentiment_satisfied_alt</i>
+            <i class="material-icons send-btn">near_me</i>
+        </div>
+    </div>
+</div>

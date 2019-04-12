@@ -1,0 +1,220 @@
+.container-1 {
+    height: 100%;
+    position: relative;
+    display: flex;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column; 
+    flex-direction: column; 
+}
+
+.topbar {
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    flex: 1;
+    background-color: rgba(221, 221, 221, 0.3);
+    user-select: none;
+}
+.top-left {
+    float: left;
+    width: 50%;
+}
+.top-left img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    float: left;
+}
+.avatar-info {
+    padding-left: 5px;
+    position: relative;
+    width: 70%;
+    float: left;
+}
+.name {
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.title {
+    font-size: 13px;
+    position: absolute;
+    top: 18px;
+    opacity: 0.5;
+}
+
+.top-right {
+    float: right;
+}
+.icon-top {
+    font-size: 30px;
+    color: rgb(177, 175, 175);
+    cursor: pointer;
+    padding: 5px;
+}
+.icon-top:hover {
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+.chats {
+    flex: 14;
+    padding: 40px 60px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.chats::-webkit-scrollbar {
+    width: 5px;
+}
+.chats::-webkit-scrollbar-track:hover {
+    width: 10px;
+}
+.chats::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.chats::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+
+.bottom-bar {
+    flex: 1;
+    border-top: 1px solid rgba(221, 221, 221, 0.5);
+    padding: 10px 30px;
+    width: 100%;
+    background-color: rgba(221, 221, 221, 0.5);
+    max-height: 60px;
+    min-height: 60px;
+}
+.bottom-container {
+    position: relative;
+}
+.bottom-container .input {
+    position: absolute;
+    width: 96%;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: none;
+    border: none;
+    padding: 6px 100px 0 50px;
+    -webkit-appearance: textarea;
+    appearance: textarea;
+    height: 38px;
+    outline: none;
+    overflow-y: auto;
+    display: table-cell;
+}
+[contenteditable=true]:empty::before {
+    content: attr(placeholder);
+}
+
+.bottom-container .input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+.send-btn {
+    position: absolute;
+    right: 4%;
+    top: -5px;
+    font-size: 32px;
+    padding: 8px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.attach {
+    position: absolute;
+    top: 3px;
+    left: 9px;
+    transform: rotate(45deg);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 6px;
+    cursor: pointer !important;
+    z-index: 300;
+    border-radius: 50%;
+    user-select: none;
+}
+.attach:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+}
+
+.attach-selected {
+    color: darkblue !important;
+    background-color: rgba(221, 221, 221, 0.9) !important;
+}
+.emoji {
+    position: absolute;
+    font-size: 24px;
+    top: 2px;
+    right: 12%;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    z-index: 550;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.emoji:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+}
+
+
+.bottomPop {
+    flex: 10;
+    animation-name: slideUp;
+    animation-duration: 0.2s;
+    background-color: rgba(221, 221, 221, 0.5);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 10px;
+}
+
+.dropup-menu {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+}
+
+.attach-items i {
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 5px 40px -5px black;
+    opacity: 1;
+    color: white;
+    border: 1px solid rgba(0, 0, 139, 0.7);
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+}
+.attach-items { 
+    margin: 10px 0;
+}
+.tooltip1 {
+    position: relative;
+}
+.tooltip1 .tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    border-radius: 16px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 60px;
+}
+  
+.tooltip1:hover .tooltiptext {
+  visibility: visible;
+}

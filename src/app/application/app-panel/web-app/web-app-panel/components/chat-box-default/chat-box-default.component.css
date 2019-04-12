@@ -1,0 +1,66 @@
+.main-container {
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(236, 237, 247);
+    display: flex;
+    padding: 20px 30px;
+    flex-direction: column;
+}
+.spacer {
+    flex-grow: 1;
+}
+.head {
+    display: flex;
+}
+.head .logo {
+    user-select: none;
+}
+.head .logo img {
+    height: 40px;
+}
+.head .top-options {
+    display: flex;
+}
+.head .top-options .block {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 40px;
+    padding: 3px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px -5px #333;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 10px;
+}
+.head .top-options .block i {
+    font-size: 22px;
+    color: rgb(110, 209, 115);
+    margin-right: 10px;
+}
+.head .top-options .block h6 {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 2px;
+}
+
+.overview {
+    padding-left: 5px;
+    margin-top: 10px;
+}
+.overview .one {
+    display: flex;
+    margin-top: 40px;
+}
+.overview .one .item {
+    margin-right: 30px;
+}
+.overview .one .item h6 {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.overview .one .item h5 {
+    font-size: 20px;
+    font-weight: 400;
+}
