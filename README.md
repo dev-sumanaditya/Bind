@@ -1,4 +1,6 @@
-# Max2
+# BIND  Max2.0
+
+This project is under development.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
@@ -6,22 +8,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+**Routes -**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `http://localhost:4200/` - **Landing page.**
+- `http://localhost:4200/app` - **Main application.**
+- `http://localhost:4200/login` - **User login.**
+- `http://localhost:4200/admin` - **Admin.**
+- `http://localhost:4200/admin/login` - **Admin Login.**
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
