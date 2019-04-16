@@ -3,16 +3,11 @@ import { Options } from 'ng5-slider';
 
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-search-page',
+  templateUrl: './search-page.component.html',
+  styleUrls: ['./search-page.component.css']
 })
-export class SearchComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class SearchPageComponent implements OnInit {
 
   private dummy = [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
   private x = 'null';
@@ -21,6 +16,12 @@ export class SearchComponent implements OnInit {
   private selectedTab:String = 'all';
 
   value: number = 1;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   options: Options = {
     floor: 0,
     ceil: 5,
@@ -29,7 +30,6 @@ export class SearchComponent implements OnInit {
     maxLimit: 5,
     showSelectionBar: true,
     showTicks: true
-
   };
 
   show(data) {
@@ -61,4 +61,5 @@ export class SearchComponent implements OnInit {
   selTab(data) {
     this.selectedTab = data;
   }
+
 }

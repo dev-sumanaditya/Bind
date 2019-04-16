@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatBoxDefaultComponent implements OnInit {
 
+  private page = 'overview';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showTasks() {
+    this.page = 'tasks';
+  }
+  showMentions() {
+    this.page = 'mentions';
+  }
+  showOverview() {
+    this.page = 'overview';
   }
 
 }

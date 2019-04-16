@@ -5,18 +5,20 @@
         </div>
         <div class="spacer"></div>
         <div class="top-options">
-            <div class="block">
+            <div class="block" (click)="showTasks()" *ngIf="page == 'overview'">
                 <i class="material-icons">check_box</i>
                 <h6>My Tasks</h6>
             </div>
-            <div class="block">
+            <div class="block" (click)="showMentions()" *ngIf="page == 'overview'">
                 <i class="material-icons">alternate_email</i>
                 <h6>All Mentions</h6>
             </div>
+            <div class="block" (click)="showOverview()" *ngIf="page != 'overview'">
+                <i class="material-icons" style="margin: 0;">close</i>
+            </div>
         </div>
     </div>
-    <div class="overview">
-        <hr>
+    <div class="overview" *ngIf="page == 'overview'">
         <h6 class="lead">Overview</h6>
         <div class="one">
             <div class="item">
@@ -24,13 +26,128 @@
                 <h5>23</h5>
             </div>
             <div class="item">
-                <h6>New Tasks</h6>
+                <h6>My Tasks</h6>
                 <h5>4</h5>
             </div>
             <div class="item">
                 <h6>Mentions</h6>
-                <h5>0</h5>
-            </div>    
+                <h5>6</h5>
+            </div>
+            <div class="item">
+                <h6>Important Messages</h6>
+                <h5>2</h5>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                Something
+            </div>
         </div>
+
+        <div class="two group">
+            <div class="avatar">
+                <img src="https://img2.thejournal.ie/inline/2470754/original/?width=100&version=2470754" alt="">
+                <a href="app/messages/team" class="name">The Incubis</a>
+            </div>
+            <div class="details">
+                    <div class="part">
+                        <i class="material-icons">chat</i>
+                        <a href="app/messages">12 new messages. (2 important)</a>
+                    </div>
+                    <div class="part">
+                            <i class="material-icons">check_box</i>
+                            <a href="app/messages">2 new tasks assigned.</a>
+                    </div>
+                    <div class="part">
+                        <i class="material-icons">cloud</i>
+                        <a href="app/messages">4 new files uploads.</a>
+                    </div>
+                    <div class="part">
+                        <i class="material-icons">alternate_email</i>
+                        <a href="app/messages">5 new mentions.</a>
+                    </div>
+                    <div class="part">
+                        <i class="material-icons">create</i>
+                        <a href="app/messages">1 canvas was updated recently.</a>
+                    </div>
+                    <div class="part">
+                        <i class="material-icons">people</i>
+                        <a href="app/messages">@mark and 2 others joined the group recently.</a>
+                    </div>
+            </div>
+
+                <div class="avatar">
+                    <img src="https://img2.thejournal.ie/inline/2470754/original/?width=100&version=2470754" alt="">
+                    <a href="app/messages/team" class="name">Bind network</a>
+                </div>
+                <div class="details">
+                        <div class="part">
+                            <i class="material-icons">chat</i>
+                            <a href="app/messages">12 new messages.</a>
+                        </div>
+                        <div class="part">
+                            <i class="material-icons">check_box</i>
+                            <a href="app/messages">2 new tasks assigned.</a>
+                        </div>
+                        <div class="part">
+                            <i class="material-icons">cloud</i>
+                            <a href="app/messages">4 new files uploads.</a>
+                        </div>
+                        <div class="part">
+                            <i class="material-icons">alternate_email</i>
+                            <a href="app/messages">5 new mentions.</a>
+                        </div>
+                        <div class="part">
+                            <i class="material-icons">create</i>
+                            <a href="app/messages">1 canvas was updated recently.</a>
+                        </div>
+                        <div class="part">
+                            <i class="material-icons">people</i>
+                            <a href="app/messages">@mark and 2 others joined the group recently.</a>
+                        </div>
+                </div>
+                <p class="expand">View all</p>
+        </div>
+        <div class="two task-overview">
+            <h6 class="header">Tasks overview</h6>
+            <div class="section">
+                <div class="prog">
+                        <round-progress
+                        [current]="70"
+                        [max]="100"
+                        [color]="'slateblue'"
+                        [background]="'#eaeaea'"
+                        [radius]="40"
+                        [stroke]="8"
+                        [semicircle]="false"
+                        [rounded]="true"
+                        [clockwise]="true"
+                        [responsive]="false"
+                        [duration]="800"
+                        [animation]="'easeInOutQuart'"
+                        [animationDelay]="0"
+                        ></round-progress>
+                </div>
+                <div class="stat">
+                    <div class="item">
+                        <i class="material-icons">check_box_outline_blank</i>
+                        <h6>2 tasks pending.</h6>
+                    </div>
+                    <div class="item">
+                        <i class="material-icons">check_box</i>
+                        <h6>8 tasks completed.</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Tasks -->
+    <div class="myTasks overview" *ngIf="page == 'tasks'">
+        tasks
+    </div>
+
+    <!-- All Mentions -->
+    <div class="mentions overview" *ngIf="page == 'mentions'">
+        mentions
     </div>
 </div>

@@ -1,16 +1,19 @@
 .main-container {
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgb(236, 237, 247);
     display: flex;
-    padding: 20px 30px;
+    padding: 20px 30px 0 30px;
     flex-direction: column;
 }
+
 .spacer {
     flex-grow: 1;
 }
 .head {
     display: flex;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #ddd;
 }
 .head .logo {
     user-select: none;
@@ -46,8 +49,12 @@
 }
 
 .overview {
-    padding-left: 5px;
-    margin-top: 10px;
+    padding: 20px 3px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.overview::-webkit-scrollbar {
+    display: none;
 }
 .overview .one {
     display: flex;
@@ -57,10 +64,113 @@
     margin-right: 30px;
 }
 .overview .one .item h6 {
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
 }
 .overview .one .item h5 {
     font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+.overview .two {
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 5px -5px #333;
+    padding: 10px;
+}
+
+.overview .group {
+    display: flex;
+    flex-direction: column;
+}
+.overview .group .avatar {
+    display: flex;
+    align-items: center;
+}
+.overview .group .avatar img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.overview .group .avatar .name {
+    font-size: 14px;
+    margin: 0 0 0 8px;
     font-weight: 400;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9)
+}
+.overview .group .details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    padding: 0 0 5px 0;
+}
+.overview .group .details .part {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.overview .group .details .part i {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.3);
+}
+.overview .group .details .part a {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 2px 10px;
+}
+.overview .group .expand {
+    font-size: 12px;
+    margin: 0;
+    padding-left: 30px;
+    color: slateblue;
+    cursor: pointer;
+    user-select: none;
+    width: max-content;
+}
+.overview .group .expand:hover {
+    text-decoration: underline;
+}
+
+.task-overview .header {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-weight: 500;
+}
+.task-overview .section {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+}
+.task-overview .section .stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    user-select: none;
+}
+.task-overview .section .stat .item {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
+.task-overview .section .stat .item i {
+    font-size: 25px;
+    color: slateblue;
+}
+
+.task-overview .section .stat .item h6 {
+    font-size: 14px;
+    margin: 0;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.6);
 }

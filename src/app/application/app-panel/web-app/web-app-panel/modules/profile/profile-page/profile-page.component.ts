@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-profile-page',
+  templateUrl: './profile-page.component.html',
+  styleUrls: ['./profile-page.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfilePageComponent implements OnInit {
 
   private repeat = [1,2,3];
   private post = [1,2,2,2,2,2,2,2,2,2,2,2];
@@ -16,13 +16,12 @@ export class ProfileComponent implements OnInit {
     {section: 'Other Skills', skills: ['Team Work', 'Leadership', 'Startups', 'Networking', 'Business Development']}
   ]
 
-
+  private tab = 'feed';
 
   constructor() { }
 
   ngOnInit() {
   }
-  private tab = 'feed';
 
   nav(data: string) {
     this.tab = data;

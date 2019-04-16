@@ -1,13 +1,14 @@
-import { Component, OnInit, Sanitizer, SecurityContext } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
-import { SafePipe } from '../../pipes/safe.pipe';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomepageComponent implements OnInit {
+
 
   private dummy = [1,2,3];
 
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
   removeFile() {
     this.SelectedFile = null;
