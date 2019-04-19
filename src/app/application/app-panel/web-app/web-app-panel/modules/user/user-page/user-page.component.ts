@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile-page',
-  templateUrl: './profile-page.component.html',
-  styleUrls: ['./profile-page.component.css']
+  selector: 'app-user-page',
+  templateUrl: './user-page.component.html',
+  styleUrls: ['./user-page.component.css']
 })
-export class ProfilePageComponent implements OnInit {
+export class UserPageComponent implements OnInit {
 
   private repeat = [1,2,3];
   private post = [1,2,2,2,2];
@@ -18,6 +18,7 @@ export class ProfilePageComponent implements OnInit {
 
   private tab = 'feed';
 
+  
   constructor() { }
 
   ngOnInit() {
@@ -27,8 +28,6 @@ export class ProfilePageComponent implements OnInit {
     this.tab = data;
   }
 
-
-  // scroll event
   onScroll() {
     if(this.tab == 'feed') {
       for(let i=0; i<2; i++) {
@@ -37,5 +36,4 @@ export class ProfilePageComponent implements OnInit {
       console.log('scroll event fired');
     }
   }
-
 }

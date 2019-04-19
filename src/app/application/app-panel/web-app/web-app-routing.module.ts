@@ -10,6 +10,7 @@ const routes: Routes = [
         {path: 'notifications', loadChildren: './web-app-panel/modules/notifications/notifications.module#NotificationsModule'},
         {path: 'profile', loadChildren: './web-app-panel/modules/profile/profile.module#ProfileModule'},
         {path: 'settings', loadChildren: './web-app-panel/modules/settings/settings.module#SettingsModule'},
+        {path: 'user', loadChildren: './web-app-panel/modules/user/user.module#UserModule'},
         {path: '', loadChildren: './web-app-panel/modules/home/home.module#HomeModule'}
     ]}
 ];

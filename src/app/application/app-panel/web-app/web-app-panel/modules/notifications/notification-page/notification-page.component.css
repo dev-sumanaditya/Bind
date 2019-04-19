@@ -1,0 +1,212 @@
+.main-container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(236, 237, 247);
+    padding: 40px;
+}
+
+.topbar {
+    display: flex;
+}
+.topbar h6 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin-right: 20px;
+    color: rgba(51, 51, 51, 0.8);
+    cursor: pointer;
+}
+.topbar h6 i {
+    font-size: 8px;
+    color: red !important;
+    vertical-align: super;
+}
+.topbar h6 span {
+    font-size: 12px;
+    margin-left: 10px;
+}
+.topbar .selected {
+    color: slateblue!important;
+}
+
+.cc {
+    display: flex;
+    margin: 40px 15px 20px 15px;
+}
+.ads {
+    flex: 2;
+    border: 1px solid #ddd;
+    margin-left: 20px;
+}
+.notificationContainer {
+    padding: 20px;
+    background-color: #fff;
+    flex: 4;
+    border-radius: 5px;
+}
+.notification {
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(236, 237, 247);
+    display: flex;
+    cursor: pointer;
+}
+.notification:hover {
+    background-color: rgb(248, 248, 248);
+}
+.notification .left {
+    padding: 0 10px 0 0;
+}
+.notification .center {
+    flex: 6;
+    padding: 2px 5px;
+}
+.notification .right {
+    padding: 0 20px;
+}
+
+
+.notification .left .not-icon {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notification .left .not-icon i {
+    font-size: 16px;
+    color: #fff;
+}
+.notification .left .like {
+    background-color: rgb(231, 73, 73);
+}
+.notification .left .comment {
+    background-color: rgb(108, 156, 35);
+}
+.notification .left .post {
+    background-color: rgb(27, 126, 187);
+}
+.notification .left .follow {
+    background-color: slateblue;
+}
+
+
+.notification .center .info {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 3px;
+}
+.notification .center .time {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.notification .right {
+    padding-left: 30px;
+}
+.notification .right .img {
+    height: 50px;
+    width: 50px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notification .right .img img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+.request {
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(236, 237, 247);
+    display: flex;
+}
+.request .left {
+    padding: 0 10px 0 0;
+}
+.request .center {
+    flex: 6;
+    padding: 2px 5px;
+}
+.request .right {
+    padding: 0 20px;
+}
+
+
+.request .left img {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.request .center .info {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 3px;
+}
+.request .center .info a {
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    text-decoration: none;
+}
+.request .center .more {
+    display: flex;
+    align-items: center;
+}
+.request .center .more .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.request .center .more .img img {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+}
+.request .center .more .name {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 6px;
+    margin-bottom: 0;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.request .center .action {
+    display: flex;
+    margin-top: 15px;
+}
+.request .center .action .acc {
+    font-size: 14px;
+    color: slateblue;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+.request .center .action .acc:hover {
+    color: rgb(73, 53, 199);
+}
+.request .center .action .dec {
+    font-size: 14px;
+    color: rgb(175, 174, 174);
+    cursor: pointer;
+    margin-left: 15px;
+    margin-bottom: 2px;
+}
+.request .right  {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.4);
+}

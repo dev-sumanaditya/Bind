@@ -12,8 +12,8 @@ export class InComponent implements OnInit {
 
   private data: string;
   private file = true;
-  private image = false;
-  private video = false;
+  private image = true;
+  private video = true;
   private msg_id = 'hexa-123';
   private isReplies = false;
   private replies = [

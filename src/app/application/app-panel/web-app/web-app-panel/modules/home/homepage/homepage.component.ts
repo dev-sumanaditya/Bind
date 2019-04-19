@@ -1,15 +1,15 @@
-import { Component, OnInit, Sanitizer } from '@angular/core';
+import { Component, OnInit, Sanitizer, ViewChild, ElementRef } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'] 
 })
 export class HomepageComponent implements OnInit {
 
-
+  private people = [1,2,3];
   private dummy = [1,2,3];
 
   private SelectedFile: File;
@@ -18,6 +18,8 @@ export class HomepageComponent implements OnInit {
   private showVid:boolean = false;
 
   inputVal: string = '';
+
+  @ViewChild('LocationInput') locationInput: ElementRef;
 
   constructor(private _sanitizer: Sanitizer) { }
 
@@ -52,5 +54,22 @@ export class HomepageComponent implements OnInit {
       this.showThumb = false;
       setTimeout(() => { this.showVid = true }, 500)
     }
+  }
+
+
+  // feed scroll
+  onScroll() {
+    console.log('scrolled');
+    for(let i=0; i<5; i++) {
+      this.dummy.push(i);
+      console.log('pushed');
+    }
+  }
+
+
+  // Location popper
+  popperShown() {
+    console.log('popper opened');
+    this.locationInput.nativeElement.focus();
   }
 }

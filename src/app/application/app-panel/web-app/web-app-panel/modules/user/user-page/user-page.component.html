@@ -9,6 +9,10 @@ infiniteScroll
         <div class="leftColumn">
           <div class="one">
               <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+              <div class="bttn">
+                <button class="btn flw">Follow</button>
+                <button class="btn"> <i class="material-icons">mail_outline</i> </button>
+              </div>
           </div>
           <div class="two">
             <div>
@@ -70,7 +74,7 @@ infiniteScroll
           <!-- feed -->
           <div class="feed" *ngIf="tab == 'feed'">
             <div class="posts">
-              <app-post *ngFor="let i of post"></app-post>
+              <app-post  *ngFor="let i of post"></app-post>
             </div>
           </div>
   

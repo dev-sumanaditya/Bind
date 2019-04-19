@@ -1,4 +1,10 @@
-<div class="homepage">
+<div class="homepage"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  [scrollWindow]="false"
+  (scrolled)="onScroll()"
+>
     <div class="feed">
       <!-- Left column -->
       <div class="left">
@@ -46,7 +52,7 @@
         <!-- Third box -->
         <div class="thirdbox">
           <h4 class="topic">Who to Follow <a href="app">View all</a></h4>
-          <div class="u-list" *ngFor="let i of dummy">
+          <div class="u-list" *ngFor="let i of people">
             <div class="imgs">
               <img src="https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg">
             </div>
@@ -64,7 +70,7 @@
       </div>
     
       <!-- Center column -->
-      <div class="center">
+      <div class="center" #center>
   
         <!-- Create post -->
         <div class="createpost">
@@ -92,6 +98,11 @@
                   <i class="material-icons" (click)="removeFile()">close</i>
             </div>
           </div>
+          <div class="Location">
+            <i class="material-icons">place</i>
+            <h6>New Delhi</h6>
+            <i class="material-icons clos">cancel</i>
+          </div>
           <div class="bottom">
             <div class="sec" ngfSelect [(file)]="SelectedFile" accept="image/*, video/mp4" (filesChange)="verifyFile()">
               <i class="material-icons">photo</i>
@@ -101,13 +112,37 @@
               <i class="material-icons">poll</i>
               <h6>Poll</h6>
             </div>
-            <div class="sec">
+            <div class="sec"
+            [popper]="LocationPopper"
+            [popperShowOnStart]="false"
+            [popperTrigger]="'click'"
+            [popperHideOnClickOutside]="true"
+            [popperHideOnScroll]="false"
+            [popperPlacement]="'bottom'"
+            [popperApplyClass]="'popperLocation'"
+            [popperDisableStyle]="false"
+            [popperPreventOverflow]="false"
+            (popperOnShown)="popperShown()"
+            >
               <i class="material-icons">location_on</i>
               <h6>Location</h6>
             </div>
-            <div class="sec2">
-  
-            </div>
+            <popper-content #LocationPopper [ngClass]="popper">
+              <div class="inpt">
+                  <input type="text" placeholder="Enter Location" #LocationInput spellcheck="false">
+                  <i class="material-icons">my_location</i>
+              </div>
+              <div class="places">
+                <h6>New Delhi</h6>
+                <h6>Bangalore</h6>
+                <h6>Mumbai</h6>
+                <h6>Chennai</h6>
+                <h6>Hyderabad</h6>
+                <h6>Pune</h6>
+              </div>
+            </popper-content>
+
+            <div class="sec2"></div>
             <div class="sec3">
               {{inputVal.length}}/400
             </div>
@@ -117,9 +152,7 @@
         <!-- posts -->
         
         <div class="createpost">
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
+          <app-post *ngFor="let i of dummy"></app-post>
         </div>
       </div>
     

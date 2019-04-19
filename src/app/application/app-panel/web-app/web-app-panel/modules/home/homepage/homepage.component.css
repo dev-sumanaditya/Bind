@@ -108,6 +108,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 15px;
 }
 .left .secondbox div {
     text-align: center;
@@ -133,6 +136,9 @@
     background-color: #fff;
     margin-bottom: 10px;
     padding: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 187px;
 }
 
 .left .thirdbox .topic {
@@ -196,7 +202,6 @@
     margin-top: 20px;
     padding: 10px 10px 0 10px;
     border-radius: 5px;
-    overflow: hidden;
     border: 1px solid #ddd;
     background-color: #fff;
     margin-bottom: 10px;
@@ -317,4 +322,33 @@
     background-color: rgba(0, 0, 0, 0.7);
     font-size: 12px;
     padding: 3px;
+}
+
+.center .createpost .Location {
+    display: flex;
+    padding: 20px 0 0 0;
+    align-items: center;
+}
+.center .createpost .Location i {
+    font-size: 15px;
+    vertical-align: sub;
+    color: rgba(51, 51, 51, 0.5);
+}
+.center .createpost .Location h6 {
+    font-size: 12px;
+    margin: 0 0 0 3px;
+    color: rgba(51, 51, 51, 0.7);
+    font-weight: 500;
+}
+.center .createpost .Location .clos {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: 0.65;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.center .createpost .Location .clos:hover {
+    opacity: 0.8;
 }

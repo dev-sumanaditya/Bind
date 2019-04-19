@@ -37,7 +37,28 @@
     border-radius: 50%;
     border: 2px solid #fff;
 }
-
+.one .bttn {
+    margin: 20px;
+}
+.one .bttn button {
+    font-size: 14px;
+    border: 1px solid slateblue;
+    background-color: #fff;
+    margin: 0 6px;
+    color: slateblue;
+    font-weight: 700;
+}
+.one .bttn button:hover {
+    background-color: rgb(236, 237, 247);
+}
+.one .bttn .flw {
+    padding: 6px 20px;
+}
+.one .bttn button i {
+    font-size: 22px;
+    line-height: 19px;
+    vertical-align: text-bottom;
+}
 
 .two {
     display: flex;
@@ -48,7 +69,6 @@
     flex: 1;
     color: rgba(0, 0, 0, 0.4);
     font-weight: 500;
-    margin-top: 20px;
 }
 .two div h6 {
     font-size: 22px;

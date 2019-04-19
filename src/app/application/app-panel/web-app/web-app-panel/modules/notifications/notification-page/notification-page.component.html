@@ -1,3 +1,78 @@
-<p>
-  notification-page works!
-</p>
+<div class="main-container">
+    <div class="topbar">
+      <h6 [class.selected]="requests == false" (click)="showNotification()">Notifications</h6>
+      <h6 [class.selected]="requests == true" (click)="showReq()">Requests <i class="material-icons" *ngIf="noti">brightness_1</i> </h6>
+    </div>
+    <div class="cc">
+        <!-- Left -->
+        <div class="notificationContainer" *ngIf="requests == false">
+            <div class="notification" *ngFor="let data of dummy">
+
+              <div class="left">
+                <div class="like not-icon" *ngIf="data.type == 'like'">
+                  <i class="material-icons">favorite</i>
+                </div>
+                <div class="comment not-icon" *ngIf="data.type == 'comment'">
+                  <i class="material-icons">comment</i>
+                </div>
+                <div class="post not-icon" *ngIf="data.type == 'post'">
+                  <i class="material-icons">whatshot</i>
+                </div>
+                <div class="follow not-icon" *ngIf="data.type == 'follow'">
+                  <i class="material-icons">account_circle</i>
+                </div>
+              </div>
+
+              <div class="center">
+                  <div class="general">
+                    <h6 class="info">{{data.info}}</h6>
+                    <h6 class="time">{{data.time}}</h6>
+                  </div>
+              </div>
+
+              <div class="right">
+                <div class="img">
+                  <img src="{{data.img}}">
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Requests -->
+        <div class="notificationContainer" *ngIf="requests == true">
+          <div class="request" *ngFor="let data of req">
+            <!-- left -->
+            <div class="left">
+              <img src="{{data.img}}">
+            </div>
+
+            <!-- Center -->
+            <div class="center">
+              <h6 class="info"><a href="app/user">{{data.user}}</a> has requested to {{data.info}}</h6>
+              <div class="more" *ngIf="data.groupreq">
+                <div class="img">
+                  <img src="{{data.gimg}}">
+                </div>
+                <div class="name">
+                  {{data.gname}}
+                </div>
+              </div>
+              <div class="action">
+                <h6 class="acc">Accept</h6>
+                <h6 class="dec">Decline</h6>
+              </div>
+            </div>
+
+            <!-- Right -->
+            <div class="right">
+              {{data.time}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right (ads) -->
+        <div class="ads">
+          ads
+        </div>
+    </div>
+</div>

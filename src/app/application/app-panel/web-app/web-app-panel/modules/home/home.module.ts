@@ -5,8 +5,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MainPipeModule } from '../../pipes/main-pipe/main-pipe.module';
 import { SharedModule } from '../shared/shared.module';
-import { PostComponent } from '../../components/profile/post/post.component';
-import { PostPollComponent } from '../../components/profile/post-poll/post-poll.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PostPollComponent } from '../../components/profile/post-poll/post-poll.
     FormsModule,
     MainPipeModule,
     SharedModule,
+    InfiniteScrollModule
   ]
 })
 export class HomeModule { }
