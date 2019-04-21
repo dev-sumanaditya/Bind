@@ -10,11 +10,11 @@ export class PostComponent implements OnInit {
 
   constructor() { }
 
-  private img = true;
-  private polls = true;
-  private link = true;
-  private linkPreview = true;
-  private video = true;
+  private img = false;
+  private polls = false;
+  private link = false;
+  private linkPreview = false;
+  private video = false;
 
   private VideoApi: VgAPI;
   private ShowBar: boolean = false;
@@ -47,9 +47,19 @@ export class PostComponent implements OnInit {
   selected:number = -1;
 
 
+  private liked = false;
+  private commented = true;
+  private shared = false;
+
+
+  private showComments = false;
+  private replyOfreply = [1,2,3];
+
   ngOnInit() {
   }
 
+
+  // Video player
   onPlayerReady(api:VgAPI) {
     this.VideoApi = api;
     console.log('fired')
@@ -73,12 +83,22 @@ export class PostComponent implements OnInit {
       }
     )
   }
-
   enter() {
     this.ShowBar = true;
   }
-
   leave() {
     setTimeout(() => { this.ShowBar = false; }, 2000);
   }
+
+
+  // Like
+  toggleLike() {
+    this.liked = !this.liked;
+  }
+
+  //showComments
+  showCmnts() {
+    this.showComments = !this.showComments;
+  }
+
 }

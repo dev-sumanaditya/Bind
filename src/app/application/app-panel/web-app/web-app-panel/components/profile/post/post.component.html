@@ -85,19 +85,78 @@
     </a>
 
 
-    <!-- Bottom bar -->
+    <!-- Like, Comment and Share buttons -->
     <div class="bottombar">
       <div class="tab tab-1">
-        <i class="material-icons">favorite_border</i>
-        <h6>49</h6>
+        <i class="material-icons" *ngIf="!liked" (click)="toggleLike()">favorite_border</i>
+        <i class="material-icons likeRed" *ngIf="liked" (click)="toggleLike()">favorite</i>
       </div>
-      <div class="tab tab-2">
-        <i class="material-icons">comment</i>
-        <h6>2</h6>
+      <div class="tab tab-2" (click)="showCmnts()">
+        <i class="material-icons">chat_bubble_outline</i>
       </div>
       <div class="tab tab-3">
         <i class="material-icons">repeat</i>
-        <h6>9</h6>
+      </div>
+    </div>
+
+
+
+    <!-- Likes, comments and shares -->
+    <div class="activity">
+      <div class="lns">
+        <span class="left">2,154 likes</span>
+        <span class="cmnt-expand" (click)="showCmnts()"> &#8226; View All 18 comments</span>
+      </div>
+      <div class="comments"  *ngIf="showComments">
+        <div class="create">
+          <div class="left">
+            <img src="https://daks2k3a4ib2z.cloudfront.net/55d62f32fa59c51977889877/561d4d3b8cf0398714ac71b5_MM-092714_Avatar.jpg">
+          </div>
+          <div class="centr">
+            <input type="text" maxlength="240">
+          </div>
+          <div class="right">
+            <button>Post</button>
+          </div>
+        </div>
+        <!-- Comment container -->
+        <div class="comment-container">
+          <!-- Comments -->
+          <div class="comment">
+            <div class="left">
+              <img src="https://www.randomaddressgenerator.com/media/face/male44.jpg">
+            </div>
+            <div class="right">
+              <div class="top">
+                  <a href="./app" class="name">dave_morin</a>
+                  <span class="text">lipsum as it is sometimes known, is dummy text used in la y i n g o u t p r i nt, graphic or web designs.</span>
+                <i class="material-icons more">more_horiz</i>
+              </div>
+              <div class="bottom">
+                <span class="time">3m</span> &#8226;
+                <span class="reply">Reply</span>
+              </div>
+
+              <!-- Reply of replies -->
+              <div class="replies" *ngFor="let x of replyOfreply">
+                    <div class="lft">
+                      <img src="https://colorlib.com/polygon/gentelella/images/img.jpg">
+                    </div>
+                    <div class="ryt">
+                      <div class="tp">
+                          <a href="./app" class="name">dave_morin</a>
+                          <span class="text">lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</span>
+                          <i class="material-icons more">more_horiz</i>
+                      </div>
+                      <div class="bttm">
+                        <span class="time">3m</span> &#8226;
+                        <span class="reply">Reply</span>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -6,7 +6,6 @@
 }
 .post:hover {
     background-color: rgba(221, 221, 221, 0.15);
-    cursor: pointer;
 }
 .post .img img {
     height: 40px;
@@ -49,29 +48,223 @@
     user-select: none;
 }
 .post .content .bottombar .tab {
-    display: flex;
-    margin-right: 25px;
+    margin-right: 15px;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.5);
 }
 .post .content .bottombar .tab i {
-    font-size: 18px;
-    margin-right: 6px;
-    margin-top: -1px;
-}
-.post .content .bottombar .tab h6 {
-    font-size: 12px;
-    color: inherit;
+    font-size: 24px;
+    font-weight: 100;
 }
 .bottombar .tab-1:hover {
-    color: rgb(228, 73, 62) !important;
+    color: crimson !important;
 }
 .bottombar .tab-2:hover {
-    color: slateblue !important;
+    color: indigo !important;
 }
 .bottombar .tab-3:hover {
     color: rgb(9, 185, 9) !important;
 }
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3px;
+}
+.activity .lns {
+    display: flex;
+    margin-bottom: 7px;
+}
+.activity .lns .left {
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+}
+.activity .lns .cmnt-expand {
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+    margin-left: 8px;
+}
+.activity .lns .cmnt-expand:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
+.activity .comments {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(221, 221, 221, 0.6);
+}
+.activity .comments .create {
+    display: flex;
+    margin-top: 10px;
+}
+.activity .comments .create .left img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.activity .comments .create .centr {
+    flex-grow: 1;
+    padding: 0 10px 0 10px;
+}
+.activity .comments .create .centr input {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.activity .comments .create .right button {
+    border: none;
+    height: 30px;
+    background-color: slateblue;
+    border-radius: 15px;
+    color: #fafafa;
+    padding: 2px 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.activity .comments .comment-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.activity .comments .comment-container .comment {
+    display: flex;
+    margin: 10px 0;
+}
+.activity .comments .comment-container .comment .left img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.activity .comments .comment-container .comment .right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.activity .comments .comment-container .comment .right .top {
+    line-height: 18px;
+    background-color: rgba(236, 237, 247, 0.8);
+    padding: 4px 40px 4px 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.activity .comments .comment-container .comment .right .top .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    line-height: 18px !important;
+}
+.activity .comments .comment-container .comment .right .top .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    line-height: 18px !important;
+    margin-left: 7px;
+    overflow-wrap: break-word;
+}
+.activity .comments .comment-container .comment .right .top .more {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    display: none;
+    cursor: pointer;
+}
+.activity .comments .comment-container .comment .right .top:hover .more {
+    display: block;
+}
+.activity .comments .comment-container .comment .right .bottom {
+    padding: 0 10px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+.activity .comments .comment-container .comment .right .bottom .time {
+    color: #333;
+    cursor: default;
+}
+.activity .comments .comment-container .comment .right .bottom .reply {
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.6);
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.activity .comments .comment-container .comment .right .replies {
+    padding: 3px;
+    display: flex;
+    margin-top: 5px;
+}
+
+.activity .comments .comment-container .comment .right .replies .lft img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+.activity .comments .comment-container .comment .right .replies .ryt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .tp {
+    line-height: 18px;
+    background-color: rgba(236, 237, 247, 0.8);
+    padding: 4px 40px 4px 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .tp .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    line-height: 18px !important;
+}
+
+.activity .comments .comment-container .comment .right .replies .ryt .tp .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    line-height: 18px !important;
+    margin-left: 7px;
+    overflow-wrap: break-word;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .tp .more {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    display: none;
+    cursor: pointer;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .tp:hover .more {
+    display: block;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .bttm {
+    padding: 0 10px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .bttm .time {
+    color: #333;
+    cursor: default;
+}
+.activity .comments .comment-container .comment .right .replies .ryt .bttm .reply {
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.6);
+    margin-left: 5px;
+    cursor: pointer;
+}
+
 
 
 .post .content .drop {
@@ -155,4 +348,25 @@
 .post .content .linkPreview .inf p {
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
+}
+
+
+
+/*  Colors  */
+
+.likeRed {
+    color: crimson !important;
+}
+.commentIndigo {
+    color: indigo !important;
+}
+.shareGreen {
+    color: rgb(9, 185, 9) !important;
+}
+
+
+
+/* Spacer */
+.spacer {
+    flex-grow: 1;
 }
