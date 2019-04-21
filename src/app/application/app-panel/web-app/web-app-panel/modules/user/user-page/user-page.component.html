@@ -53,142 +53,28 @@ infiniteScroll
             <h6>Founder, Incubis inc. I'm a passionate digital entrepreneur with a deep affection for tech & startups!</h6>
           </div>
           <div class="c-navbar">
-            <div class="nav-opt" (click)="nav('feed')" [class.selected-nav-opt]="tab == 'feed'">
+            <div class="nav-opt" routerLink="./" routerLinkActive="selected-nav-opt"  [routerLinkActiveOptions]="{exact: true}">
               <i class="material-icons">event_note</i>
               <h6>Feed</h6>
             </div>
-            <div class="nav-opt" (click)="nav('about')" [class.selected-nav-opt]="tab == 'about'">
+            <div class="nav-opt" routerLink="./about" routerLinkActive="selected-nav-opt">
               <i class="material-icons">assignment_ind</i>
               <h6>About</h6>
             </div>
-            <div class="nav-opt" (click)="nav('projects')" [class.selected-nav-opt]="tab == 'projects'">
+            <div class="nav-opt" routerLink="./projects" routerLinkActive="selected-nav-opt">
               <i class="material-icons">vertical_split</i>
               <h6>Projects</h6>
             </div>
-            <div class="nav-opt nav-opt-last" (click)="nav('more')" [class.selected-nav-opt]="tab == 'more'">
+            <div class="nav-opt nav-opt-last" routerLink="./more" routerLinkActive="selected-nav-opt">
               <i class="material-icons">more</i>
               <h6>More</h6>
             </div>
           </div>
   
           <!-- feed -->
-          <div class="feed" *ngIf="tab == 'feed'">
-            <div class="posts">
-              <app-post  *ngFor="let i of post"></app-post>
-            </div>
-          </div>
-  
-          <!-- About -->
-          <div class="about" *ngIf="tab == 'about'">
-  
-            <!-- Skills -->
-            <div class="c-one">
-              <h2 class="lead-1">Skills</h2>
-              <div class="c-ctr" *ngFor="let i of skill">
-                <h3 class="lead-2">{{i.section}}</h3>
-                <div class="skill-ctr">
-                  <div class="skil" *ngFor="let x of i.skills">{{x}}</div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Education -->
-            <div class="c-one">
-                <h2 class="lead-1">Education</h2>
-                <div class="experience" *ngFor="let i of repeat">
-                  <div class="e-left">
-                    <i class="material-icons">account_balance</i>
-                  </div>
-                  <div class="e-right">
-                    <h6 class="pos">University of California</h6>
-                    <h6 class="name">Bachelor of Technology, Computer Science</h6>
-                    <h6 class="timespan">2014 - 2018</h6>
-                    <h6 class="location">California, US</h6>
-                    <hr>
-                  </div>
-                </div>
-            </div>
-  
-            <!-- Experience -->
-            <div class="c-one">
-              <h2 class="lead-1">Experience</h2>
-              <div class="experience" *ngFor="let i of repeat">
-                <div class="e-left">
-                  <i class="material-icons">business_center</i>
-                </div>
-                <div class="e-right">
-                  <h6 class="pos">Director & Co-Founder</h6>
-                  <h6 class="name">Mavric Ventures</h6>
-                  <h6 class="timespan">Sep 2017 - present <i class="material-icons">lens</i> 1 yrs 7 mos</h6>
-                  <h6 class="location">New Delhi, India</h6>
-                  <hr>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Languages -->
-            <div class="c-one">
-              <h2 class="lead-1">Others</h2>
-              <div class="c-ctr">
-                <h3 class="lead-2">Languages</h3>
-                  <h4 class="lang"><i class="material-icons">lens</i> English</h4>
-                  <h4 class="lang"><i class="material-icons">lens</i> Hindi</h4>
-                  <h4 class="lang"><i class="material-icons">lens</i> Spanish</h4>
-              </div>
-              <div class="c-ctr">
-                <h3 class="lead-2">Achievements</h3>
-                <div class="achievement">
-                   <div class="a-left">
-                     <i class="material-icons">stars</i>
-                   </div>
-                   <div class="a-right">
-                      <h6 class="name">Hackathon Winner</h6>
-                      <h6 class="event">Hacker Earth</h6> -<span class="year">Mar 2017</span>
-                      <p class="desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                      <hr>
-                    </div>
-                </div>
-              </div>
-            </div>
-  
-  
-          </div>
-  
-          <!-- Projects -->
-          <div class="projects" *ngIf="tab == 'projects'">
-            <div class="c-one">
-              <h2 class="lead-1">Projects</h2>
-              <div class="experience" *ngFor="let i of repeat">
-                <div class="e-left">
-                  <i class="material-icons">pages</i>
-                </div>
-                <div class="e-right">
-                  <h6 class="pos">Home Automation System</h6>
-                  <h6 class="name">Fully autonomous Home Automation using machine Learning.</h6> 
-                  <div class="team">
-                    Team -
-                    <h6>@mark.cuban</h6>
-                    <h6>@missneilsen</h6>
-                    <h6>@guy_o_sarry</h6>
-                  </div>
-                  <h6 class="timespan">Mar 2016 <i class="material-icons">lens</i> 10 Days</h6>
-                  <h6 class="location">Job - Microprocessor Coding and PCB design</h6>
-                  <h6 class="description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</h6>
-                  <div class="media">
-                    <img src="https://cdn.dribbble.com/users/883236/screenshots/3788436/day_391_projects_list_ui_design-.png" alt="">
-                    <img src="https://static.collectui.com/shots/3335173/getting-started-large" alt="">
-                  </div>
-                  <div class="link"><a href="http://www.google.com" target="_blank">www.myproject.com/mcuban/dir/home-automation</a></div>
-                  <hr>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- More -->
-          <div class="more" *ngIf="tab == 'more'">
-  
-          </div>
+          
+          <router-outlet></router-outlet>
+
         </div>
         <div class="rightColumn">
           ads and suggestions

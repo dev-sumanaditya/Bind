@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPipeModule } from '../../pipes/main-pipe/main-pipe.module';
 import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
 
 
 
@@ -19,7 +20,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FormsModule,
     MainPipeModule,
     SharedModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    RoundProgressModule,
   ]
 })
 export class HomeModule { }

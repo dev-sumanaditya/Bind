@@ -1,0 +1,160 @@
+.c-one {
+    padding: 20px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    transition: box-shadow 83ms;
+}
+.c-one .lead-1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+}
+.c-one .experience {
+    display: flex;
+}
+
+.c-one .experience .e-left i {
+    font-size: 30px;
+    padding: 8px;
+    margin: 10px;
+    background-color: rgba(128, 128, 128, 0.7);
+    color: #ddd;
+    border-radius: 2px;
+}
+.c-one .experience .e-right {
+    padding: 5px;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.c-one .experience .e-right .pos {
+    color: rgba(0, 0, 0, 0.8);
+}
+.c-one .experience .e-right .name {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 2px;
+}
+.c-one .experience .e-right .timespan {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2px;
+
+}
+.c-one .experience .e-right .timespan i {
+    font-size: 3px;
+    vertical-align: middle;
+    color: grey;
+    margin: 0 4px;
+}
+.c-one .experience .e-right .location {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+}
+.c-one .experience .e-right .team {
+    line-height: 16px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.c-one .experience .e-right .team h6 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 10px 0 0;
+    color: #0645AD;
+    cursor: pointer;
+}
+.c-one .experience .e-right .description {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+}
+.c-one .experience .e-right .media {
+    padding: 10px 0;
+}
+.c-one .experience .e-right img {
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.c-one .experience .e-right .link a {
+    font-weight: 400;
+    color: #0645AD;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+
+.c-ctr {
+    padding: 10px;
+}
+.lead-2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin: 0;
+}
+.skill-ctr {
+    padding: 5px 0;
+}
+.skill-ctr .skil {
+    width: 50%;
+    display: inline-block;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.lang {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.lang i {
+    font-size: 4px;
+    vertical-align: middle;
+}
+
+.achievement {
+    display: flex;
+    margin-top: 5px;
+}
+.achievement .a-left {
+    margin: 0;
+}
+.achievement .a-left i {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.4);
+    margin: 0 5px;
+}
+.achievement .a-right {
+    margin-left: 5px;
+}
+.achievement .a-right .name {
+    font-size: 16px;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7);
+}
+.achievement .a-right .event {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    display: inline-block;
+}
+.achievement .a-right .year {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    margin-left: 5px;
+}
+.achievement .a-right .desc {
+    font-size: 13px;
+}

@@ -236,6 +236,7 @@
     margin: 0;
     border: none;
     padding: 5px;
+    font-size: 14px;
 }
 .textareaHeight {
     height: 80px !important;
@@ -274,14 +275,35 @@
     flex-grow: 1;
 }
 .center .createpost .bottom .sec3 {
-    margin: 10px 0;
-    border-radius: 10px;
+    margin: 0;
+}
+.center .createpost .bottom .sec3 .post {
+    display: flex;
     align-items: center;
-    padding: 2px 0;
-    color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    border: none;
+    background-color: slateblue;
+    border-radius: 20px;
+    padding: 0 12px 0 5px;
+    height: 30px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+.center .createpost .bottom .sec3 .post:hover {
+    background-color: rgb(84, 65, 202);
+}
+.center .createpost .bottom .sec3 .post .count {
+    margin-right: 7px;
+}
+
+.center .createpost .bottom .sec3 .post h6 {
+    font-size: 16px;
     font-weight: 600;
-    font-size: 14px;
-    cursor: default;
+    color: #fff;
+    margin: -3px 0 0 0;
+    line-height: 16px;
 }
 
 .center .createpost .mid {
@@ -326,8 +348,13 @@
 
 .center .createpost .Location {
     display: flex;
-    padding: 20px 0 0 0;
+    margin-top: 20px;
+    padding: 3px 5px;
+    border-radius: 20px;
     align-items: center;
+    border: 1px solid slateblue;
+    width: max-content;
+    user-select: none;
 }
 .center .createpost .Location i {
     font-size: 15px;
@@ -351,4 +378,102 @@
 }
 .center .createpost .Location .clos:hover {
     opacity: 0.8;
+}
+
+
+.center .createpost .CreatePoll {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+}
+.center .createpost .CreatePoll .option {
+    position: relative;
+    margin: 5px;
+}
+.createpost .CreatePoll .option input {
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px 4px 4px 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 300px;
+    outline: none;
+}
+.createpost .CreatePoll .option .radio {
+    position: absolute;
+    font-size: 20px;
+    color: #49505781;
+    top: 5px;
+    left: 5px;
+}
+.createpost .CreatePoll .option .remove {
+    font-size: 22px;
+    color: #495057;
+    margin: 0;
+    vertical-align: sub;
+    margin-left: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.createpost .CreatePoll .addOption {
+    display: flex;
+    align-items: center;
+    margin: 5px 3px;
+    cursor: pointer;
+    width: max-content;
+}
+.createpost .CreatePoll .addOption i {
+    font-size: 22px;
+    color: slateblue;
+}
+.createpost .CreatePoll .addOption h6 {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 0 5px;
+    line-height: 12px;
+}
+.createpost .CreatePoll .botm {
+    display: flex;
+    margin: 5px 4px;
+    border-top: 1px solid #ddd;
+    padding-top: 4px;
+}
+.createpost .CreatePoll .botm .lft {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+.createpost .CreatePoll .botm .lft i {
+    font-size: 18px;
+    color: rgba(51, 51, 51, 0.5);
+}
+.createpost .CreatePoll .botm .lft h6 {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+    line-height: 12px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.8);
+}
+.createpost .CreatePoll .botm .cntr {
+    flex-grow: 1;
+}
+.createpost .CreatePoll .botm .ryt {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    cursor: pointer;
+}
+.createpost .CreatePoll .botm .ryt:hover {
+    color: slateblue;
 }

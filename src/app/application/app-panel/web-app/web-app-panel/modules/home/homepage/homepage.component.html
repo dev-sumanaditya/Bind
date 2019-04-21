@@ -74,6 +74,7 @@
   
         <!-- Create post -->
         <div class="createpost">
+          <!-- Main text input -->
           <div class="top">
               <div class="avatar">
                 <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754" alt="">
@@ -82,6 +83,7 @@
                 <textarea type="text" [(ngModel)]="inputVal" placeholder="Write something..." maxlength="400" [class.textareaHeight]="inputVal.length > 0"></textarea>
               </div>
           </div>
+          <!-- File preview -->
           <div class="mid" *ngIf="SelectedFile">
             <div class="filePreview" *ngIf="showThumb">
                 <div [ngfBackground]="SelectedFile"
@@ -98,17 +100,55 @@
                   <i class="material-icons" (click)="removeFile()">close</i>
             </div>
           </div>
-          <div class="Location">
+          <!-- Create Poll -->
+          <div class="CreatePoll" *ngIf="poll">
+            <div class="option" *ngFor="let i of pollOptions;">
+              <i class="material-icons radio">radio_button_checked</i>
+              <input type="text" placeholder="Option {{i}}" maxlength="25">
+              <i class="material-icons remove" *ngIf="i > 2" (click)="removeOption(i)">close</i>
+            </div>
+            <div class="addOption" (click)="addOption()">
+              <i class="material-icons">add_box</i>
+              <h6>Add Option</h6>
+            </div>
+            <div class="botm">
+              <div class="lft"
+              [popper]="PollTimePopper"
+              [popperShowOnStart]="false"
+              [popperTrigger]="'click'"
+              [popperHideOnClickOutside]="true"
+              [popperHideOnScroll]="false"
+              [popperPlacement]="'bottom'"
+              [popperApplyClass]="'timePopper'"
+              [popperDisableStyle]="false"
+              [popperPreventOverflow]="false"
+              >
+                <i class="material-icons">access_time</i>
+                <h6>1 Day</h6>
+                <i class="material-icons">arrow_drop_down</i>
+              </div>
+              <popper-content #PollTimePopper>
+                <h6 class="selected">1 Day</h6>
+                <h6>2 Day</h6>
+                <h6>1 Week</h6>
+              </popper-content>
+              <div class="cntr"></div>
+              <div class="ryt" (click)="HidePoll()">Remove Poll</div>
+            </div>
+          </div>
+
+          <!-- Loaction display -->
+          <div class="Location" *ngIf="location">
             <i class="material-icons">place</i>
-            <h6>New Delhi</h6>
-            <i class="material-icons clos">cancel</i>
+            <h6>{{location}}</h6>
+            <i class="material-icons clos" (click)="removeLoc()">cancel</i>
           </div>
           <div class="bottom">
             <div class="sec" ngfSelect [(file)]="SelectedFile" accept="image/*, video/mp4" (filesChange)="verifyFile()">
               <i class="material-icons">photo</i>
               <h6>Photo/Video</h6>
             </div>
-            <div class="sec">
+            <div class="sec" (click)="ShowPoll()">
               <i class="material-icons">poll</i>
               <h6>Poll</h6>
             </div>
@@ -127,30 +167,46 @@
               <i class="material-icons">location_on</i>
               <h6>Location</h6>
             </div>
+            
+            <!-- Loaction selection popover -->
             <popper-content #LocationPopper [ngClass]="popper">
               <div class="inpt">
                   <input type="text" placeholder="Enter Location" #LocationInput spellcheck="false">
                   <i class="material-icons">my_location</i>
               </div>
               <div class="places">
-                <h6>New Delhi</h6>
-                <h6>Bangalore</h6>
-                <h6>Mumbai</h6>
-                <h6>Chennai</h6>
-                <h6>Hyderabad</h6>
-                <h6>Pune</h6>
+                <h6 (click)="selLocation(i)" *ngFor="let i of Locations">{{i}}</h6>
               </div>
             </popper-content>
 
             <div class="sec2"></div>
+
+            <!-- Post button -->
             <div class="sec3">
-              {{inputVal.length}}/400
-            </div>
+                <button class="post">
+                  <div class="count">
+                      <round-progress
+                      [current]="inputVal.length"
+                      [max]="400"
+                      [color]="'white'"
+                      [background]="'917FFF'"
+                      [radius]="11"
+                      [stroke]="2"
+                      [semicircle]="false"
+                      [rounded]="false"
+                      [clockwise]="true"
+                      [responsive]="flase"
+                      [class]="'circle'"
+                      ></round-progress>
+                  </div>
+                  <h6>Post</h6>
+                </button>
+              </div>
           </div>
         </div>
   
+
         <!-- posts -->
-        
         <div class="createpost">
           <app-post *ngFor="let i of dummy"></app-post>
         </div>
