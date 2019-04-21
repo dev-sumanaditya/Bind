@@ -1,8 +1,12 @@
 # BIND  Max2.0
 
-This project is under development.
+We are looking for motivated Front-end and Back-end developers.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+Must-Haves
+ - Good grasp of Front end tools such as Angular 7, Rxjs, Ngrx
+ - Hands-on experience in Node.js
+ 
+Contact - sumanaditya19@gmail.com
 
 ## Development server
 
