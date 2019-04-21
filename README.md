@@ -4,7 +4,8 @@ We are looking for motivated Front-end and Back-end developers.
 
 Must-Haves
  - Good grasp of Front end tools such as Angular 7, Rxjs, Ngrx
- - Experience in Node.js
+ - Hands-on experience in Node.js
+ 
 Contact - sumanaditya19@gmail.com
 
 ## Development server
