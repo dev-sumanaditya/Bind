@@ -1,14 +1,17 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectionStrategy} from '@angular/core';
 import { ModalService } from '../../../../services/modal.service';
 
 @Component({
   selector: 'app-in',
   templateUrl: './in.component.html',
-  styleUrls: ['./in.component.css']
+  styleUrls: ['./in.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InComponent implements OnInit {
 
   @Output() reply = new EventEmitter();
+
+  @Input() indata: any;
 
   private data: string;
   private file = true;
@@ -33,7 +36,7 @@ export class InComponent implements OnInit {
 
   replyfn() {
     this.reply.emit(this.msg_id);
-    this.replies.push({'author': 'You', 'message': 'this is good.', 'time': '1h'});
+    this.replies.push({'author': 'You', 'message': 'this is good. the presentation was awesome and everyone liked it', 'time': '1h'});
     this.isReplies = true;
   }
 }

@@ -42,7 +42,7 @@ export class ChatsPageState {
             error: ''
         })
         this.ChatsService.getChatsList().subscribe(
-            data => this.store.dispatch(new ChatActions.GetChatsListSuccess(data)),
+            data =>  this.store.dispatch(new ChatActions.GetChatsListSuccess(data)),
             error => this.store.dispatch(new ChatActions.GetChatsListFail(error))
         )
     }

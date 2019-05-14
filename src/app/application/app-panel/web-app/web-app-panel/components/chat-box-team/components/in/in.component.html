@@ -2,59 +2,60 @@
   <span>Today</span>
   <hr>
 </div>
-
-<div class="container-1" [class.msg-right]="you">
-  <img class="avatar" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
-  <div class="avatar-info">
-      <span class="name">John Doe</span>
-      -
-      <span class="title">Senior VP Design</span>
-      <span class="imp-span">- <i class="material-icons important">star</i></span>
-  </div>
-  <p class="time"> 2h ago</p>
-  <p class="msg"> Team - do forward the reports. it is very important for me. if you dont, then be r e a d y to follow the consequences. </p>
-  
-  <!-- Image -->
-  <div class="pics" *ngIf="image">
-    <img (click)="openModal()" class="uploaded-pic" src="https://smallbiztrends.com/wp-content/uploads/2013/01/hidden-value-of-long-tail-seo-100011.png">
-  </div>
-
-  <!-- Files -->
-  <div class="file-div" *ngIf="file">
-      <i class="material-icons file-icon">insert_drive_file</i>
-      <span class="file-icon-txt">W</span>
-      <div class="file-details">
-        <h6 class="file-name">Marketing plan.txt</h6>
-        <h6 class="file-type">Text Document</h6>
+<div class="block-container">
+      <div class="container-1" [class.msg-right]="indata.self">
+        <img class="avatar" src="{{indata.user.image}}">
+        <div class="avatar-info">
+            <span class="name">{{indata.user.name}}</span>
+            -
+            <span class="title">{{indata.user.pos}}</span>
+            <span class="imp-span" *ngIf="indata.imp">- <i class="material-icons important">star</i></span>
+        </div>
+        <p class="time">{{indata.time}}</p>
+        <p class="msg">{{indata.msg.text}}</p>
+        
+        <!-- Image -->
+        <div class="pics" *ngIf="indata.msg.type == 'img'">
+          <img (click)="openModal()" class="uploaded-pic" src="{{indata.msg.img}}">
+        </div>
+      
+        <!-- Files -->
+        <div class="file-div" *ngIf="indata.msg.type == 'file'">
+            <i class="material-icons file-icon">insert_drive_file</i>
+            <span class="file-icon-txt">W</span>
+            <div class="file-details">
+              <h6 class="file-name">{{indata.msg.file.name}}</h6>
+              <h6 class="file-type">{{indata.msg.file.type}}</h6>
+            </div>
+        </div>
+      
+        <!-- Video -->
+        <div class="video-div" *ngIf="indata.msg.type == 'vid'">
+          <div class="video-ctr">
+            <img src="https://www.lollypop.design/media/5385/10_color-psychology.jpg">
+            <div class="video-overlay">
+              <i class="material-icons">play_circle_filled</i>
+              <span class="vid-time">3:21</span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- replies -->
+        <div class="replies" *ngIf="isReplies">
+          <div class="reply" *ngFor="let reply of replies">
+            <img class="reply-avatar" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+            <div class="reply-data">
+              <span class="reply-author">{{reply.author}} : </span>
+              <span class="reply-msg">{{reply.message}}</span>
+            </div>
+            <span class="reply-time">{{reply.time}}</span>
+          </div>
+        </div>
+      
+        <div class="reply-btn-div" (click)="replyfn()">
+            <i class="material-icons">reply</i>
+            <span>reply</span>
+        </div>
       </div>
-  </div>
-
-  <!-- Video -->
-  <div class="video-div" *ngIf="video">
-    <div class="video-ctr" (click)="openModal()">
-      <img src="https://www.lollypop.design/media/5385/10_color-psychology.jpg">
-      <div class="video-overlay">
-        <i class="material-icons">play_circle_filled</i>
-        <span class="vid-time">3:21</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- replies -->
-  <div class="replies" *ngIf="isReplies">
-    <div class="reply" *ngFor="let reply of replies">
-      <img class="reply-avatar" src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
-      <div class="reply-data">
-        <span class="reply-author">{{reply.author}} : </span>
-        <span class="reply-msg">{{reply.message}}</span>
-      </div>
-      <span class="reply-time">{{reply.time}}</span>
-    </div>
-  </div>
-
-  <div class="reply-btn-div" (click)="replyfn()">
-      <i class="material-icons">reply</i>
-      <span>reply</span>
-  </div>
 </div>
 

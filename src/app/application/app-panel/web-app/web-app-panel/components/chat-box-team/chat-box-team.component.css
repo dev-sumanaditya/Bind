@@ -27,24 +27,33 @@
     border-radius: 50%;
     border: 1px solid #ddd;
     float: left;
+    cursor: pointer;
 }
 .avatar-info {
-    padding-left: 5px;
+    padding-left: 15px;
     position: relative;
     width: 70%;
     float: left;
 }
-.name {
+.avatar-info .name {
     font-size: 14px;
     margin-top: 3px;
     font-weight: 600;
     opacity: 0.9;
+    width: max-content;
+    cursor: pointer;
+
 }
-.title {
+.avatar-info .name:hover {
+    color: #03145f;
+}
+.avatar-info .title {
     font-size: 13px;
     position: absolute;
     top: 18px;
     opacity: 0.5;
+    width: max-content;
+    cursor: pointer;
 }
 
 .top-right {
@@ -66,7 +75,7 @@
 
 .chats {
     flex: 14;
-    padding: 40px 60px;
+    padding: 40px 20px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -377,11 +386,219 @@
 /* Info window  */
 .infoWindow {
     flex: 14;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
+    padding: 20px;
+    background-color: rgb(236, 237, 247);
+}
+.infoWindow::-webkit-scrollbar {
+    width: 5px;
+}
+.infoWindow::-webkit-scrollbar-track:hover {
+    width: 10px;
+}
+.infoWindow::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.infoWindow::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
 }
 
 
+.infoWindow .fst {
+    display: flex;
+}
+.infoWindow .fst .a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.infoWindow .fst .a img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.infoWindow .fst .b {
+    flex: 3;
+    padding: 20px;
+}
+.infoWindow .fst .b .name {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(71, 71, 71);
+    margin: 0;
+}
+.infoWindow .fst .b .name .username {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(71, 71, 71);
+    margin-left: 5px;
+}
+
+.infoWindow .fst .b .title {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 5px;
+}
+.infoWindow .fst .b .desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-top: 15px;
+}
+
+.infoWindow .scnd {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.infoWindow .scnd .media {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.infoWindow .scnd .media .item {
+    height: 7vw;
+    width: 7vw;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.infoWindow .scnd .media .item .img {
+    height: 100%;
+    width: 100%;
+    background-position: center center !important;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.infoWindow .scnd a {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: 500;
+    cursor: pointer;
+}
+.infoWindow .scnd a:hover {
+    text-decoration: underline;
+}
+
+
+
+.infoWindow .thrd {
+    padding: 20px;
+}
+.infoWindow .thrd .members {
+    padding-top: 15px;
+}
+.infoWindow .thrd .members .addMember {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: max-content;
+    margin-top: 10px;
+}
+.infoWindow .thrd .members .addMember i {
+    font-size: 25px;
+    color: #667eea;
+    width: 30px;
+}
+.infoWindow .thrd .members .addMember span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 10px;
+}
+
+.infoWindow .thrd .members .listItem {
+    display: flex;
+    margin-top: 20px;
+}
+.infoWindow .thrd .members .listItem .l img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.infoWindow .thrd .members .listItem .m {
+    margin-left: 15px;
+    flex-grow: 1;
+}
+.infoWindow .thrd .members .listItem .m .name {
+    font-size: 14px;
+    line-height: 14px;
+    margin: 3px 0 0 0;
+    cursor: pointer;
+    color: #03145f;
+    width: max-content;
+}
+.infoWindow .thrd .members .listItem .m .title {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    margin: 5px 0 0 0;
+}
+.infoWindow .thrd .members .listItem .r {
+    display: flex;
+    align-items: center;
+}
+.infoWindow .thrd .members .listItem .r .badge h6 {
+    margin: 0;
+    user-select: none;
+}
+.infoWindow .thrd .members .listItem .r .opt  {
+    margin: 0 20px;
+    user-select: none;
+}
+.infoWindow .thrd .members .listItem .r .opt i {
+    font-size: 24px;
+    vertical-align: text-bottom;
+    background-color: rgba(221, 221, 221, 0.6);
+    border-radius: 50%;
+    padding: 3px;
+    color: rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+}
+
+.frth {
+    padding: 40px 20px 20px 20px;
+}
+.frth .item {
+    display: flex;
+    align-items: center;
+    color: crimson;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 10px 5px;
+}
+.frth .item:hover {
+    background-color: rgba(221, 221, 221, 0.3);
+}
+.frth .item i {
+    font-size: 30px;
+    font-weight: 100;
+    margin-right: 20px;
+    vertical-align: text-bottom;
+}
+.frth .item span {
+    font-size: 18px;
+    line-height: 16px;
+    margin: 0 0 4px 0;
+    font-weight: 400;
+}
+
+
+
+
+
+
+.leads {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+}
 
 
 @keyframes slideUp {

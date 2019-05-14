@@ -1,4 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import * as AppTeamChatActions from '../../store/actions/appTeamChat.actions';
+
 
 @Component({
   selector: 'app-group-card',
@@ -8,9 +12,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class GroupCardComponent implements OnInit {
 
   @ViewChild('GroupDropdown') popperd; 
+  
+  @Input() data: any; 
 
   private showDrop = false;
-  constructor() { }
+  constructor(private router: Router , private store: Store) { }
 
   ngOnInit() {
   }
@@ -26,5 +32,20 @@ export class GroupCardComponent implements OnInit {
   
   clickOutPopper() {
     this.popperd.hide();
+  }
+
+  navigate() {
+    this.router.navigate(['/app/messages/team'], { queryParams: { id: this.data.id } });
+    this.ShowChatsWindow();
+  }
+
+  openInNewTab() {
+    window.open("http://localhost:4200/app/messages/team?id=" + this.data.id);
+  }
+
+
+  // Actions
+  ShowChatsWindow() {
+    this.store.dispatch(new AppTeamChatActions.ShowChat);
   }
 }

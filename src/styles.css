@@ -236,3 +236,23 @@
 .circle svg {
   vertical-align: top;
 }
+
+
+
+/* Emoji mart */
+
+.emoji-mart {
+  height: 100% !important;
+}
+.emoji-mart-preview {
+  display: none !important;
+}
+.emoji-mart {
+  width: 100% !important;
+}
+.emoji-mart-scroll {
+  margin-bottom: -5px;
+}
+.emoji-mart-bar:last-child {
+  border: none !important; 
+}

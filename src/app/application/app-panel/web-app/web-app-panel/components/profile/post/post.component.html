@@ -59,7 +59,9 @@
 
             <!-- Video media -->
             <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
-                <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+                <source [src]="'http://static.videogular.com/assets/videos/videogular.mp4'" type="video/mp4">
+                <source [src]="'https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/rabbit320.webm'" type="video/webm">
+
             </video>
         </vg-player>
     </div>

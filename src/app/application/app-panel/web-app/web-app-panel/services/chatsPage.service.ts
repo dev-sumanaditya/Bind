@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators';
 import * as ChatsPageModel from '../store/model/chatsPage.model';
@@ -8,7 +8,7 @@ import * as ChatsPageModel from '../store/model/chatsPage.model';
     providedIn: 'root'
 })
 export class ChatsPageService {
-    private chatsListUrl = '';
+    private chatsListUrl = 'http://localhost:3000/chatList';
     private createNewGroupUrl = '';
     private createNewDirectUrl = '';
 

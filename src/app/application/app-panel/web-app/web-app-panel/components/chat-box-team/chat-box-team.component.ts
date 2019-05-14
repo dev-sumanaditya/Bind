@@ -1,7 +1,14 @@
+// general imports
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+
+import { ActivatedRoute } from '@angular/router';
+
+// NGXS store
 import { Store } from '@ngxs/store';
 import { AppTeamChatState } from '../../store/state/appTeamChat.state';
 import * as AppTeamChatActions from '../../store/actions/appTeamChat.actions';
+
+// Services
 import { EmojiService } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 
 
@@ -12,15 +19,18 @@ import { EmojiService } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 })
 export class ChatBoxTeamComponent implements OnInit {
 
-  private ChatsWindow: boolean;
-  private GroupBoxWindow: boolean;
-  private InfoWindow: boolean;
-  private GroupBoxTab: string;
 
-  private emojiToggleState = false;
-  private attachMenuState = false;
+  // states for message pages and toggles
+  public ChatsWindow: boolean;
+  public GroupBoxWindow: boolean;
+  public InfoWindow: boolean;
+  public GroupBoxTab: string;
+
+  public emojiToggleState = false;
+  public attachMenuState = false;
 
 
+  // Message input
   private text: string = '';
   private value: string = '';
 
@@ -29,10 +39,146 @@ export class ChatBoxTeamComponent implements OnInit {
   private caretPos;
   private selection;
 
+  public teamId;
+
+
+  private msgs = [
+    {
+      user: {
+        name: 'John Doe',
+        image: 'https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg',
+        pos: 'Senior VP Design'
+      },
+      imp: true,
+      time: '2h ago',
+      msg: {
+        type: 'text',
+        text: 'Team - do forward the reports. it is very important for me. if you dont, then be r e a d y to follow the consequences.',
+        img: '',
+        file: {
+          name: 'Marketing Plan.txt',
+          type: 'Text Docoment'
+        }
+      },
+      self: false
+    },
+    {
+      user: {
+        name: 'Mario Mendez',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTG0j1MmEng29JZuTbH7KqM55WOrUD7XfxtzOseyZeuFWJPv7',
+        pos: 'Marketing Head'
+      },
+      imp: false,
+      time: '1h ago',
+      msg: {
+        type: 'img',
+        text: 'Team - do forward the reports. it is very important for me. if you dont, then be r e a d y to follow the consequences.',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTG0j1MmEng29JZuTbH7KqM55WOrUD7XfxtzOseyZeuFWJPv7',
+        file: {
+          name: 'Marketing Plan.txt',
+          type: 'Text Docoment'
+        }
+      },
+      self: false
+    },
+    {
+      user: {
+        name: 'John Doe',
+        image: 'https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg',
+        pos: 'Senior VP Design'
+      },
+      imp: true,
+      time: '2h ago',
+      msg: {
+        type: 'file',
+        text: '',
+        img: '',
+        file: {
+          name: 'Marketing Plan.txt',
+          type: 'Text Docoment'
+        }
+      },
+      self: true
+    },
+    {
+      user: {
+        name: 'John Doe',
+        image: 'https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg',
+        pos: 'Senior VP Design'
+      },
+      imp: true,
+      time: '2h ago',
+      msg: {
+        type: 'vid',
+        text: 'Team - do forward the reports. it is very important for me. if you dont, then be r e a d y to follow the consequences.',
+        img: '',
+        file: {
+          name: 'Marketing Plan.txt',
+          type: 'Text Docoment'
+        }
+      },
+      self: false
+    },
+    {
+      user: {
+        name: 'John Doe',
+        image: 'https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg',
+        pos: 'Senior VP Design'
+      },
+      imp: true,
+      time: '2h ago',
+      msg: {
+        type: 'text',
+        text: 'Team - do forward the reports.',
+        img: '',
+        file: {
+          name: '',
+          type: ''
+        }
+      },
+      self: false
+    },
+    {
+      user: {
+        name: 'John Doe',
+        image: 'https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg',
+        pos: 'Senior VP Design'
+      },
+      imp: true,
+      time: '2h ago',
+      msg: {
+        type: 'text',
+        text: 'Great!',
+        img: '',
+        file: {
+          name: 'Marketing Plan.txt',
+          type: 'Text Docoment'
+        }
+      },
+      self: false
+    }
+  ];
+
+  public media = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_H4HeEPBNcqbb5hUjc8Vl3fcFkZsdKw4dSYwJbupTBIrGTpnR',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_H4HeEPBNcqbb5hUjc8Vl3fcFkZsdKw4dSYwJbupTBIrGTpnR',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEY-Ga3xz60W0xU-AV-6dFKmY1FkkPTV7LAVMst4Sa0k071L9n',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTx7RsyxG9S3Eg-KbCFgujx7q9bw24tLGYFpoRsamO_iPLDDxPpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_H4HeEPBNcqbb5hUjc8Vl3fcFkZsdKw4dSYwJbupTBIrGTpnR',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEY-Ga3xz60W0xU-AV-6dFKmY1FkkPTV7LAVMst4Sa0k071L9n',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTx7RsyxG9S3Eg-KbCFgujx7q9bw24tLGYFpoRsamO_iPLDDxPpg',
+  ];
+
+
 
   @ViewChild('inputBar') outputContainer:ElementRef;
 
-  constructor(private store: Store, private _emoji: EmojiService, private renderer: Renderer2) {
+  constructor(
+    private store: Store,
+    private _emoji: EmojiService,
+    private renderer: Renderer2,
+    private route: ActivatedRoute
+    ) {
     this.store.select(AppTeamChatState.getAppTeamChatState).subscribe(
       val => {
         this.ChatsWindow = val.ShowChat;
@@ -43,12 +189,30 @@ export class ChatBoxTeamComponent implements OnInit {
     )
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams
+      .subscribe(
+        params => {
+          this.teamId = params.id;
+        }
+      )
+  }
 
+  // reply function
   reply_this(id) {
     console.log(id);
   }
 
+
+  // Group info recent media
+  expand() {
+    for( let i = 1; i < 12; i ++)
+    this.media.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTx7RsyxG9S3Eg-KbCFgujx7q9bw24tLGYFpoRsamO_iPLDDxPpg');
+  }
+
+
+
+  // toggle Emojiselector & attachmenu
   toggleEmojiSelector() {
     this.emojiToggleState = !this.emojiToggleState;
   }
@@ -207,11 +371,12 @@ export class ChatBoxTeamComponent implements OnInit {
     }
   };
 
-
+  // for right click
   return() {
     return false;
   }
 
+  // for sanitizing and selecting only text content
   paste(event) {
     let pastedText = event.clipboardData.getData('text/plain');
     this.getPosandRange();
@@ -237,7 +402,7 @@ export class ChatBoxTeamComponent implements OnInit {
 
   
 
-
+  // NGXS store actions
   // topbar options
   ShowGroupBox() {
     this.emojiToggleState = false;

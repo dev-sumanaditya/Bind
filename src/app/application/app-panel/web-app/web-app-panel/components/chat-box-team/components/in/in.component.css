@@ -1,3 +1,14 @@
+.block-container {
+    display: block;
+    width: 100%;
+    padding: 0 40px;
+}
+.block-container::after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
 .container-1 {
     position: relative;
     background-color: white;
@@ -15,6 +26,7 @@
 }
 .msg-right {
     float: right;
+    background-color: rgba(236, 237, 247, 0.7) !important;
 }
 
 .avatar {
@@ -60,6 +72,7 @@
 .important {
     font-size: 15px;
     color: goldenrod;
+    vertical-align: text-bottom;
 }
 
 .msg {

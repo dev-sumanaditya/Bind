@@ -46,6 +46,7 @@
           <!-- Sort By -->
           <div class="float-left second-left">
             <span class="sortBy">Sort by:</span> show unread
+            users cant search or join team.. only admin can add users
           </div>
   
           <!-- Create New -->
@@ -70,7 +71,7 @@
                 <div class="lead-noti"></div>
               </span>
               <div class="teams" >
-                  <app-group-card *ngFor="let item of groups"></app-group-card>
+                  <app-group-card *ngFor="let item of groups"  [data]="item"></app-group-card>
               </div>
   
               <!-- Direct List -->
@@ -79,7 +80,7 @@
                 <div class="lead-noti"></div>
               </span>
               <div class="dm">
-                <app-dm-card *ngFor="let item of dms"></app-dm-card>
+                <app-dm-card *ngFor="let item of directs"></app-dm-card>
                 <h6 class="dm-archives-link" (click)="ShowArchives()">View archives</h6>
               </div>
         </div>

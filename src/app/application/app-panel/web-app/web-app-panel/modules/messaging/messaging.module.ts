@@ -17,13 +17,18 @@ import { PollComponent } from '../../components/chat-box-team/components/poll/po
 
 
 // Modules
-import { NgxPopperModule } from 'ngx-popper';
 import { NgxTributeModule } from 'ngx-tribute';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { MainPipeModule } from '../../pipes/main-pipe/main-pipe.module';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { SharedModule } from '../shared/shared.module';
+import { NgxsModule } from '@ngxs/store';
+
+// Store
+import { ChatsPageState} from '../../store/state/chatsPage.state';
+import { ChatsPageLazyState } from '../../store/state/chatsPageLazy.state';
+import { MgsMainService } from '../../services/pages/messaging/mgs-main.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +53,8 @@ import { SharedModule } from '../shared/shared.module';
     RoundProgressModule,
     ClickOutsideModule,
     SharedModule,
-  ]
+    NgxsModule.forFeature([ChatsPageState, ChatsPageLazyState])
+  ],
+  providers: [ MgsMainService ]
 })
 export class MessagingModule { }

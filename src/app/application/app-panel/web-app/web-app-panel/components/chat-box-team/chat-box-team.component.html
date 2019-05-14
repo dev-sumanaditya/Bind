@@ -2,15 +2,15 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="top-left">
-      <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754">
+      <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754" (click)="ShowInfo()">
       <div class="avatar-info">
-          <h6 class="name">The Incubis</h6>
-          <p class="title">Title  |  Last seen - 2h ago</p>
+          <h6 class="name" (click)="ShowInfo()">The Incubis</h6>
+          <p class="title" (click)="ShowInfo()">Title  |  Last seen - 2h ago</p>
       </div>
     </div>
     <div class="top-right">
-        <i class="material-icons icon-top" (click)="ShowGroupBox()" *ngIf="ChatsWindow">widgets</i>
-        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="ChatsWindow"
+        <i class="material-icons icon-top" (click)="ShowGroupBox()" *ngIf="ChatsWindow" title="Open GroupBox">widgets</i>
+        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="ChatsWindow" title="Options"
           [popper]="Chatdropdown"
           [popperShowOnStart]="false"
           [popperTrigger]="'click'"
@@ -20,17 +20,17 @@
           [popperApplyClass]="'popper2'"
           [popperDisableStyle]="true"
         >more_horiz</i>
-        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="!ChatsWindow">clear</i>
+        <i class="material-icons icon-top" (click)="ShowChatsWindow()" *ngIf="!ChatsWindow" title="close">clear</i>
     </div>
   </div> 
     <!-- Dropdown menu -->
     <popper-content #Chatdropdown [ngClass]="popper">
       <h6> <i class="material-icons">search</i> Search</h6>
-      <h6> <i class="material-icons">info</i> Group info</h6>
-      <h6> <i class="material-icons">volume_off</i> Mute notifications</h6>
+      <h6 (click)="ShowInfo()"> <i class="material-icons">info</i> Group info</h6>
+      <h6> <i class="material-icons">volume_off</i> Mute Group</h6>
+      <h6> <i class="material-icons">volume_up</i> Unmute Group</h6>
       <h6> <i class="material-icons">person_add</i> Add members </h6>
       <h6> <i class="material-icons">settings</i> Group Settings</h6>
-      <h6> <i class="material-icons">backspace</i> Exit group</h6>
     </popper-content>
 
   <!-- Chats container -->
@@ -38,11 +38,7 @@
     input:
     <div class="ctr" [innerHtml]="vall | safe: 'html'"></div>
     <hr>
-    <app-in (reply)="reply_this($event)"></app-in>
-    <app-in (reply)="reply_this($event)"></app-in>
-    <app-in (reply)="reply_this($event)"></app-in>
-    <app-in (reply)="reply_this($event)"></app-in>
-    <app-in (reply)="reply_this($event)"></app-in>
+    <app-in *ngFor="let m of msgs" (reply)="reply_this($event)" [indata]="m"></app-in>
   </div>
 
   <!-- Group box container -->
@@ -170,9 +166,99 @@
     </div>
   </div>
 
+
+
+
+  <!-- Info Window -->
   <div class="infoWindow" *ngIf="InfoWindow">
-    Info Window
+    <div class="fst">
+      <div class="a">
+        <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754" alt="">
+      </div>
+      <div class="b">
+        <h6 class="name">The Incubis <span class="username">@incubis</span></h6>
+        <h6 class="title">Media and Saas</h6>
+        <p class="desc">This is the description of the page. The passage is attributed 
+          to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De.</p>
+      </div>
+    </div>
+
+    <div class="scnd">
+      <h6 class="leads">Recent media</h6>
+      <div class="media">
+        <div class="item" *ngFor="let i of media">
+          <div class="img" [style.background]="'url('+i+')'"></div>
+        </div>
+      </div>
+      <a (click)="expand()">Show more</a>
+    </div>
+
+    <div class="thrd">
+      <h6 class="leads">14 Members</h6>
+      <div class="members">
+        <div class="addMember">
+          <i class="material-icons">add</i> <span>Add Members</span>
+        </div>
+        <div class="addMember">
+          <i class="material-icons">link</i> <span>Copy Invite link</span>
+        </div>
+        <!-- members -->
+        <hr>
+        <div class="listItem" *ngFor="let i of media">
+          <div class="l">
+            <img src="https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754" alt="...">
+          </div>
+          <div class="m">
+            <h6 class="name">John Doe</h6>
+            <h6 class="title">Front-end Developer</h6>
+          </div>
+          <div class="r">
+            <div class="badge">
+                <h6><span class="badge badge-pill badge-success">Admin</span></h6>
+            </div>
+            <div class="opt">
+              <i class="material-icons"
+              [popper]="Memberdropdown"
+              [popperShowOnStart]="false"
+              [popperTrigger]="'click'"
+              [popperHideOnClickOutside]="true"
+              [popperHideOnScroll]="true"
+              [popperPlacement]="'bottom'"
+              [popperApplyClass]="'popper'"
+              [popperDisableStyle]="false"
+              >more_horiz</i>
+
+              <!-- Dropdown menu -->
+              <popper-content #Memberdropdown>
+                <h6> Private Message</h6>
+                <h6 routerLink="/app/user"> View Profile</h6>
+                <h6> Make Admin</h6>
+                <h6> Remove as Admin </h6>
+                <hr>
+                <h6> Remove from Group</h6>
+              </popper-content>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frth">
+      <h6 class="leads">Group Options</h6>
+      <div class="item">
+        <i class="material-icons">exit_to_app</i>
+        <span>Exit Group</span>
+      </div>
+      <div class="item">
+        <i class="material-icons">thumb_down</i>
+        <span>Report Group</span>
+      </div>
+    </div>
+
   </div>
+
+
 
   <!-- Emoji selector Div -->
   <div class="bottomPop" *ngIf="emojiToggleState">
@@ -202,8 +288,18 @@
             </div>
           </div>
       </div>
-        <div class="input" #inputBar contenteditable="true" [ngxTribute]="Options"  (drop)="return()" (paste)="paste($event)" (onMentioned)="display()" placeholder="Type a message here..." (input)="display()" (keyup)="display()" (click)="display()"></div>
-        <i class="material-icons emoji" [class.attach-selected]="emojiToggleState" (click)="toggleEmojiSelector()">sentiment_satisfied_alt</i>
+        <div class="input" #inputBar contenteditable="true"
+          [ngxTribute]="Options"
+          (drop)="return()"
+          (paste)="paste($event)"
+          (onMentioned)="display()"
+          placeholder="Type a message here..."
+          (input)="display()" (keyup)="display()"
+          (click)="display()">
+        </div>
+        <i class="material-icons emoji" [class.attach-selected]="emojiToggleState" (click)="toggleEmojiSelector()">
+          sentiment_satisfied_alt
+        </i>
         <i class="material-icons send-btn">near_me</i>
     </div>
   </div>
